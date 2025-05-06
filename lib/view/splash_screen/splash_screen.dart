@@ -31,7 +31,11 @@ class SplashScreen extends StatelessWidget {
                       height: 1.5,
                     ),
                     children: const [
-                      TextSpan(text: 'Streamly offers seamless streaming of '),
+                      TextSpan(
+
+                          text: 'Streamly offers seamless streaming of ',
+
+                      ),
                       TextSpan(
                         text: 'movies, TV shows, ',
                         style: TextStyle(fontWeight: FontWeight.bold),
