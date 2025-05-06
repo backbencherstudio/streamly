@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:streamly/view/auth/login.dart';
+import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/splash_screen/splash_screen.dart';
 import 'block/bottom_nav/bottom_nav_cubit.dart';
 import 'block/theme/theme_cubit.dart';
@@ -53,7 +54,7 @@ class StreamlyApp extends StatelessWidget {
               theme: AppThemes.lightTheme,
               darkTheme: AppThemes.darkTheme,
               themeMode: themeMode,
-              home:  SplashScreen(),
+              home: LibraryScreen(),
             );
           },
         );

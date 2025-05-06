@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streamly/view/favorite/favorite_screen.dart';
-import 'package:streamly/view/library/library_screen.dart';
+import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/live/live_screen.dart';
 import 'package:streamly/view/profile/profile_screen.dart';
 import 'package:streamly/view/navigation/widget/custom_bottom_nav_bar.dart';
@@ -15,7 +15,7 @@ class NavigationRoot extends StatelessWidget {
   static final List<Widget> _screens = [
     const Home(),
     const LiveScreen(),
-    const LibraryScreen(),
+          LibraryScreen(),
     const FavoriteScreen(),
     const ProfileScreen(),
   ];
