@@ -4,7 +4,7 @@ import 'package:streamly/view/favorite/favorite_screen.dart';
 import 'package:streamly/view/library/library_screen.dart';
 import 'package:streamly/view/live/live_screen.dart';
 import 'package:streamly/view/profile/profile_screen.dart';
-import 'package:streamly/widgets/custom_bottom_nav_bar.dart';
+import 'package:streamly/view/navigation/widget/custom_bottom_nav_bar.dart';
 
 import '../../block/bottom_nav/bottom_nav_cubit.dart';
 import '../home/home.dart';
