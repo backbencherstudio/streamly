@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:streamly/routes/app_router.dart';
+import 'block/bottom_nav/bottom_nav_cubit.dart';
 import 'block/theme/theme_cubit.dart';
 import 'themes/themes.dart';
 import 'themes/theme_extensions.dart';
-import 'view/home/home.dart';
+import 'view/navigation/navigation_root.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Hive.openBox('settings');
-
 
   runApp(const AppWrapper());
 }
@@ -22,7 +21,13 @@ class AppWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (_) => ThemeCubit(), child: const StreamlyApp());
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => ThemeCubit()),
+        BlocProvider(create: (_) => BottomNavCubit()),
+      ],
+      child: const StreamlyApp(),
+    );
   }
 }
 
@@ -38,13 +43,13 @@ class StreamlyApp extends StatelessWidget {
       builder: (context, child) {
         return BlocBuilder<ThemeCubit, ThemeMode>(
           builder: (context, themeMode) {
-            return MaterialApp.router(
+            return MaterialApp(
               title: 'Streamly',
               debugShowCheckedModeBanner: false,
               theme: AppThemes.lightTheme,
               darkTheme: AppThemes.darkTheme,
               themeMode: themeMode,
-              routerConfig: AppRouter.router,
+              home: const NavigationRoot(),
             );
           },
         );
