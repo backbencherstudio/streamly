@@ -53,7 +53,7 @@ class StreamlyApp extends StatelessWidget {
               theme: AppThemes.lightTheme,
               darkTheme: AppThemes.darkTheme,
               themeMode: themeMode,
-              home:  Login(),
+              home:  SplashScreen(),
             );
           },
         );
