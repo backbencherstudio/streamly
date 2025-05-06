@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streamly/view/favorite/favorite_screen.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/live/live_screen.dart';
-import 'package:streamly/view/profile/profile_screen.dart';
 import 'package:streamly/view/navigation/widget/custom_bottom_nav_bar.dart';
 
 import '../../block/bottom_nav/bottom_nav_cubit.dart';
 import '../home/home.dart';
+import '../profile/profile_management_screen.dart';
 
 class NavigationRoot extends StatelessWidget {
   const NavigationRoot({super.key});
@@ -17,7 +17,7 @@ class NavigationRoot extends StatelessWidget {
     const LiveScreen(),
           LibraryScreen(),
     const FavoriteScreen(),
-    const ProfileScreen(),
+    const ProfileManagementScreen(),
   ];
 
   @override

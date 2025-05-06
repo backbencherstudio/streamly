@@ -5,20 +5,24 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final Widget? suffixIconWithText; // ✅ নতুন ফিল্ড
   final int maxLines;
   final bool? isObSecure;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final Color? fileColor; // ✅ আপনি fileColor পাঠাচ্ছেন
 
   const CustomTextField({
     super.key,
     required this.hintText,
     this.suffixIcon,
     this.prefixIcon,
+    this.suffixIconWithText,
     this.maxLines = 1,
     this.isObSecure,
     this.controller,
     this.validator,
+    this.fileColor,
   });
 
   @override
@@ -30,9 +34,7 @@ class CustomTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         obscureText: isObSecure ?? false,
-
         style: TextStyle(color: Colors.white, fontSize: 14.sp),
-
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -41,9 +43,12 @@ class CustomTextField extends StatelessWidget {
             fontSize: 14.sp,
           ),
           filled: true,
-          fillColor: const Color(0xff060209),
+          fillColor: fileColor ?? const Color(0xff060209),
           prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
+
+          // ✅ এখানে suffixIconWithText না থাকলে fallback হবে suffixIcon
+          suffixIcon: suffixIconWithText ?? suffixIcon,
+
           suffixIconColor: const Color(0xff9A9EA7),
           contentPadding: EdgeInsets.symmetric(
             horizontal: 16.w,

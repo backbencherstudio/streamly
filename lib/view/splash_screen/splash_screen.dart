@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/images/images.dart';
+import '../../themes/color.dart';
+import '../../widgets/outlined_primary_button.dart';
+import '../../widgets/primary_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -10,42 +14,71 @@ class SplashScreen extends StatelessWidget {
       body: SizedBox.expand(
         child: Stack(
           children: [
-            // Background Image
-            Image.asset(
-              AppImages.splash,
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: double.infinity,
+            Positioned.fill(
+              child: Image.asset(AppImages.splash, fit: BoxFit.cover),
             ),
 
-            // Centered Text Overlay
             Center(
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 24.0),
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                      height: 1.5,
+                padding: EdgeInsets.only(top: 420, left: 20, right: 20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    /// Rich Text
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Streamly offers seamless streaming of ',
+                            style: TextStyle(
+                              color: AppColors.textPrimary,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'movies, TV shows, ',
+                            style: TextStyle(
+                              color: AppColors.textPurple,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                          TextSpan(
+                            text:
+                                'and exclusives, tailored for every entertainment lover!',
+                            style: TextStyle(
+                              color: AppColors.textPrimary,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    children: const [
-                      TextSpan(
 
-                          text: 'Streamly offers seamless streaming of ',
+                    SizedBox(height: 32.h),
 
-                      ),
-                      TextSpan(
-                        text: 'movies, TV shows, ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text:
-                        'and exclusives, tailored for every entertainment lover!',
-                      ),
-                    ],
-                  ),
+                    /// Primary CTA Button
+                    PrimaryButton(
+                      text: 'Get Started',
+                      onTap: () {
+                        // TODO: Navigate to next screen
+                      },
+                    ),
+
+                    SizedBox(height: 16.h),
+
+                    /// Secondary Button
+                    OutlinedPrimaryButton(
+                      text: 'Log in',
+                      onTap: () {
+                        // TODO: Navigate to login screen
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),

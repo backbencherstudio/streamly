@@ -41,4 +41,5 @@ class AppIcons {
   static const String visibility = 'assets/icons/visibility.png';
   static const String whatsapp = 'assets/icons/whatsapp.png';
   static const String x = 'assets/icons/x.png';
+  static const String SwitchIcon = 'assets/icons/switch.png';
 }
