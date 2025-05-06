@@ -1,22 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:streamly/view/home/home.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:streamly/routes/app_router.dart';
+import 'block/theme/theme_cubit.dart';
+import 'themes/themes.dart';
+import 'themes/theme_extensions.dart';
+import 'view/home/home.dart';
 
-void main() {
-  runApp(const StreamlyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox('settings');
+
+
+  runApp(const AppWrapper());
+}
+
+class AppWrapper extends StatelessWidget {
+  const AppWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(create: (_) => ThemeCubit(), child: const StreamlyApp());
+  }
 }
 
 class StreamlyApp extends StatelessWidget {
   const StreamlyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const Home(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return BlocBuilder<ThemeCubit, ThemeMode>(
+          builder: (context, themeMode) {
+            return MaterialApp.router(
+              title: 'Streamly',
+              debugShowCheckedModeBanner: false,
+              theme: AppThemes.lightTheme,
+              darkTheme: AppThemes.darkTheme,
+              themeMode: themeMode,
+              routerConfig: AppRouter.router,
+            );
+          },
+        );
+      },
     );
   }
 }
