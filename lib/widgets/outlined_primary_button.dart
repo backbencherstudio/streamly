@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:streamly/themes/color.dart';
 
 class OutlinedPrimaryButton extends StatelessWidget {
   final double? width;
@@ -7,11 +8,11 @@ class OutlinedPrimaryButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const OutlinedPrimaryButton({
-    Key? key,
+    super.key,
     this.width,
     required this.text,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +26,14 @@ class OutlinedPrimaryButton extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
-            color: const Color(0xFF9F4EDD), // Light purple border
+            color: AppColors.buttonBorder, // Light purple border
             width: 1.5.w,
           ),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: const Color(0xFF9F4EDD),
+            color: AppColors.textPurple,
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
           ),
