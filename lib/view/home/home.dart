@@ -13,12 +13,11 @@ class Home extends StatelessWidget {
           'Home Screen',
           style: TextStyle(
             fontSize: 24,
-          color: Colors.black
-          //  color: Theme.of(context).textTheme.headline1?.color,
+            color: Colors.black,
+            //  color: Theme.of(context).textTheme.headline1?.color,
           ),
         ),
       ),
-
     );
   }
 }
