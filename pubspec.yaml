@@ -48,3 +48,17 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+
+  #   - images/a_dot_ham.jpeg
+
+
+#  fonts:
+#    - family: Menseal
+#      fonts:
+#        - asset: assets/fonts/Menseal-Regular.ttf
+
