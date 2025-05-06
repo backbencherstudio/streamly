@@ -25,4 +25,6 @@ class AppColors {
 
   // Borders & Dividers
   static const Color borderColor = Color(0xFFAD59F3);
+  static const Color containerBackground = Color(0xFF0F0F11);
+  static const Color dividerColor = Color(0xFF414141);
 }
