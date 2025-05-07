@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:streamly/themes/color.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -7,34 +8,40 @@ class FavoriteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 240,
-      width: 170,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(
-          image: AssetImage(data["imageUrl"]),
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        context.go('/managePlaneScreen');
+      },
+      child: Container(
+        height: 240,
+        width: 170,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          image: DecorationImage(
+            image: AssetImage(data["imageUrl"]),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            top: 9,
-            left: 10,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: AppColors.textPurple,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 9,
+              left: 10,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: AppColors.textPurple,
+                ),
+                child: Text(
+                  data["rating"].toString(),
+                  style: TextStyle(color: AppColors.textPrimary),
+                ),
               ),
-              child: Text(
-                data["rating"].toString(),
-                style: TextStyle(color: AppColors.textPrimary),
-              ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

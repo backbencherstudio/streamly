@@ -43,4 +43,7 @@ class AppIcons {
   static const String x = 'assets/icons/x.png';
   static const String SwitchIcon = 'assets/icons/switch.png';
   static const String voice = 'assets/icons/voice.png';
+  static const String check = 'assets/icons/check.png';
+  static const String scan = 'assets/icons/scan.png';
+  static const String paypal = 'assets/icons/paypal.png';
 }
