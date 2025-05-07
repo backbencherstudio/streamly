@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../config/images/images.dart';
+import '../../routes/routes.dart';
 import '../../themes/color.dart';
 import '../../widgets/outlined_primary_button.dart';
 import '../../widgets/primary_button.dart';
@@ -65,8 +67,7 @@ class SplashScreen extends StatelessWidget {
                     PrimaryButton(
                       text: 'Get Started',
                       onTap: () {
-                        // TODO: Navigate to next screen
-                      },
+                        context.go('/navigationRoot');                      },
                     ),
 
                     SizedBox(height: 16.h),
@@ -75,7 +76,7 @@ class SplashScreen extends StatelessWidget {
                     OutlinedPrimaryButton(
                       text: 'Log in',
                       onTap: () {
-                        // TODO: Navigate to login screen
+                        context.go(RoutesName.loginScreen);
                       },
                     ),
                   ],

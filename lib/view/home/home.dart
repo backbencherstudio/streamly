@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:streamly/widgets/outlined_primary_button.dart';
-import 'package:streamly/widgets/primary_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:streamly/view/home/widget/category_vedio_list.dart';
+import 'package:streamly/view/home/widget/header_section.dart';
+import 'package:streamly/view/home/widget/movie_carosal.dart';
+import '../../../config/images/images.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,20 +12,31 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          /// Background SVG
+          Positioned.fill(
+            child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
+          ),
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 50),
-            PrimaryButton(text: "login", onTap: (){}),
-            const SizedBox(height: 20),
-            OutlinedPrimaryButton(text: "SignUp", onTap: (){}),
-            // Add more widgets here as needed
-          ],
-        ),
-      )
-
+          /// Main Scrollable Content
+          Positioned.fill(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const HeaderSection(),
+                  SizedBox(height: 16.h),
+                  const MovieCarousel(),
+                  SizedBox(height: 16.h),
+                  CategoryVideoList(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

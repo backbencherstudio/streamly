@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:streamly/view/auth/login/widget/login_header_section.dart';
 import 'package:streamly/view/auth/login/widget/social_login_option.dart';
 import 'package:streamly/widgets/primary_button.dart';
@@ -28,7 +29,9 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   const LoginHeaderSection(),
                   const SizedBox(height: 32),
-                  PrimaryButton(text: 'Log In', onTap: () {}),
+                  PrimaryButton(text: 'Log In', onTap: () {
+                    context.go('/navigationRoot');
+                  }),
                   SizedBox(height: 16.h),
                   Text.rich(
                     TextSpan(
