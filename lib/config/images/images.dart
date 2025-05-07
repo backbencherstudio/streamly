@@ -12,4 +12,6 @@ class AppImages {
   static const String favorite_2 = 'assets/images/favorite_2.png';
   static const String favorite_3 = 'assets/images/favorite_3.png';
   static const String favorite_4 = 'assets/images/favorite_4.png';
+  static const String visa = 'assets/images/visa.png';
+  static const String visa_text = 'assets/images/visa_text.png';
 }

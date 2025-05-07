@@ -6,12 +6,14 @@ class PrimaryButton extends StatelessWidget {
   final double? width;
   final String text;
   final VoidCallback onTap;
+  final Color? color;
 
   const PrimaryButton({
     super.key,
     this.width,
     required this.text,
     required this.onTap,
+    this.color,
   });
 
   @override
@@ -23,7 +25,7 @@ class PrimaryButton extends StatelessWidget {
         height: 50.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: AppColors.buttonBackground, // Purple color
+          color: color ?? AppColors.buttonBackground, // Purple color
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Text(

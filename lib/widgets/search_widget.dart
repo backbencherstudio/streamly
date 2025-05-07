@@ -46,6 +46,10 @@ class SearchWidget extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Color(0xff19161D)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide.none,
         ),
       ),
