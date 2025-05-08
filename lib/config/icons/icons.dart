@@ -46,4 +46,6 @@ class AppIcons {
   static const String check = 'assets/icons/check.png';
   static const String scan = 'assets/icons/scan.png';
   static const String paypal = 'assets/icons/paypal.png';
+  static const String success = 'assets/icons/success.png';
+  static const String storage = 'assets/icons/storage.png';
 }
