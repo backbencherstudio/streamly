@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:streamly/routes/routes.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
+import 'package:streamly/view/live/screen/LiveViewScreen.dart';
 import '../view/auth/login/login_screen.dart';
 import '../view/navigation/navigation_root.dart';
 import '../view/profile/componenst/add_new_card/add_new_card_screen.dart';
@@ -54,6 +55,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.addNewCardScreen,
         builder: (context, state) => AddNewCardScreen(),
+      ),
+      GoRoute(
+        path: RoutesName.liveViewScreen,
+        builder: (context, state) => LiveViewScreen(),
       ),
     ],
   );

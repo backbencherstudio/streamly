@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../model/live/live_model.dart';
+import '../../../routes/routes.dart';
 import '../../../themes/color.dart';
 
 class LiveCardItem extends StatelessWidget {
@@ -13,6 +15,7 @@ class LiveCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        context.push(RoutesName.liveViewScreen);
         // TODO: Add your navigation or action logic
         debugPrint('Clicked on ${user.name}');
       },

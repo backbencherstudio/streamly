@@ -9,4 +9,5 @@ class RoutesName {
   static const String helpSupportScreen = '/helpSupportScreen';
   static const String paymentMethodScreen = '/paymentMethodScreen';
   static const String addNewCardScreen = '/addNewCardScreen';
+  static const String liveViewScreen = '/liveViewScreen';
 }
