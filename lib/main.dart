@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:streamly/block/bottom_nav/bottom_nav_cubit.dart';
+import 'package:streamly/block/live/live_bloc.dart';
 import 'package:streamly/block/theme/theme_cubit.dart';
 import 'package:streamly/routes/app_router.dart';
 import 'package:streamly/themes/themes.dart';
@@ -24,6 +25,7 @@ class AppWrapper extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),
+        BlocProvider(create: (_) => LiveBloc()),
       ],
       child: const StreamlyApp(),
     );
