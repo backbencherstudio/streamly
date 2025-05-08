@@ -47,17 +47,11 @@ class ProfileManagementScreen extends StatelessWidget {
                         logoutButton(),
                       ],
                     ),
-
                     SizedBox(height: 32.h),
-
-                    /// User Info
                     const ProfileUserNameSection(),
                     SizedBox(height: 24.h),
-
                     _sectionTitle("Preferences"),
                     SizedBox(height: 16.h),
-
-                    /// Preferences Fields
                     customContainerWithBackground(
                       hintText: "Kids Mode",
                       iconPath: AppIcons.kids,
@@ -85,7 +79,25 @@ class ProfileManagementScreen extends StatelessWidget {
                     customContainerWithBackground(
                       hintText: "Downloaded",
                       iconPath: AppIcons.download,
-                      onTap: () {},
+                      onTap: () {
+                        context.go('/downloadScreen');
+                      },
+                    ),
+                    customContainerWithBackground(
+                      hintText: "Storage",
+                      iconPath: AppIcons.storage,
+                      suffix: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text("Plan", style: _textStyle()),
+                          SizedBox(width: 4.w),
+                          Image.asset(AppIcons.downArrow,
+                              width: 16.w, height: 16.h),
+                        ],
+                      ),
+                      onTap: () {
+                        context.go('/storageManagementScreen');
+                      },
                     ),
                     customContainerWithBackground(
                       hintText: "Current Plan",

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../themes/color.dart';
 import '../../../../widgets/custom_text_field.dart';
@@ -11,7 +12,28 @@ class LoginHeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          "Hey! Welcome",
+          style: TextStyle(
+              color: AppColors.textPrimary,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400),
+        ),
+        SizedBox(
+          height: 16.h,
+        ),
+        Text(
+          "Login to \nYour Account",
+          style: TextStyle(
+              color: AppColors.textPrimary,
+              fontSize: 28.sp,
+              fontWeight: FontWeight.w500),
+        ),
+        SizedBox(
+          height: 40.h,
+        ),
         CustomTextField(hintText: 'example@gmail.com'),
         SizedBox(height: 16.h),
         CustomTextField(
@@ -41,7 +63,9 @@ class LoginHeaderSection extends StatelessWidget {
               ),
               const Spacer(),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/forgotPasswordScreen');
+                },
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
@@ -184,64 +185,69 @@ class MovieCard extends StatelessWidget {
         ? 200.h
         : 140.h;
 
-    return Container(
-      width: width,
-      margin: EdgeInsets.symmetric(horizontal: 8.w),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8.r),
-                child: Image.network(
-                  movie.posterUrl,
-                  height: height,
-                  width: width,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
+    return GestureDetector(
+      onTap: (){
+        context.go('/contentDetailScreen');
+      },
+      child: Container(
+        width: width,
+        margin: EdgeInsets.symmetric(horizontal: 8.w),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: Image.network(
+                    movie.posterUrl,
                     height: height,
                     width: width,
-                    color: Colors.grey,
-                    child: const Icon(Icons.error),
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      height: height,
+                      width: width,
+                      color: Colors.grey,
+                      child: const Icon(Icons.error),
+                    ),
                   ),
                 ),
-              ),
-              if (darkOverlay)
-                Container(
-                  height: height,
-                  width: width,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(8.r),
+                if (darkOverlay)
+                  Container(
+                    height: height,
+                    width: width,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
                   ),
-                ),
-              if (isSquare && iconData != null)
-                Icon(
-                  iconData,
-                  color: Colors.white,
-                  size: 32.sp,
-                ),
-            ],
-          ),
-          SizedBox(height: 4.h),
-          ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: isSquare ? 36.h : 28.h),
-            child: Text(
-              movie.title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: isSquare ? 14.sp : 12.sp,
-                fontWeight: isSquare ? FontWeight.w500 : FontWeight.normal,
-              ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+                if (isSquare && iconData != null)
+                  Icon(
+                    iconData,
+                    color: Colors.white,
+                    size: 32.sp,
+                  ),
+              ],
             ),
-          ),
-        ],
+            SizedBox(height: 4.h),
+            ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: isSquare ? 36.h : 28.h),
+              child: Text(
+                movie.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: isSquare ? 14.sp : 12.sp,
+                  fontWeight: isSquare ? FontWeight.w500 : FontWeight.normal,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

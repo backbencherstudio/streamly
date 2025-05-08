@@ -1,17 +1,17 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/view/auth/login/widget/login_header_section.dart';
 import 'package:streamly/view/auth/login/widget/social_login_option.dart';
+import 'package:streamly/view/auth/sign_up/widget/sign_up_header.dart';
+import 'package:streamly/view/auth/sign_up/widget/social_signUp_option.dart';
 import 'package:streamly/widgets/primary_button.dart';
-
 import '../../../config/images/images.dart';
 import '../../../themes/color.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,41 +28,34 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const LoginHeaderSection(),
+                  const SignUpHeader(),
                   const SizedBox(height: 32),
                   PrimaryButton(
-                      text: 'Log In',
+                      text: 'Create account',
                       onTap: () {
                         context.go('/navigationRoot');
                       }),
                   SizedBox(height: 16.h),
-                  RichText(
-                    text: TextSpan(
-                      text: 'New to Streamly? ',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium
-                          ?.copyWith(color: Colors.white),
+                  Text.rich(
+                    TextSpan(
+                      text: 'Already have an account? ',
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodyMedium?.copyWith(color: Colors.white),
                       children: [
                         TextSpan(
-                          text: 'Create an Account',
+                          text: 'Log in',
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             color: AppColors.textPurple,
                             fontSize: 14.sp,
                           ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              context.go( '/signUpScreen');
-                            },
                         ),
                       ],
                     ),
                   ),
-
                   SizedBox(height: 32.h),
-                  // signUpScreen
-                  const SocialLoginOptions(),
+                  const SocialSignupOption(),
                 ],
               ),
             ),

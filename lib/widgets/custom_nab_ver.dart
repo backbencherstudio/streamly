@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../config/icons/icons.dart';
 
 class CustomNabVer extends StatelessWidget {
-  final String title;
+  final String? title;
   final String? trailing;
-  const CustomNabVer({super.key, required this.title, this.trailing});
+  const CustomNabVer({super.key,  this.title, this.trailing});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +23,7 @@ class CustomNabVer extends StatelessWidget {
           SizedBox(width: 16.w),
           Expanded(
             child: Text(
-              title,
+              title ?? '',
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
