@@ -1,0 +1,64 @@
+{
+  "episodes": [
+    {
+      "id": "1",
+      "title": "The Last Frontier",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+    },
+    {
+      "id": "2",
+      "title": "City of Shadows",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Echoes of Eternity",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Battlefield 2025",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Armageddon: Multiverse",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Legend of the Phoenix",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Ocean's Code",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Sharknado: The Ultimate Disaster",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg"
+    },
+    {
+      "id": "9",
+      "title": "The Fantastic Four: First Steps",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/ynXoOxmDHNQ4UAy0oU6avW71HVW.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Neon Skies",
+      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+      "thumbnailUrl": "https://image.tmdb.org/t/p/w500/5BwqwxMEjeFtdknRV792Svo0K1v.jpg"
+    }
+  ]
+}

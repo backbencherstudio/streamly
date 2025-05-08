@@ -60,6 +60,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
+    - assets/data/content.json
 
   #   - images/a_dot_ham.jpeg
 

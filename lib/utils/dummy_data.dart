@@ -1,3 +1,4 @@
+import '../model/comment/comment.dart';
 import '../model/live_view/live_view_model.dart';
 
 const dummyJson = {
@@ -280,6 +281,58 @@ final dummyLiveView = LiveViewModel(
     LiveComment(name: 'Mary Freund', message: 'Looks like a yummy pizza 😋'),
   ],
 );
+
+
+// Dummy comment list to load initially
+final List<Comment> dummyComments = [
+  Comment(
+    id: '1',
+    user: 'John Doe',
+    text: 'Awesome content!',
+    time: '2 hours ago',
+    likes: 5,
+    dislikes: 0,
+    replies: [
+      Comment(
+        id: '1_1',
+        user: 'Jane Doe',
+        text: 'Totally agree!',
+        time: '1 hour ago',
+        likes: 2,
+        dislikes: 0,
+        replies: [],
+      ),
+    ],
+  ),
+  Comment(
+    id: '2',
+    user: 'Mike Ross',
+    text: 'Loved it!',
+    time: '1 day ago',
+    likes: 3,
+    dislikes: 1,
+    replies: [],
+  ),
+  Comment(
+    id: '1',
+    user: 'John Doe',
+    text: 'Awesome content!',
+    time: '2 hours ago',
+    likes: 5,
+    dislikes: 0,
+    replies: [
+      Comment(
+        id: '1_1',
+        user: 'Jane Doe',
+        text: 'Totally agree!',
+        time: '1 hour ago',
+        likes: 2,
+        dislikes: 0,
+        replies: [],
+      ),
+    ],
+  ),
+];
 
 
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:streamly/routes/routes.dart';
 
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
@@ -19,7 +21,7 @@ class LibraryScreen extends StatelessWidget {
           children: [
             Positioned.fill(
               child: SvgPicture.asset(
-                'assets/images/background.svg', // Update this path if needed
+                'assets/images/background.svg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -61,7 +63,6 @@ class LibraryScreen extends StatelessWidget {
       ),
     );
   }
-}
 
   Widget _buildSearchBar() {
     return Padding(
@@ -84,7 +85,7 @@ class LibraryScreen extends StatelessWidget {
       ),
     );
   }
-
+}
 
 class CategorySection extends StatelessWidget {
   final Category category;
@@ -103,21 +104,28 @@ class CategorySection extends StatelessWidget {
         children: [
           _buildHeader(context, category.title, isPopularGenres),
           SizedBox(
-            height: isComingSoon
-                ? 260.h
-                : 215.h,
+            height: isComingSoon ? 260.h : 215.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: category.movies.length,
               itemBuilder: (context, index) {
                 final movie = category.movies[index];
-                return MovieCard(
-                  movie: movie,
-                  isLarge: isComingSoon,
-                  isSquare: isPopularGenres,
-                  iconData: isPopularGenres ? _getGenreIcon(movie.title) : null,
-                  darkOverlay: isPopularGenres,
-                  key: ValueKey(movie.title),
+                return GestureDetector(
+                  onTap: () {
+                    context.push(RoutesName.videoPlayScreen);
+                    // Replace this with actual navigation or action
+                    // ScaffoldMessenger.of(context).showSnackBar(
+                    //   SnackBar(content: Text('Tapped on ${movie.title}')),
+                    // );
+                  },
+                  child: MovieCard(
+                    movie: movie,
+                    isLarge: isComingSoon,
+                    isSquare: isPopularGenres,
+                    iconData: isPopularGenres ? _getGenreIcon(movie.title) : null,
+                    darkOverlay: isPopularGenres,
+                    key: ValueKey(movie.title),
+                  ),
                 );
               },
             ),
