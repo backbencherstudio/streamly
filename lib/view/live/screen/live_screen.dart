@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/view/live/widgets/live_card_grid.dart';
 import 'package:streamly/view/live/widgets/live_tab_bar.dart';
 
-import '../../block/live/live_bloc.dart';
-import '../../block/live/live_event.dart';
-import '../../block/live/live_state.dart';
-import '../../model/live/live_model.dart';
-import '../../themes/color.dart';
-import 'app_bar/live_app_bar.dart';
+import '../../../block/live/live_bloc.dart';
+import '../../../block/live/live_event.dart';
+import '../../../block/live/live_state.dart';
+import '../../../model/live/live_model.dart';
+import '../../../themes/color.dart';
+import '../app_bar/live_app_bar.dart';
 
 
 class LiveScreen extends StatelessWidget {

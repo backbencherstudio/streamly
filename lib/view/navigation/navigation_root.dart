@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streamly/view/favorite/favorite_screen.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
-import 'package:streamly/view/live/live_screen.dart';
+import 'package:streamly/view/live/screen/live_screen.dart';
 import 'package:streamly/view/navigation/widget/custom_bottom_nav_bar.dart';
 
 import '../../block/bottom_nav/bottom_nav_cubit.dart';
