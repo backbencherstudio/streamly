@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:streamly/routes/routes.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
+import 'package:streamly/view/live/screen/LiveViewScreen.dart';
 import '../view/auth/forgot_password/forgot_password_screen.dart';
 import '../view/auth/forgot_password/reset_success_screen.dart';
 import '../view/auth/forgot_password/set_new_password_screen.dart';
@@ -62,6 +63,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.addNewCardScreen,
         builder: (context, state) => AddNewCardScreen(),
+      ),
+      GoRoute(
+        path: RoutesName.liveViewScreen,
+        builder: (context, state) => LiveViewScreen(),
       ),
       GoRoute(
         path: RoutesName.signUpScreen,

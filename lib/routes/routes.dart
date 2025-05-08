@@ -17,4 +17,5 @@ class RoutesName {
   static const String downloadScreen = '/downloadScreen';
   static const String storageManagementScreen = '/storageManagementScreen';
   static const String contentDetailScreen = '/contentDetailScreen';
+  static const String liveViewScreen = '/liveViewScreen';
 }

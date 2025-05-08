@@ -1,3 +1,5 @@
+import '../model/live_view/live_view_model.dart';
+
 const dummyJson = {
   "categories": [
     {
@@ -262,5 +264,22 @@ const dummyLiveData = [
     "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
   }
 ];
+
+
+
+final dummyLiveView = LiveViewModel(
+  userName: 'Kate Sims',
+  userImage: 'https://i.imgur.com/2yaf2wb.jpg',
+  viewers: '2.5k',
+  streamUrl: 'https://stream-akamai.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8',
+  comments: [
+    LiveComment(name: 'Shane Floyd', message: 'Wow! guys where are you??'),
+    LiveComment(name: 'Anita Shelam', message: 'Heyyy, you guys are having fun, ain’t ya!😄'),
+    LiveComment(name: 'Patricia Sanders', message: 'I’m missing on a big treat!😅🍕'),
+    LiveComment(name: 'James Hall', message: 'Oh, is that Sasha?! When did you guys meet??'),
+    LiveComment(name: 'Mary Freund', message: 'Looks like a yummy pizza 😋'),
+  ],
+);
+
 
 
