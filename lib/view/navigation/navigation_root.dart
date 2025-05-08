@@ -14,7 +14,7 @@ class NavigationRoot extends StatelessWidget {
 
   static final List<Widget> _screens = [
     const Home(),
-    const LiveScreen(),
+           LiveScreen(),
           LibraryScreen(),
     const FavoriteScreen(),
     const ProfileManagementScreen(),

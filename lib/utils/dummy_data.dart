@@ -202,3 +202,65 @@ const dummyJson = {
     }
   ]
 };
+
+
+const dummyLiveData = [
+  {
+    "id": 1,
+    "name": "Lorri Warf",
+    "followers": "12k Followers",
+    "views": "1M",
+    "image": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bradley Lawlor",
+    "followers": "15k Followers",
+    "views": "2.1k",
+    "image": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kenthy Aleena",
+    "followers": "1.5M Followers",
+    "views": "12k",
+    "image": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Iva & Ryan",
+    "followers": "10k Followers",
+    "views": "2.8k",
+    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Lorri Warf",
+    "followers": "12k Followers",
+    "views": "1M",
+    "image": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bradley Lawlor",
+    "followers": "15k Followers",
+    "views": "2.1k",
+    "image": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kenthy Aleena",
+    "followers": "1.5M Followers",
+    "views": "12k",
+    "image": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Iva & Ryan",
+    "followers": "10k Followers",
+    "views": "2.8k",
+    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+  }
+];
+
+
