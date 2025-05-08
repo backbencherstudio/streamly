@@ -5,7 +5,8 @@ import '../../../config/icons/icons.dart';
 class CustomNabVer extends StatelessWidget {
   final String? title;
   final String? trailing;
-  const CustomNabVer({super.key,  this.title, this.trailing});
+  final VoidCallback? onTap;
+  const CustomNabVer({super.key,  this.title, this.trailing,this.onTap});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +14,7 @@ class CustomNabVer extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(10.w),
+            padding: EdgeInsets.all(8.w),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: const Color(0xff1D092E),
@@ -33,9 +34,12 @@ class CustomNabVer extends StatelessWidget {
             ),
           ),
           if (trailing != null)
-            Image.asset(
-              trailing!,
-              height: 23,
+            GestureDetector(
+              onTap: onTap,
+              child: Image.asset(
+                trailing!,
+                height: 23,
+              ),
             ),
         ],
       ),

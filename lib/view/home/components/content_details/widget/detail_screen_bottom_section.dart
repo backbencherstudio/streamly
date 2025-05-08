@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/themes/color.dart';
 
 class DetailScreenBottomSection extends StatelessWidget {
   const DetailScreenBottomSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,9 +56,7 @@ class DetailScreenBottomSection extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                onTap: () {
-                  // Add play functionality
-                },
+                onTap: () {},
                 child: Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
@@ -66,8 +66,12 @@ class DetailScreenBottomSection extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(AppIcons.start,
-                          width: 20.w, height: 20.w, color: Colors.white),
+                      Image.asset(
+                        AppIcons.start,
+                        width: 20.w,
+                        height: 20.w,
+                        color: Colors.white,
+                      ),
                       SizedBox(width: 6.w),
                       Text(
                         "Play",
@@ -76,7 +80,7 @@ class DetailScreenBottomSection extends StatelessWidget {
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -90,13 +94,16 @@ class DetailScreenBottomSection extends StatelessWidget {
               SizedBox(width: 12.w),
               _actionIcon(AppIcons.download1, onTap: () {}),
               SizedBox(width: 8.w),
-              _actionIcon(AppIcons.share, onTap: () {}),
+              _actionIcon(AppIcons.share, onTap: () {
+                Share.share(
+                  'https://play.google.com/store/apps/details?id=com.example.streamly',
+                );
+              }),
               SizedBox(width: 8.w),
               _actionIcon(AppIcons.copy, onTap: () {}),
             ],
           ),
           SizedBox(height: 20.h),
-
           Text(
             "Genre: Drama, Music, Action",
             style: TextStyle(
@@ -105,10 +112,7 @@ class DetailScreenBottomSection extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-
           SizedBox(height: 12.h),
-
-          /// Synopsis
           Text(
             "Synopsis",
             style: TextStyle(

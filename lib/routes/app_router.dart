@@ -16,6 +16,7 @@ import '../view/profile/componenst/help_support/help_support_screen.dart';
 import '../view/profile/componenst/manage_plan/mangage_plane_screen.dart';
 import '../view/profile/componenst/notification/notification_screen.dart';
 import '../view/profile/componenst/payment_method/payment_method_screen.dart';
+import '../view/profile/componenst/review_card_summery/review_card_summery_screen.dart';
 import '../view/profile/componenst/setting/setting_screen.dart';
 import '../view/profile/componenst/storage_managment/storage_management_screen.dart';
 import '../view/splash_screen/splash_screen.dart';
@@ -100,6 +101,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.contentDetailScreen,
         builder: (context, state) => ContentDetailScreen(),
+      ),
+      GoRoute(
+        path: RoutesName.reviewCardSummeryScreen,
+        builder: (context, state) => ReviewCardSummeryScreen(),
       ),
     ],
   );
