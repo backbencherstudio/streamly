@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/config/images/images.dart';
+import '../../../../../routes/routes.dart';
 
 class DetailScreenHeader extends StatelessWidget {
   const DetailScreenHeader({super.key});
@@ -39,7 +41,14 @@ class DetailScreenHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
+                      onTap: () {
+                        if (GoRouter.of(context).canPop()) {
+                          GoRouter.of(context).pop();
+                        } else {
+                          context
+                              .go(RoutesName.navigationRoot); // Fallback route
+                        }
+                      },
                       child: Container(
                         padding: EdgeInsets.all(8.w),
                         decoration: BoxDecoration(
@@ -51,13 +60,13 @@ class DetailScreenHeader extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8.w),
+                      padding: EdgeInsets.all(4.w),
                       decoration: BoxDecoration(
                         color: const Color(0xff472C2A),
                         shape: BoxShape.circle,
                       ),
                       child:
-                          Image.asset(AppIcons.cast, width: 20.w, height: 20.w),
+                          Image.asset(AppIcons.cast, width: 35.w, height: 30.w),
                     ),
                   ],
                 ),
