@@ -41,6 +41,9 @@ dependencies:
   chewie: ^1.11.3
   better_player_plus: ^1.0.8
   permission_handler: ^12.0.0+1
+  share_plus: ^11.0.0
+  mobile_scanner: ^6.0.7
+
 
 
 

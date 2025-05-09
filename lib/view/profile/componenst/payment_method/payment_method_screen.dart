@@ -6,6 +6,7 @@ import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/config/images/images.dart';
 import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/profile/componenst/payment_method/widget/payment_card_tile.dart';
+import 'package:streamly/view/profile/componenst/payment_method/widget/scanner_widget.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/outlined_primary_button.dart';
 import 'package:streamly/widgets/primary_button.dart';
@@ -19,18 +20,32 @@ class PaymentMethodScreen extends StatefulWidget {
 
 class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   String selectedMethod = "paypal";
+  final TextEditingController controller = TextEditingController();
+
+  Future<void> _openFullScreenScanner(BuildContext context) async {
+    final result = await Navigator.push<String>(
+      context,
+      MaterialPageRoute(
+        fullscreenDialog: true,
+        builder: (context) => const BarcodeScannerScreen(),
+      ),
+    );
+
+    if (result != null && mounted) {
+      setState(() {
+        controller.text = result;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          /// Background
           Positioned.fill(
             child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
           ),
-
-          /// Foreground
           Positioned.fill(
             child: SafeArea(
               child: Padding(
@@ -41,6 +56,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     CustomNabVer(
                       title: "Payment Methods",
                       trailing: AppIcons.scan,
+                      onTap: () {
+                        _openFullScreenScanner(context);
+                      },
                     ),
                     SizedBox(height: 24.h),
                     PaymentTile(
@@ -65,9 +83,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       onChanged: (val) => setState(() => selectedMethod = val!),
                     ),
                     SizedBox(height: 24.h),
-                    OutlinedPrimaryButton(text: "Add New Card", onTap: () {
-                      context.go('/addNewCardScreen');
-                    }),
+                    OutlinedPrimaryButton(
+                        text: "Add New Card",
+                        onTap: () {
+                          context.go('/addNewCardScreen');
+                        }),
                     const Spacer(),
                     Row(
                       children: [
@@ -84,6 +104,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             text: 'Submit',
                             onTap: () {
                               // Handle submit with selectedMethod
+                              context.go('/reviewCardSummeryScreen');
                             },
                             color: const Color(0xff7A25BC),
                           ),
