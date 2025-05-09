@@ -18,5 +18,6 @@ class RoutesName {
   static const String storageManagementScreen = '/storageManagementScreen';
   static const String contentDetailScreen = '/contentDetailScreen';
   static const String liveViewScreen = '/liveViewScreen';
+  static const String videoPlayScreen = '/videoPlayScreen';
   static const String reviewCardSummeryScreen = '/reviewCardSummeryScreen';
 }
