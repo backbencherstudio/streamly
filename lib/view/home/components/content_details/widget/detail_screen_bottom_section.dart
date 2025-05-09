@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/themes/color.dart';
+
+import '../../../../../routes/routes.dart';
 
 class DetailScreenBottomSection extends StatelessWidget {
   const DetailScreenBottomSection({super.key});
@@ -73,12 +76,18 @@ class DetailScreenBottomSection extends StatelessWidget {
                         color: Colors.white,
                       ),
                       SizedBox(width: 6.w),
-                      Text(
-                        "Play",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
+                      GestureDetector(
+                        onTap: () {
+                          // Navigate to the video player screen
+                           context.go(RoutesName.videoPlayScreen);
+                        },
+                        child: Text(
+                          "Play",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ],
