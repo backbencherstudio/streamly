@@ -7,6 +7,7 @@ import '../../../block/library_bloc/library_event.dart';
 import '../../../block/library_bloc/library_state.dart';
 import '../widgets/category_section.dart';
 import '../widgets/search_bar.dart';
+import '../widgets/search_suggestion_widget.dart';
 
 class LibraryScreen extends StatelessWidget {
   const LibraryScreen({super.key});
@@ -28,25 +29,65 @@ class LibraryScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SearchBarLibrary(),
+                  SizedBox(height: 8.h),
+                  BlocBuilder<LibraryBloc, LibraryState>(
+                    builder: (context, state) {
+                      final showWidget =
+                          state is LibraryLoaded && state.showSuggestions;
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 200),
+                        transitionBuilder: (child, animation) {
+                          return FadeTransition(
+                              opacity: animation, child: child);
+                        },
+                        child: showWidget
+                            ? SearchSuggestionWidget(
+                                key: const ValueKey("suggestions_visible"),
+                                suggestions: [
+                                  "Latest",
+                                  "TV Series",
+                                  "Comedy",
+                                  "Drama",
+                                  "Romance",
+                                  "Family",
+                                  "Kids",
+                                  "Horror",
+                                  "Shorts"
+                                ],
+                                onTap: (text) {
+                                  print("Selected: $text");
+                                },
+                              )
+                            : const SizedBox(
+                                key: ValueKey("suggestions_hidden"),
+                              ),
+                      );
+                    },
+                  ),
+                  SizedBox(height: 8.h),
                   Expanded(
                     child: BlocBuilder<LibraryBloc, LibraryState>(
                       builder: (context, state) {
                         if (state is LibraryLoading) {
-                          return const Center(child: CircularProgressIndicator());
+                          return const Center(
+                              child: CircularProgressIndicator());
                         } else if (state is LibraryLoaded) {
                           return ListView.builder(
                             padding: EdgeInsets.only(bottom: 16.h),
                             itemCount: state.categories.length,
                             itemBuilder: (context, index) {
                               final category = state.categories[index];
-                              return CategorySection(category: category, key: ValueKey(category.title));
+                              return CategorySection(
+                                  category: category,
+                                  key: ValueKey(category.title));
                             },
                           );
                         } else if (state is LibraryError) {
                           return Center(
                             child: Text(
                               state.message,
-                              style: TextStyle(color: Colors.white, fontSize: 14.sp),
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 14.sp),
                             ),
                           );
                         }
