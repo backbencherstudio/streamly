@@ -184,44 +184,40 @@ class _CommentTabState extends State<CommentTab> {
           ),
         ],
       ),
-
       bottomNavigationBar: SafeArea(
-        child: Transform.translate(
-          offset: Offset(0,50),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            color: const Color(0xFF1A1A2E),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 16.r,
-                  backgroundColor: Colors.grey,
-                  child: Icon(Icons.person, color: Colors.white, size: 18.sp),
-                ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    style: TextStyle(color: Colors.white, fontSize: 14.sp),
-                    decoration: InputDecoration(
-                      hintText: 'Add a public comment...',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: 13.sp),
-                      border: InputBorder.none,
-                    ),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          color: const Color(0xFF1A1A2E),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 16.r,
+                backgroundColor: Colors.grey,
+                child: Icon(Icons.person, color: Colors.white, size: 18.sp),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: TextField(
+                  controller: _controller,
+                  style: TextStyle(color: Colors.white, fontSize: 14.sp),
+                  decoration: InputDecoration(
+                    hintText: 'Add a public comment...',
+                    hintStyle: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                    border: InputBorder.none,
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    final text = _controller.text.trim();
-                    if (text.isNotEmpty) {
-                      context.read<CommentBloc>().add(AddComment(text));
-                      _controller.clear();
-                    }
-                  },
-                  child: Text('Comment', style: TextStyle(color: Colors.purple, fontSize: 14.sp)),
-                ),
-              ],
-            ),
+              ),
+              TextButton(
+                onPressed: () {
+                  final text = _controller.text.trim();
+                  if (text.isNotEmpty) {
+                    context.read<CommentBloc>().add(AddComment(text));
+                    _controller.clear();
+                  }
+                },
+                child: Text('Comment', style: TextStyle(color: Colors.purple, fontSize: 14.sp)),
+              ),
+            ],
           ),
         ),
       ),
