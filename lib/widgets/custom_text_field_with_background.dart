@@ -21,20 +21,17 @@ Widget customContainerWithBackground({
         ),
         child: Row(
           children: [
-            /// Prefix Icon
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
                 width: 20.w,
                 height: 20.h,
                 child: Transform.scale(
-                  scale: 0.7,
+                  scale: 0.9,
                   child: Image.asset(iconPath),
                 ),
               ),
             ),
-
-            /// Hint Text
             Expanded(
               child: Text(
                 hintText,
@@ -42,10 +39,8 @@ Widget customContainerWithBackground({
                   color: Colors.white.withOpacity(0.6),
                   fontSize: 14.sp,
                 ),
-              ),
+              )
             ),
-
-            /// Suffix Icon or Arrow
             if (suffix != null)
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),

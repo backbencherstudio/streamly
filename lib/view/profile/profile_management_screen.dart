@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,8 +12,17 @@ import 'package:streamly/view/profile/widget/profile_user_name_section.dart';
 import 'package:streamly/widgets/custom_text_field_with_background.dart';
 import 'package:streamly/widgets/primary_button.dart';
 
-class ProfileManagementScreen extends StatelessWidget {
+class ProfileManagementScreen extends StatefulWidget {
   const ProfileManagementScreen({super.key});
+
+  @override
+  State<ProfileManagementScreen> createState() =>
+      _ProfileManagementScreenState();
+}
+
+class _ProfileManagementScreenState extends State<ProfileManagementScreen> {
+  bool isKidsMode = false;
+  bool isAutostart = false;
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +65,13 @@ class ProfileManagementScreen extends StatelessWidget {
                     customContainerWithBackground(
                       hintText: "Kids Mode",
                       iconPath: AppIcons.kids,
-                      suffix: Image.asset(
-                        AppIcons.toggle,
-                        width: 35.w,
-                        height: 24.h,
+                      suffix: Transform.scale(
+                        scale: 1,
+                        child: CupertinoSwitch(
+                          activeTrackColor: AppColors.textPurple,
+                          value: isKidsMode,
+                          onChanged: (val) => setState(() => isKidsMode = val),
+                        ),
                       ),
                       onTap: () {},
                     ),
@@ -89,7 +102,6 @@ class ProfileManagementScreen extends StatelessWidget {
                       suffix: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text("Plan", style: _textStyle()),
                           SizedBox(width: 4.w),
                           Image.asset(AppIcons.downArrow,
                               width: 16.w, height: 16.h),
@@ -126,7 +138,9 @@ class ProfileManagementScreen extends StatelessWidget {
                     customContainerWithBackground(
                       hintText: "Change Password",
                       iconPath: AppIcons.lock,
-                      onTap: () {},
+                      onTap: () {
+                        context.go('/forgotPasswordScreen');
+                      },
                     ),
                     SizedBox(height: 16.h),
                     customContainerWithBackground(

@@ -49,4 +49,7 @@ class AppIcons {
   static const String success = 'assets/icons/success.png';
   static const String storage = 'assets/icons/storage.png';
   static const String calender = 'assets/icons/calender.png';
+  static const String issue = 'assets/icons/issue.png';
+  static const String subscription_success = 'assets/icons/subscription_success.png';
+  static const String streamly = 'assets/icons/streamly.png';
 }
