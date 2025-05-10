@@ -60,7 +60,10 @@ class CategorySection extends StatelessWidget {
           ),
           if (!hideViewAll)
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // Navigate to the full list of movies in this category
+                 context.push(RoutesName.filterResult);
+              },
               child: Text(
                 'View All',
                 style: TextStyle(
