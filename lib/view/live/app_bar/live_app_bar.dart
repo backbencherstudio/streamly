@@ -1,68 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../themes/color.dart';
+import 'package:streamly/config/icons/icons.dart';
 
 class LiveAppBar extends StatelessWidget {
   const LiveAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: AppColors.background,
-      elevation: 0,
-      toolbarHeight: 100.h,
-      title: Padding(
-        padding: EdgeInsets.only(top: 30.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Container(
-                height: 40.h,
-                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                decoration: BoxDecoration(
-                  color: Colors.white10,
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.search, color: Colors.white54, size: 20.sp),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: TextField(
-                        style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
-                        decoration: InputDecoration(
-                          hintText: "Search",
-                          hintStyle: TextStyle(color: Colors.white54, fontSize: 14.sp),
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                    Icon(Icons.mic, color: Colors.white54, size: 20.sp),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(width: 12.w),
-            Stack(
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: TextFormField(
+        decoration: InputDecoration(
+          contentPadding:
+          const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          filled: true,
+          fillColor: const Color(0xff0E0A05),
+          hintText: "Search",
+          hintStyle: const TextStyle(color: Colors.grey),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset(AppIcons.search, width: 20, height: 20),
+          ),
+          suffixIcon: SizedBox(
+            width: 72,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.notifications_none, color: Colors.white, size: 28.sp),
-                Positioned(
-                  right: 0,
-                  top: 2.h,
+                Padding(
+                  padding: EdgeInsets.only(right: 8.0),
                   child: Container(
-                    width: 10.w,
-                    height: 10.h,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                    ),
+                    height: 23,
+                    width: 2,
+                    color: Color(0xff9F9D9B),
                   ),
-                )
+                ),
+                SizedBox(
+                  width: 8.w,
+                ),
+                Container(
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      color: Color(0xff4B3736), shape: BoxShape.circle),
+                  child: Image.asset(AppIcons.voice, width: 20, height: 20),
+                ),
               ],
             ),
-          ],
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide: BorderSide(color: Color(0xff19161D)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide: BorderSide.none,
+          ),
         ),
       ),
     );

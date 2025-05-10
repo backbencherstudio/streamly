@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:streamly/config/icons/icons.dart';
 
 import '../../../block/bottom_nav/bottom_nav_cubit.dart';
 
@@ -17,26 +18,70 @@ class CustomBottomNavBar extends StatelessWidget {
       backgroundColor: Colors.black,
       selectedItemColor: Colors.purpleAccent,
       unselectedItemColor: Colors.white70,
-      items: const [
+      items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
-          activeIcon: Icon(Icons.home, color: Colors.purpleAccent),
+          icon: Image.asset(
+            AppIcons.home,
+            height: 24,
+            color: Colors.white70,
+          ),
+          activeIcon: Image.asset(
+            AppIcons.home,
+            height: 24,
+            color: Colors.purpleAccent,
+          ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.wifi_tethering),
+          icon: Image.asset(
+            AppIcons.live,
+            height: 24,
+            color: Colors.white70,
+          ),
+          activeIcon: Image.asset(
+            AppIcons.live,
+            height: 24,
+            color: Colors.purpleAccent,
+          ),
           label: 'Live Stream',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.video_library_outlined),
+          icon: Image.asset(
+            AppIcons.library,
+            height: 24,
+            color: Colors.white70,
+          ),
+          activeIcon: Image.asset(
+            AppIcons.library,
+            height: 24,
+            color: Colors.purpleAccent,
+          ),
           label: 'Library',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.bookmark_border),
+          icon: Image.asset(
+            AppIcons.favorite,
+            height: 24,
+            color: Colors.white70,
+          ),
+          activeIcon: Image.asset(
+            AppIcons.favorite,
+            height: 24,
+            color: Colors.purpleAccent,
+          ),
           label: 'Favorite',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
+          icon: Image.asset(
+          AppIcons.profile,
+            height: 24,
+            color: Colors.white70,
+          ),
+          activeIcon: Image.asset(
+            AppIcons.profile,
+            height: 24,
+            color: Colors.purpleAccent,
+          ),
           label: 'Profile',
         ),
       ],
