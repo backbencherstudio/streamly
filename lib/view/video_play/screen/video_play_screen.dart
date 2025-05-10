@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:streamly/themes/color.dart';
 import '../../../block/content/content_bloc.dart';
 import '../../../block/content/content_event.dart';
 import '../../../block/content/content_state.dart';
@@ -19,7 +20,7 @@ class VideoPlayScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => ContentBloc(repository: ContentRepository())..add(LoadContentEvent(isEpisode: isEpisode)),
       child: Scaffold(
-        backgroundColor: const Color(0xFF0B0617),
+        backgroundColor: AppColors.background,
         body: SafeArea(
           child: BlocBuilder<ContentBloc, ContentState>(
             builder: (context, state) {

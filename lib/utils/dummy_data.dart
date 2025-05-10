@@ -1,4 +1,7 @@
 import '../model/comment/comment.dart';
+import '../model/content_details/episode.dart';
+import '../model/content_details/person.dart';
+import '../model/content_details/trailer.dart';
 import '../model/live_view/live_view_model.dart';
 import '../model/search_result/media_item.dart';
 
@@ -547,6 +550,100 @@ final List<MediaCategory> dummyCategories = [
     ],
   ),
 ];
+
+final dummyPeople = [
+  Person(
+    name: 'Michael Carter',
+    role: 'Director',
+    imageUrl: 'https://i.pravatar.cc/150?img=3',
+  ),
+  Person(
+    name: 'Emily Lopez',
+    role: 'Cast',
+    imageUrl: 'https://i.pravatar.cc/150?img=5',
+  ),
+  Person(
+    name: 'John Doe',
+    role: 'Cast',
+    imageUrl: 'https://i.pravatar.cc/150?img=8',
+  ),
+  Person(
+    name: 'Michael Carter',
+    role: 'Director',
+    imageUrl: 'https://i.pravatar.cc/150?img=3',
+  ),
+  Person(
+    name: 'Emily Lopez',
+    role: 'Cast',
+    imageUrl: 'https://i.pravatar.cc/150?img=5',
+  ),
+  Person(
+    name: 'John Doe',
+    role: 'Cast',
+    imageUrl: 'https://i.pravatar.cc/150?img=8',
+  ),
+];
+
+final dummyEpisodes = [
+  Episode(
+    title: 'Episode 1',
+    thumbnailUrl: 'https://picsum.photos/id/237/200/300',
+    isSelected: true,
+  ),
+  Episode(
+    title: 'Episode 2',
+    thumbnailUrl: 'https://picsum.photos/id/238/200/300',
+  ),
+  Episode(
+    title: 'Episode 3',
+    thumbnailUrl: 'https://picsum.photos/id/239/200/300',
+  ),
+  Episode(
+    title: 'Episode 4',
+    thumbnailUrl: 'https://picsum.photos/id/240/200/300',
+  ),
+  Episode(
+    title: 'Episode 5',
+    thumbnailUrl: 'https://picsum.photos/id/241/200/300',
+  ),
+  Episode(
+    title: 'Episode 6',
+    thumbnailUrl: 'https://picsum.photos/id/242/200/300',
+  ),
+  Episode(
+    title: 'Episode 7',
+    thumbnailUrl: 'https://picsum.photos/id/243/200/300',
+  ),
+  Episode(
+    title: 'Episode 8',
+    thumbnailUrl: 'https://picsum.photos/id/244/200/300',
+  ),
+  Episode(
+    title: 'Episode 9',
+    thumbnailUrl: 'https://picsum.photos/id/241/200/300',
+  ),
+  Episode(
+    title: 'Episode 10',
+    thumbnailUrl: 'https://picsum.photos/id/237/200/300',
+  ),
+];
+
+final dummyTrailers = [
+  Trailer(
+    title: 'Trailer 2: Final',
+    duration: '1m 56s',
+    thumbnailUrl: 'https://i.imgur.com/aD3HGpM.png',
+    isSelected: true,
+  ),
+  Trailer(
+    title: 'Trailer 1',
+    duration: '1m 46s',
+    thumbnailUrl: 'https://i.imgur.com/Ly9VZ5F.png',
+  ),
+];
+
+
+
 
 
 
