@@ -73,7 +73,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       SettingTile(
                           title: 'Notifications',
                           onTap: () {
-                            context.go('/notificationScreen');
+                            context.push('/notificationScreen');
                           }),
                       SettingTile(title: 'Profile', onTap: () {}),
                       Divider(color: const Color(0xff1C082B)),
@@ -81,9 +81,11 @@ class _SettingScreenState extends State<SettingScreen> {
                       SettingTile(title: 'Privacy Center', onTap: () {}),
                       SettingTile(
                           title: 'Activate Streamly on Your TV', onTap: () {}),
-                      SettingTile(title: 'Help & Support', onTap: () {
-                        context.go('/helpSupportScreen');
-                      }),
+                      SettingTile(
+                          title: 'Help & Support',
+                          onTap: () {
+                            context.push('/helpSupportScreen');
+                          }),
                       SettingTile(title: 'Delete Account', onTap: () {}),
                       SizedBox(height: 40.h),
                       PrimaryButton(

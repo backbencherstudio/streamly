@@ -69,7 +69,7 @@ class ManagePlaneScreen extends StatelessWidget {
                     PrimaryButton(
                         text: 'Update Payment Method',
                         onTap: () {
-                          context.go('/paymentMethodScreen');
+                          context.push('/paymentMethodScreen');
                         }),
                     SizedBox(
                       height: 35.h,

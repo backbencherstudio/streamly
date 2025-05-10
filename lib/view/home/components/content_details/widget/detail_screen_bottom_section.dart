@@ -5,7 +5,6 @@ import 'package:share_plus/share_plus.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/home/components/content_details/widget/ratting_bottom_sheet.dart';
-
 import '../../../../../routes/routes.dart';
 
 class DetailScreenBottomSection extends StatelessWidget {
@@ -71,21 +70,20 @@ class DetailScreenBottomSection extends StatelessWidget {
                     color: AppColors.textPurple,
                     borderRadius: BorderRadius.circular(6.r),
                   ),
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        AppIcons.start,
-                        width: 20.w,
-                        height: 20.w,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 6.w),
-                      GestureDetector(
-                        onTap: () {
-                          // Navigate to the video player screen
-                          context.go(RoutesName.videoPlayScreen);
-                        },
-                        child: Text(
+                  child: GestureDetector(
+                    onTap: () {
+                      context.go(RoutesName.videoPlayScreen);
+                    },
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          AppIcons.start,
+                          width: 20.w,
+                          height: 20.w,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
                           "Play",
                           style: TextStyle(
                             color: Colors.white,
@@ -93,8 +91,8 @@ class DetailScreenBottomSection extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

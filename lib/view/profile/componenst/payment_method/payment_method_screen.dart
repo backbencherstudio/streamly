@@ -86,7 +86,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     OutlinedPrimaryButton(
                         text: "Add New Card",
                         onTap: () {
-                          context.go('/addNewCardScreen');
+                          context.push('/addNewCardScreen');
                         }),
                     const Spacer(),
                     Row(
@@ -104,7 +104,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             text: 'Submit',
                             onTap: () {
                               // Handle submit with selectedMethod
-                              context.go('/reviewCardSummeryScreen');
+                              context.push('/reviewCardSummeryScreen');
                             },
                             color: const Color(0xff7A25BC),
                           ),

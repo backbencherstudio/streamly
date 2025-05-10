@@ -12,14 +12,12 @@ import 'package:streamly/block/theme/theme_cubit.dart';
 import 'package:streamly/repository/content/content_repository.dart';
 import 'package:streamly/routes/app_router.dart';
 import 'package:streamly/themes/themes.dart';
-
-import 'block/search_result/search_result_bloc.dart';
+import 'package:streamly/block/search_result/search_result_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Hive.openBox('settings');
-
   runApp(const AppWrapper());
 }
 
@@ -38,7 +36,6 @@ class AppWrapper extends StatelessWidget {
         BlocProvider(create: (_) => CommentBloc()),
         BlocProvider(create: (_) => LibraryBloc()),
         BlocProvider(create: (_) => SearchResultBloc()),
-
       ],
       child: const StreamlyApp(),
     );

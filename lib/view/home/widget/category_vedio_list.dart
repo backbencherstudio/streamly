@@ -187,7 +187,7 @@ class MovieCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        context.go('/contentDetailScreen');
+        context.push('/contentDetailScreen');
       },
       child: Container(
         width: width,
