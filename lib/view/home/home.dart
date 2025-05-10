@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:streamly/view/home/widget/category_vedio_list.dart';
 import 'package:streamly/view/home/widget/header_section.dart';
 import 'package:streamly/view/home/widget/movie_carosal.dart';
-import '../../../config/images/images.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,12 +14,14 @@ class Home extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          /// Background SVG
+          // Background SVG (replace with your asset)
           Positioned.fill(
-            child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
+            child: SvgPicture.asset(
+              'assets/images/background.svg',
+              fit: BoxFit.cover,
+            ),
           ),
-
-          /// Main Scrollable Content
+          // Main Scrollable Content
           Positioned.fill(
             child: SingleChildScrollView(
               child: Column(
@@ -30,7 +31,7 @@ class Home extends StatelessWidget {
                   SizedBox(height: 16.h),
                   const MovieCarousel(),
                   SizedBox(height: 16.h),
-                  CategoryVideoList(),
+                  const CategoryVideoList(),
                 ],
               ),
             ),
