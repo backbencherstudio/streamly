@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:streamly/routes/routes.dart';
 
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
@@ -127,7 +129,10 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                     child: child,
                   );
                 },
-              );
+              ).then((_) {
+                context.push(RoutesName.searchResult);
+              });
+
             },
             child: Container(
               width: 40.w,
@@ -140,6 +145,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
               child: Icon(Icons.tune, color: Colors.white70, size: 20.sp),
             ),
           ),
+
         ],
       ),
     );

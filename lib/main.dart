@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:streamly/block/bottom_nav/bottom_nav_cubit.dart';
 import 'package:streamly/block/comment/comment_bloc.dart';
 import 'package:streamly/block/content/content_bloc.dart';
+import 'package:streamly/block/library_bloc/library_bloc.dart';
 import 'package:streamly/block/live/live_bloc.dart';
 import 'package:streamly/block/live_view/live_view_bloc.dart';
 import 'package:streamly/block/theme/theme_cubit.dart';
@@ -33,6 +34,7 @@ class AppWrapper extends StatelessWidget {
         BlocProvider(create: (_) => LiveViewBloc()),
         BlocProvider(create: (_) => ContentBloc(repository: ContentRepository())),
         BlocProvider(create: (_) => CommentBloc()),
+        BlocProvider(create: (_) => LibraryBloc()),
       ],
       child: const StreamlyApp(),
     );
