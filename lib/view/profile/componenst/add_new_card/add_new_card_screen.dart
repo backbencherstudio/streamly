@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:streamly/themes/color.dart';
 import 'package:streamly/widgets/primary_button.dart';
 import '../../../../config/icons/icons.dart';
 import '../../../../config/images/images.dart';
@@ -89,19 +90,23 @@ class AddNewCardScreen extends StatelessWidget {
 
                     // Card Number
                     Text("Card Number",
-                        style: TextStyle(fontWeight: FontWeight.w500)),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.sp,
+                            color: AppColors.textPrimary)),
                     SizedBox(height: 8.h),
                     CustomTextField(hintText: "3827 4637 3103 4679"),
                     SizedBox(height: 16.h),
 
                     // Card Name
                     Text("Card Name",
-                        style: TextStyle(fontWeight: FontWeight.w500)),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.sp,
+                            color: AppColors.textPrimary)),
                     SizedBox(height: 8.h),
                     CustomTextField(hintText: "Sophia Carter"),
                     SizedBox(height: 16.h),
-
-                    // Expiry and CVV
                     Row(
                       children: [
                         Expanded(
@@ -109,8 +114,10 @@ class AddNewCardScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("Expiry Date",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.w500)),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14.sp,
+                                      color: AppColors.textPrimary)),
                               SizedBox(height: 8.h),
                               CustomTextField(
                                 hintText: "06/12/25",
@@ -128,8 +135,10 @@ class AddNewCardScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("CVV",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.w500)),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14.sp,
+                                      color: AppColors.textPrimary)),
                               SizedBox(height: 8.h),
                               CustomTextField(
                                 hintText: "244",
@@ -140,8 +149,6 @@ class AddNewCardScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 50.h),
-
-                    // Save Button
                     PrimaryButton(text: 'Add', onTap: () {}),
                     SizedBox(height: 32.h),
                   ],

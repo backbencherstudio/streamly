@@ -10,7 +10,7 @@ class FavoriteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.go('/managePlaneScreen');
+        context.push('/managePlaneScreen');
       },
       child: Container(
         height: 240,

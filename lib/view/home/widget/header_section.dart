@@ -80,7 +80,7 @@ class HeaderSection extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  context.go(RoutesName.videoPlayScreen);
+                  context.push(RoutesName.videoPlayScreen);
                 },
                 child: Container(
                   padding:

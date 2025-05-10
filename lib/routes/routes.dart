@@ -22,4 +22,5 @@ class RoutesName {
   static const String reviewCardSummeryScreen = '/reviewCardSummeryScreen';
   static const String filterResult = '/filterResult';
   static const String searchResult = '/searchResult';
+  static const String editProfileScreen = '/editProfileScreen';
 }

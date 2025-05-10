@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/favorite/widget/favorite_card.dart';
 import 'package:streamly/view/favorite/widget/favorite_header_section.dart';
 import '../../config/icons/icons.dart';
@@ -56,44 +56,39 @@ class FavoriteScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
-          ),
-          Positioned.fill(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomNabVer(
-                    title: "My List",
-                    trailing: AppIcons.search,
-                  ),
-                  FavoriteHeaderSection(),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.all(16.w),
-                    itemCount: favoriteData.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12.w,
-                      mainAxisSpacing: 12.h,
-                      childAspectRatio: 3 / 4,
-                    ),
-                    itemBuilder: (context, index) {
-                      return FavoriteCard(
-                        data: favoriteData[index],
-                      );
-                    },
-                  ),
-                ],
+      backgroundColor: AppColors.background,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 16),
+              child: CustomNabVer(
+                title: "My List",
+                fromScreen:'favorite',
+                trailing: AppIcons.search,
               ),
             ),
-          ),
-        ],
+            FavoriteHeaderSection(),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.all(16.w),
+              itemCount: favoriteData.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12.w,
+                mainAxisSpacing: 12.h,
+                childAspectRatio: 3 / 4,
+              ),
+              itemBuilder: (context, index) {
+                return FavoriteCard(
+                  data: favoriteData[index],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

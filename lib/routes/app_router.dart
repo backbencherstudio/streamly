@@ -15,6 +15,7 @@ import '../view/home/components/content_details/content_detail_screen.dart';
 import '../view/navigation/navigation_root.dart';
 import '../view/profile/componenst/add_new_card/add_new_card_screen.dart';
 import '../view/profile/componenst/download/download_screen.dart';
+import '../view/profile/componenst/edit_profile/edit_profile_screen.dart';
 import '../view/profile/componenst/help_support/help_support_screen.dart';
 import '../view/profile/componenst/manage_plan/mangage_plane_screen.dart';
 import '../view/profile/componenst/notification/notification_screen.dart';
@@ -120,6 +121,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.searchResult,
         builder: (context, state) => SearchResult(),
+      ),
+      GoRoute(
+        path: RoutesName.editProfileScreen,
+        builder: (context, state) => EditProfileScreen(),
       ),
     ],
   );
