@@ -3,13 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StorageHeaderSection extends StatelessWidget {
   const StorageHeaderSection({super.key});
-
   @override
   Widget build(BuildContext context) {
     double usedStorage = 60;
     double totalStorage = 128;
     double percentage = usedStorage / totalStorage;
-
     return Column(
       children: [
         SizedBox(height: 20.h),
@@ -23,6 +21,7 @@ class StorageHeaderSection extends StatelessWidget {
               child: CircularProgressIndicator(
                 value: percentage,
                 strokeWidth: 16.w,
+                strokeCap: StrokeCap.round,
                 backgroundColor: Color(0xff7A25BC),
                 valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF320F4D)),
               ),

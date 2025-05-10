@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:streamly/config/images/images.dart';
 import 'package:streamly/themes/color.dart';
+import 'package:streamly/view/profile/componenst/storage_managment/widget/storage_bottom_section.dart';
 import 'package:streamly/view/profile/componenst/storage_managment/widget/storage_header_section.dart';
 import 'package:streamly/view/profile/componenst/storage_managment/widget/storage_list.dart';
 import '../../../../config/icons/icons.dart';
@@ -63,6 +64,10 @@ class StorageManagementScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 23.h),
                     StorageList(),
+                    StorageBottomSection(),
+                    SizedBox(
+                      height: 32,
+                    ),
                   ],
                 ),
               ),

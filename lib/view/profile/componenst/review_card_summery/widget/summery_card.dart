@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/themes/color.dart';
-
 import '../../../../../config/icons/icons.dart';
 import 'check_item.dart';
 
@@ -11,19 +9,30 @@ class SummeryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return       Container(
+    return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(
-          vertical: 24.h, horizontal: 16.w),
+      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: Colors.white12),
       ),
       child: Column(
         children: [
-          Image.asset(
-            AppIcons.subscription,
-            height: 40,
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.textPurple,
+                  blurRadius: 44,
+                  offset: Offset(0, 30),
+                ),
+              ],
+            ),
+            child: Image.asset(
+              AppIcons.subscription,
+              height: 40,
+            ),
           ),
           SizedBox(height: 12.h),
           RichText(
@@ -50,10 +59,8 @@ class SummeryCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Divider(color: AppColors.textPurple),
           SizedBox(height: 12.h),
-          buildCheckItem(
-              "Ad-free listening without restrictions"),
-          buildCheckItem(
-              "Unlimited shuffle play and downloads"),
+          buildCheckItem("Ad-free listening without restrictions"),
+          buildCheckItem("Unlimited shuffle play and downloads"),
           buildCheckItem("Premium audio quality"),
         ],
       ),
