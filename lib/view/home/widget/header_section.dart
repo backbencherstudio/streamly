@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:streamly/config/icons/icons.dart';
+import 'package:streamly/routes/routes.dart';
 import 'package:streamly/themes/color.dart';
 import '../../../config/images/images.dart';
 import '../../../widgets/search_widget.dart';
@@ -75,18 +78,24 @@ class HeaderSection extends StatelessWidget {
           /// Action Buttons
           Row(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                decoration: BoxDecoration(
-                  color: AppColors.textPurple,
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Text(
-                  "Watch Now",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: () {
+                  context.go(RoutesName.videoPlayScreen);
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.textPurple,
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text(
+                    "Watch Now",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
@@ -97,26 +106,33 @@ class HeaderSection extends StatelessWidget {
                 color: AppColors.textPrimary,
               ),
               SizedBox(width: 16.w),
-              ...[
-                AppIcons.download1,
-                AppIcons.share,
-                AppIcons.copy,
-              ].map(
-                    (icon) => Padding(
-                  padding: EdgeInsets.only(right: 16.w),
-                  child: Container(
-                    padding: EdgeInsets.all(12.w),
-                    decoration: BoxDecoration(
-                      color: const Color(0xff341E2E),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Image.asset(icon, width: 20.w, height: 20.w),
-                  ),
-                ),
-              ),
+              SizedBox(width: 12.w),
+              _actionIcon(AppIcons.download1, onTap: () {}),
+              SizedBox(width: 8.w),
+              _actionIcon(AppIcons.share, onTap: () {
+                Share.share(
+                  'https://play.google.com/store/apps/details?id=com.example.streamly',
+                );
+              }),
+              SizedBox(width: 8.w),
+              _actionIcon(AppIcons.copy, onTap: () {}),
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _actionIcon(String iconPath, {required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(10.w),
+        decoration: BoxDecoration(
+          color: const Color(0xff200F2C),
+          borderRadius: BorderRadius.circular(6.r),
+        ),
+        child: Image.asset(iconPath, width: 20.w, height: 20.w),
       ),
     );
   }

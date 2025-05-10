@@ -1,73 +1,103 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:streamly/config/images/images.dart';
 
 class MovieCarousel extends StatefulWidget {
   const MovieCarousel({super.key});
-
   @override
-  State<MovieCarousel> createState() => _CenteredCarouselState();
+  _MovieCarouselState createState() => _MovieCarouselState();
 }
 
-class _CenteredCarouselState extends State<MovieCarousel> {
-  final PageController _controller = PageController(viewportFraction: 0.55);
-  int _currentPage = 0;
-
-  final List<String> images = [
-    AppImages.carosal_1,
-    AppImages.carosal_1,
-    AppImages.carosal_1,
-    AppImages.carosal_1,
-    AppImages.carosal_1,
+class _MovieCarouselState extends State<MovieCarousel> {
+  int _currentIndex = 0;
+  final List<Map<String, String>> items = [
+    {
+      'image': 'assets/images/carosal_1.png',
+    },
+    {
+      'image': 'assets/images/carosal_2.png',
+    },
+    {
+      'image': 'assets/images/carosal_3.png',
+    },
+    {
+      'image': 'assets/images/carosal_4.png',
+    },
+    {
+      'image': 'assets/images/carosal_1.png',
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Transform.translate(
-          offset: Offset(-20, 0),
-          child: SizedBox(
-            height: 100.h,
-            width: MediaQuery.of(context).size.width,
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: images.length,
-              onPageChanged: (index) => setState(() => _currentPage = index),
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.only(
-                    left: index == 0 ? 0 : 8.w,
-                    right: 8.w,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16.r),
-                    child: Image.asset(
-                      images[index],
-                      width: 220.w,
+        CarouselSlider(
+          options: CarouselOptions(
+            height: 70.h, // Fixed height for the carousel
+
+            autoPlay: true,
+            enlargeCenterPage: false, // Disable enlarging to keep sizes uniform
+            viewportFraction: 0.3, // Adjust to fit multiple items of fixed size
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
+          items: items.map((item) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: 100.w, // Fixed width for each item
+                  height: 100.h, // Fixed height for each item
+                  margin: EdgeInsets.symmetric(horizontal: 5.w),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    image: DecorationImage(
+                      image:
+                          AssetImage(item['image']!), // Use AssetImage directly
                       fit: BoxFit.cover,
                     ),
                   ),
+                  // child: Stack(
+                  //   children: [
+                  //     Container(
+                  //       decoration: BoxDecoration(
+                  //         borderRadius: BorderRadius.circular(10.r),
+                  //         gradient: LinearGradient(
+                  //           colors: [
+                  //             Colors.black.withOpacity(0.5),
+                  //             Colors.transparent,
+                  //           ],
+                  //           begin: Alignment.bottomCenter,
+                  //           end: Alignment.topCenter,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     // Text overlay (currently commented out)
+                  //   ],
+                  // ),
                 );
               },
-            ),
-          ),
+            );
+          }).toList(),
         ),
-        SizedBox(height: 12.h),
-        Center(
-          child: SmoothPageIndicator(
-            controller: _controller,
-            count: images.length,
-            effect: ExpandingDotsEffect(
-              activeDotColor: Colors.deepPurpleAccent,
-              dotColor: Colors.deepPurpleAccent.withOpacity(0.3),
-              dotHeight: 6.h,
-              dotWidth: 20.w,
-              spacing: 8.w,
-              expansionFactor: 2,
-              radius: 8.r,
-            ),
+        SizedBox(height: 10.h),
+        // Dot Indicator
+        SmoothPageIndicator(
+          controller: PageController(initialPage: _currentIndex),
+          count: items.length,
+          effect: WormEffect(
+            dotHeight: 6.h,
+            dotWidth: 30.w,
+            activeDotColor: Color(0xff7A25BC),
+            dotColor: Color(0xff360F51),
+            spacing: 8.w,
           ),
         ),
       ],
