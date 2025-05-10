@@ -42,12 +42,7 @@ class DetailScreenHeader extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        if (GoRouter.of(context).canPop()) {
-                          GoRouter.of(context).pop();
-                        } else {
-                          context
-                              .go(RoutesName.navigationRoot); // Fallback route
-                        }
+                        context.pop();
                       },
                       child: Container(
                         padding: EdgeInsets.all(8.w),

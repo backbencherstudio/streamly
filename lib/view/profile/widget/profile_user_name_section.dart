@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/config/images/images.dart';
+import 'package:streamly/routes/routes.dart';
 import '../../../themes/color.dart';
 
 class ProfileUserNameSection extends StatelessWidget {
@@ -48,7 +50,6 @@ class ProfileUserNameSection extends StatelessWidget {
             ],
           ),
         ),
-
         InkWell(
           onTap: () {},
           borderRadius: BorderRadius.circular(100.r),
@@ -56,14 +57,18 @@ class ProfileUserNameSection extends StatelessWidget {
             padding: EdgeInsets.all(8.r),
             decoration: BoxDecoration(
               color: const Color(0xff1E092E),
-
               shape: BoxShape.circle,
             ),
-            child: Image.asset(
-              AppIcons.edit,
-              color: AppColors.textPrimary,
-              width: 20.w,
-              height: 20.h,
+            child: GestureDetector(
+              onTap: () {
+                context.push(RoutesName.editProfileScreen);
+              },
+              child: Image.asset(
+                AppIcons.edit,
+                color: AppColors.textPrimary,
+                width: 20.w,
+                height: 20.h,
+              ),
             ),
           ),
         ),
