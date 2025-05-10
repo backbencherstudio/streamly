@@ -4,14 +4,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:streamly/config/images/images.dart';
 import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/profile/componenst/help_support/widget/faq.dart';
+import 'package:streamly/view/profile/componenst/help_support/widget/help_bottom_section.dart';
 import 'package:streamly/view/profile/componenst/notification/widget/notification_tile.dart';
+import 'package:streamly/widgets/primary_button.dart';
 import 'package:streamly/widgets/search_widget.dart';
 import '../../../../config/icons/icons.dart';
 import '../../../../widgets/custom_nab_ver.dart';
+import '../../../../widgets/custom_text_field_with_background.dart';
+import '../../../../widgets/description_field.dart';
 
 class HelpSupportScreen extends StatelessWidget {
   const HelpSupportScreen({super.key});
-
   final List<String> faqList = const [
     "How do I subscribe to premium?",
     "How to change my password?",
@@ -74,7 +77,34 @@ class HelpSupportScreen extends StatelessWidget {
                     NotificationTile(title: "Accessibility"),
                     NotificationTile(title: "Settings Features"),
                     NotificationTile(title: "Start Live Chat"),
-                    NotificationTile(title: "Submit a Ticket")
+                    NotificationTile(title: "Submit a Ticket"),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Divider(
+                      color: AppColors.secondaryBorderColor,
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    customContainerWithBackground(
+                      hintText: "Issue type",
+                      iconPath: AppIcons.issue,
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    DescriptionField(
+                      hintText: 'Description',
+                      maxLines: 5,
+                      fileColor: Color(0xff160621),
+                    ),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    PrimaryButton(text: "Submit", onTap: () {}),
+                    HelpBottomSection(),
                   ],
                 ),
               ),

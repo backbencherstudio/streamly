@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/themes/color.dart';
+import 'package:streamly/view/home/components/content_details/widget/ratting_bottom_sheet.dart';
 
 import '../../../../../routes/routes.dart';
 
@@ -39,7 +40,10 @@ class DetailScreenBottomSection extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 8.w),
-              Image.asset(AppIcons.rightArrow, width: 12.w),
+              GestureDetector(
+                onTap: () => showRattingBottomSheet(context),
+                child: Image.asset(AppIcons.rightArrow, width: 12.w),
+              ),
               SizedBox(width: 8.w),
               Text(
                 "2025",
@@ -79,7 +83,7 @@ class DetailScreenBottomSection extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           // Navigate to the video player screen
-                           context.go(RoutesName.videoPlayScreen);
+                          context.go(RoutesName.videoPlayScreen);
                         },
                         child: Text(
                           "Play",

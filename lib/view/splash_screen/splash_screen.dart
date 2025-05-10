@@ -19,7 +19,6 @@ class SplashScreen extends StatelessWidget {
             Positioned.fill(
               child: Image.asset(AppImages.splash, fit: BoxFit.cover),
             ),
-
             Center(
               child: Padding(
                 padding: EdgeInsets.only(top: 420, left: 20, right: 20),
@@ -27,7 +26,6 @@ class SplashScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    /// Rich Text
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
@@ -67,7 +65,8 @@ class SplashScreen extends StatelessWidget {
                     PrimaryButton(
                       text: 'Get Started',
                       onTap: () {
-                        context.go('/navigationRoot');                      },
+                        context.go('/navigationRoot');
+                      },
                     ),
 
                     SizedBox(height: 16.h),
