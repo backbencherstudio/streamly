@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:streamly/view/favorite/widget/favorite_card.dart';
+import 'package:streamly/view/favorite/widget/favorite_header_section.dart';
 import '../../config/icons/icons.dart';
 import '../../config/images/images.dart';
 import '../../widgets/custom_nab_ver.dart';
@@ -68,8 +69,9 @@ class FavoriteScreen extends StatelessWidget {
                 children: [
                   CustomNabVer(
                     title: "My List",
-                    trailing:AppIcons.search,
+                    trailing: AppIcons.search,
                   ),
+                  FavoriteHeaderSection(),
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
