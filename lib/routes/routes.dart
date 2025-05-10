@@ -20,5 +20,6 @@ class RoutesName {
   static const String liveViewScreen = '/liveViewScreen';
   static const String videoPlayScreen = '/videoPlayScreen';
   static const String reviewCardSummeryScreen = '/reviewCardSummeryScreen';
+  static const String filterResult = '/filterResult';
   static const String searchResult = '/searchResult';
 }

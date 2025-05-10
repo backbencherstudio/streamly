@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:streamly/routes/routes.dart';
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
 import '../../../block/library_bloc/library_state.dart';
@@ -55,6 +57,7 @@ class LibraryScreen extends StatelessWidget {
                                   "Shorts"
                                 ],
                                 onTap: (text) {
+                                  context.push(RoutesName.searchResult);
                                   print("Selected: $text");
                                 },
                               )
