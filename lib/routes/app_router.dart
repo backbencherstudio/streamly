@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/routes/routes.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/live/screen/LiveViewScreen.dart';
+import 'package:streamly/view/search_result/screen/search_result_screen.dart';
 import 'package:streamly/view/video_play/screen/video_play_screen.dart';
 import '../view/auth/forgot_password/forgot_password_screen.dart';
 import '../view/auth/forgot_password/reset_success_screen.dart';
@@ -110,6 +111,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.reviewCardSummeryScreen,
         builder: (context, state) => ReviewCardSummeryScreen(),
+      ),
+      GoRoute(
+        path: RoutesName.searchResult,
+        builder: (context, state) => SearchResultScreen(),
       ),
     ],
   );

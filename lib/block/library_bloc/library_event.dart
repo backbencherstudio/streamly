@@ -24,3 +24,31 @@ class FocusSearchField extends LibraryEvent {
   @override
   List<Object> get props => [isFocused];
 }
+
+class CategoryChanged extends LibraryEvent {
+  final String category;
+  CategoryChanged(this.category);
+}
+
+class GenreChanged extends LibraryEvent {
+  final String genre;
+  GenreChanged(this.genre);
+}
+
+class YearChanged extends LibraryEvent {
+  final DateTime year;
+  YearChanged(this.year);
+}
+
+class KeywordChanged extends LibraryEvent {
+  final String keyword;
+  KeywordChanged(this.keyword);
+}
+
+class TopRatedChanged extends LibraryEvent {
+  final String topRated;
+  TopRatedChanged(this.topRated);
+}
+
+class SubmitFilterForm extends LibraryEvent {}
+
