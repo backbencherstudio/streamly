@@ -1,16 +1,53 @@
-# streamly
+# 🎬 Streamly - Streaming Admin Dashboard
 
-A new Flutter project.
+**Streamly** is a modern and responsive admin dashboard built with Flutter, designed for managing a streaming content platform. The design is based on the stunning Figma file by UIGEEKY and adapted into a powerful cross-platform interface.
 
-## Getting Started
+👉 [View Figma Design](https://www.figma.com/design/a8XMOKvuWTozwhyH6rh6gG/susdent864_FO16925B1681_Streaming-Admin-Dashboard_UIGEEKY_-Client-File-?node-id=5264-4418&m=dev)
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Preview
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> *Add screenshots or a GIF here to showcase your UI*
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🚀 Features
+
+- 📱 Fully responsive layout (Web, Tablet, Mobile)
+- 🔍 Advanced search filter (category, genre, year, keyword, rating)
+- 🎨 Dark theme with clean modern UI
+- 📦 Scalable architecture using BLoC pattern
+- ⚙️ Custom dropdowns, date pickers, and form input widgets
+- 🔌 Ready for API integrations and analytics modules
+
+---
+
+## 🧱 Tech Stack
+
+- [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
+- [flutter_bloc](https://pub.dev/packages/flutter_bloc)
+- [flutter_screenutil](https://pub.dev/packages/flutter_screenutil)
+- [google_fonts](https://pub.dev/packages/google_fonts)
+
+---
+
+## 🧑‍💻 Getting Started
+
+### Prerequisites
+
+- ✅ Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+
+### Installation Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your_username/streamly.git
+cd streamly
+
+# 2. Get dependencies
+flutter pub get
+
+# 3. Run the app
+flutter run
