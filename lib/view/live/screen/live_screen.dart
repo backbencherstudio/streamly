@@ -26,7 +26,7 @@ class LiveScreen extends StatelessWidget {
           child: LiveAppBar(),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 16.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
