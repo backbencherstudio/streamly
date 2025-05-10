@@ -441,6 +441,111 @@ final List<MediaCategory> dummyCategories = [
       ),
     ],
   ),
+  MediaCategory(
+    title: "Popular Movies",
+    items: [
+      MediaItem(
+        id: 1,
+        title: "Inception",
+        posterUrl: "https://image.tmdb.org/t/p/w500/glKDfE6btIRcVB5zrjspRIs4r52.jpg",
+      ),
+      MediaItem(
+        id: 2,
+        title: "The Dark Knight",
+        posterUrl: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      ),
+      MediaItem(
+        id: 3,
+        title: "Interstellar",
+        posterUrl: "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+      ),
+      MediaItem(
+        id: 4,
+        title: "The Matrix",
+        posterUrl: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+      ),
+      MediaItem(
+        id: 5,
+        title: "Gladiator",
+        posterUrl: "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+      ),
+      MediaItem(
+        id: 6,
+        title: "Avengers: Endgame",
+        posterUrl: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+      ),
+    ],
+  ),
+  MediaCategory(
+    title: "Popular TV Shows",
+    items: [
+      MediaItem(
+        id: 7,
+        title: "Breaking Bad",
+        posterUrl: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+      ),
+      MediaItem(
+        id: 8,
+        title: "Game of Thrones",
+        posterUrl: "https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
+      ),
+      MediaItem(
+        id: 9,
+        title: "Stranger Things",
+        posterUrl: "https://image.tmdb.org/t/p/w500/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg",
+      ),
+      MediaItem(
+        id: 10,
+        title: "The Mandalorian",
+        posterUrl: "https://image.tmdb.org/t/p/w500/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+      ),
+      MediaItem(
+        id: 11,
+        title: "The Crown",
+        posterUrl: "https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg",
+      ),
+      MediaItem(
+        id: 12,
+        title: "The Witcher",
+        posterUrl: "https://image.tmdb.org/t/p/w500/zrPpUlehQaBf8YX2NrVrKK8IEpf.jpg",
+      ),
+    ],
+  ),
+  MediaCategory(
+    title: "Trending Now",
+    items: [
+      MediaItem(
+        id: 13,
+        title: "The Queen's Gambit",
+        posterUrl: "https://image.tmdb.org/t/p/w500/zU0htwkhNvBQdVSIKB9s6hgVeFK.jpg",
+      ),
+      MediaItem(
+        id: 14,
+        title: "Loki",
+        posterUrl: "https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+      ),
+      MediaItem(
+        id: 15,
+        title: "WandaVision",
+        posterUrl: "https://image.tmdb.org/t/p/w500/glKDfE6btIRcVB5zrjspRIs4r52.jpg",
+      ),
+      MediaItem(
+        id: 16,
+        title: "The Falcon and the Winter Soldier",
+        posterUrl: "https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+      ),
+      MediaItem(
+        id: 17,
+        title: "The Boys",
+        posterUrl: "https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg",
+      ),
+      MediaItem(
+        id: 18,
+        title: "Money Heist",
+        posterUrl: "https://image.tmdb.org/t/p/w500/glKDfE6btIRcVB5zrjspRIs4r52.jpg",
+      ),
+    ],
+  ),
 ];
 
 

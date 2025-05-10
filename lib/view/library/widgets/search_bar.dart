@@ -82,6 +82,10 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                       onChanged: (text) {
                         context.read<LibraryBloc>().add(SearchQueryChanged(text));
                       },
+                      onSubmitted: (text) {
+                        context.read<LibraryBloc>().add(SearchQueryChanged(text));
+                        context.push(RoutesName.searchResult);
+                      },
                       style: TextStyle(color: Colors.white, fontSize: 14.sp),
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
@@ -130,7 +134,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                   );
                 },
               ).then((_) {
-                context.push(RoutesName.searchResult);
+                context.push(RoutesName.filterResult);
               });
 
             },
