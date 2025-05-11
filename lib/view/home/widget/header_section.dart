@@ -10,7 +10,6 @@ import '../../../widgets/search_widget.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +24,6 @@ class HeaderSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Search & Notification
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,21 +32,25 @@ class HeaderSection extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8.w),
                 decoration: BoxDecoration(
-                  color: Color(0xff472C2A),
-                  shape: BoxShape.circle,
-                ),
+                    color: Color(0xff472C2A),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 1,
+                      color: Color(0xff59544d),
+                    )),
                 child: Image.asset(AppIcons.notification,
                     width: 20.w, height: 20.w),
               ),
             ],
           ),
-
           const Spacer(),
-
-          /// Rating Row
           Row(
             children: [
-              Image.asset(AppImages.ibdb),
+              Image.asset(
+                AppImages.ibdb,
+                height: 24,
+                width: 48,
+              ),
               SizedBox(width: 8.w),
               Text(
                 "6.8/10",
@@ -60,10 +62,7 @@ class HeaderSection extends StatelessWidget {
               ),
             ],
           ),
-
           SizedBox(height: 9.h),
-
-          /// Title
           Text(
             "Companion",
             style: TextStyle(
@@ -72,10 +71,7 @@ class HeaderSection extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-
           SizedBox(height: 16.h),
-
-          /// Action Buttons
           Row(
             children: [
               GestureDetector(
@@ -84,9 +80,9 @@ class HeaderSection extends StatelessWidget {
                 },
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                      EdgeInsets.symmetric(horizontal: 30.w, vertical: 11.h),
                   decoration: BoxDecoration(
-                    color: AppColors.textPurple,
+                    color: Color(0xff7A25BC),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: Text(
@@ -103,7 +99,7 @@ class HeaderSection extends StatelessWidget {
               Container(
                 height: 25.h,
                 width: 2,
-                color: AppColors.textPrimary,
+                color: Color(0xffA3A09D),
               ),
               SizedBox(width: 16.w),
               SizedBox(width: 12.w),
@@ -126,13 +122,16 @@ class HeaderSection extends StatelessWidget {
   Widget _actionIcon(String iconPath, {required VoidCallback onTap}) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(10.w),
-        decoration: BoxDecoration(
-          color: const Color(0xff200F2C),
-          borderRadius: BorderRadius.circular(6.r),
+      child: Padding(
+        padding: EdgeInsets.only(right: 7.w),
+        child: Container(
+          padding: EdgeInsets.all(10.w),
+          decoration: BoxDecoration(
+            color: Color(0xff423144),
+            borderRadius: BorderRadius.circular(6.r),
+          ),
+          child: Image.asset(iconPath, width: 20.w, height: 20.w),
         ),
-        child: Image.asset(iconPath, width: 20.w, height: 20.w),
       ),
     );
   }

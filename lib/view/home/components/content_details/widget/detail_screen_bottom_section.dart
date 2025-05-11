@@ -65,10 +65,10 @@ class DetailScreenBottomSection extends StatelessWidget {
                 onTap: () {},
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                      EdgeInsets.symmetric(horizontal: 30.w, vertical: 11.h),
                   decoration: BoxDecoration(
-                    color: AppColors.textPurple,
-                    borderRadius: BorderRadius.circular(6.r),
+                    color: Color(0xff7A25BC),
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: GestureDetector(
                     onTap: () {
@@ -82,7 +82,7 @@ class DetailScreenBottomSection extends StatelessWidget {
                           height: 20.w,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 6.w),
+                        SizedBox(width: 8.w),
                         Text(
                           "Play",
                           style: TextStyle(
@@ -100,17 +100,17 @@ class DetailScreenBottomSection extends StatelessWidget {
               Container(
                 height: 30.h,
                 width: 1,
-                color: AppColors.textPurple,
+                color: Color(0xff9B9A9D),
               ),
               SizedBox(width: 12.w),
               _actionIcon(AppIcons.download1, onTap: () {}),
-              SizedBox(width: 8.w),
+              SizedBox(width: 15.w),
               _actionIcon(AppIcons.share, onTap: () {
                 Share.share(
                   'https://play.google.com/store/apps/details?id=com.example.streamly',
                 );
               }),
-              SizedBox(width: 8.w),
+              SizedBox(width: 15.w),
               _actionIcon(AppIcons.copy, onTap: () {}),
             ],
           ),
@@ -166,14 +166,14 @@ class DetailScreenBottomSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border: Border.all(color: AppColors.textPurple),
+        border: Border.all(color: Color(0xff7A25BC)),
         borderRadius: BorderRadius.circular(6.r),
       ),
       child: Text(
         text,
         style: TextStyle(
           fontSize: 12.sp,
-          color: AppColors.textPurple,
+          color: Color(0xff7A25BC)
         ),
       ),
     );
