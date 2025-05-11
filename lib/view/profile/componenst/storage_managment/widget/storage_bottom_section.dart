@@ -23,13 +23,17 @@ class _StorageBottomSectionState extends State<StorageBottomSection> {
         Text(
           "Easy Management",
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500,
+              color: Colors.white),
         ),
         SizedBox(height: 8),
         Text(
           'Save time with bulk actions—clear all downloads at once or auto-delete old content when storage is low. Manage space with ease.',
           style: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white70),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: Colors.white70),
         ),
         SizedBox(height: 16),
         Row(
@@ -41,7 +45,7 @@ class _StorageBottomSectionState extends State<StorageBottomSection> {
                 Text("Auto-delete old content",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400)),
                 SizedBox(
                   height: 4.h,
@@ -75,7 +79,7 @@ class _StorageBottomSectionState extends State<StorageBottomSection> {
                 Text("Cloud Sync",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400)),
                 SizedBox(
                   height: 4.h,
@@ -103,16 +107,23 @@ class _StorageBottomSectionState extends State<StorageBottomSection> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Clear All Downloads", style: TextStyle(color: Colors.white)),
+            Text("Clear All Downloads",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14.sp)),
             SizedBox(
               width: 24.w,
             ),
             Expanded(
-              child: OutlinedPrimaryButton(
-                text: 'Bulk Delete',
-                onTap: () {
-                  // handle clear all
-                },
+              child: SizedBox(
+                height: 44,
+                child: OutlinedPrimaryButton(
+                  text: 'Bulk Delete',
+                  onTap: () {
+                    // handle clear all
+                  },
+                ),
               ),
             ),
           ],
