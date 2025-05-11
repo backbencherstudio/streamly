@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/config/icons/icons.dart';
-import '../themes/color.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -10,51 +9,54 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         filled: true,
-        fillColor: AppColors.containerBackground,
+        fillColor: const Color(0xff0E0A05),
         hintText: "Search",
-        hintStyle: TextStyle(color: AppColors.lightGrey, fontSize: 14.sp),
+        hintStyle: const TextStyle(color: Colors.grey),
         prefixIcon: Padding(
-          padding: EdgeInsets.all(12.w),
-          child: Image.asset(AppIcons.search, width: 20.w, height: 20.h),
+          padding: const EdgeInsets.all(12.0),
+          child: Image.asset(AppIcons.search, width: 20, height: 20),
         ),
         suffixIcon: SizedBox(
-          width: 72.w,
+          width: 72,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(right: 8.w),
+                padding: EdgeInsets.only(right: 8.0),
                 child: Container(
-                  height: 23.h,
-                  width: 2.w,
-                  color: AppColors.lightGrey,
+                  height: 23,
+                  width: 2,
+                  color: Color(0xff9F9D9B),
                 ),
               ),
-              SizedBox(width: 8.w),
+              SizedBox(
+                width: 8.w,
+              ),
               Container(
-                padding: EdgeInsets.all(4.w),
+                padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryDark,
-                  shape: BoxShape.circle,
-                ),
-                child: Image.asset(AppIcons.voice, width: 20.w, height: 20.h),
+                    color: Color(0xff554444), shape: BoxShape.circle),
+                child: Image.asset(AppIcons.voice, width: 20, height: 20),
               ),
             ],
           ),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(color: AppColors.surface),
+          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
         ),
       ),
-      style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
-      cursorColor: AppColors.textPrimary,
     );
   }
 }

@@ -15,7 +15,8 @@ class PersonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ClipOval(
           child: Image.network(
@@ -25,21 +26,28 @@ class PersonCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        SizedBox(height: 8.h),
-        Text(
-          name,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        Text(
-          role,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.6),
-            fontSize: 11.sp,
-          ),
+        SizedBox(width: 12.w),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              name,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 4.h),
+            Text(
+              role,
+              style: TextStyle(
+                color: Color(0xffE0E0E0),
+                fontSize: 11.sp,
+              ),
+            ),
+          ],
         ),
       ],
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:streamly/routes/routes.dart';
 import 'package:streamly/themes/color.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -10,7 +12,7 @@ class FavoriteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push('/managePlaneScreen');
+        context.push(RoutesName.contentDetailScreen);
       },
       child: Container(
         height: 240,
@@ -25,14 +27,13 @@ class FavoriteCard extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              top: 9,
-              left: 10,
+              top: 12,
+              left: 12,
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: AppColors.textPurple,
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: Color(0xff7A25BC),
                 ),
                 child: Text(
                   data["rating"].toString(),

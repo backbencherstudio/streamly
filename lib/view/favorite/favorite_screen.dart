@@ -62,10 +62,10 @@ class FavoriteScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomNabVer(
-                title: "My List",
-                fromScreen:'favorite',
+                title: "My Favorites List",
+                fromScreen: 'favorite',
                 trailing: AppIcons.search,
               ),
             ),
@@ -87,6 +87,19 @@ class FavoriteScreen extends StatelessWidget {
                 );
               },
             ),
+            SizedBox(height: 16.h),
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 16.w),
+              child: Text(
+                "Recommended to Download",
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(height: 16.h,),
           ],
         ),
       ),
