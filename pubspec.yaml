@@ -46,6 +46,9 @@ dependencies:
   speech_to_text: ^7.0.0
   flutter_rating: ^2.0.2
   carousel_slider: ^5.0.0
+  dio: ^5.8.0+1
+  path_provider: ^2.1.5
+  flutter_downloader: ^1.12.0
 
 
 
