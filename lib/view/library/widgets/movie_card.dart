@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../model/movie/movie_model.dart';
+import '../../../themes/color.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -47,14 +48,14 @@ class MovieCard extends StatelessWidget {
                   height: height,
                   width: width,
                   decoration: BoxDecoration(
-                    color: Colors.black.withAlpha(150),
+                    color: AppColors.black.withAlpha(150),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                 ),
               if (isSquare && iconData != null)
                 Icon(
                   iconData,
-                  color: Colors.white,
+                  color: AppColors.white,
                   size: 32.sp,
                 ),
             ],
@@ -64,7 +65,7 @@ class MovieCard extends StatelessWidget {
             movie.title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.textPrimary,
               fontSize: isSquare ? 14.sp : 12.sp,
               fontWeight: isSquare ? FontWeight.w500 : FontWeight.normal,
             ),

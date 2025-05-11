@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../themes/color.dart';
 
 class DescriptionField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-  final Widget? suffixIconWithText; //
+  final Widget? suffixIconWithText;
   final int maxLines;
   final bool? isObSecure;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
-  final Color? fileColor; //
+  final Color? fileColor;
 
   const DescriptionField({
     super.key,
@@ -18,7 +19,7 @@ class DescriptionField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.suffixIconWithText,
-    this.maxLines =1,
+    this.maxLines = 1,
     this.isObSecure,
     this.controller,
     this.validator,
@@ -28,42 +29,41 @@ class DescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-
       child: TextFormField(
         maxLines: maxLines,
         controller: controller,
         validator: validator,
         obscureText: isObSecure ?? false,
-        style: TextStyle(color: Colors.white, fontSize: 14.sp),
+        style: TextStyle(
+          color: AppColors.textPrimary,
+          fontSize: 14.sp,
+        ),
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: const Color(0xff9A9EA7),
+            color: AppColors.lightGrey,
             fontWeight: FontWeight.w400,
             fontSize: 14.sp,
           ),
           filled: true,
-          fillColor: fileColor ?? const Color(0xff060209),
+          fillColor: fileColor ?? AppColors.background,
           prefixIcon: prefixIcon,
-
-          //
           suffixIcon: suffixIconWithText ?? suffixIcon,
-
-          suffixIconColor: const Color(0xff9A9EA7),
+          suffixIconColor: AppColors.lightGrey,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 16.w,
             vertical: 12.h,
           ),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10.r),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10.r),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10.r),
           ),
         ),

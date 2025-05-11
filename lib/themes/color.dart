@@ -29,4 +29,9 @@ class AppColors {
   static const Color containerBackground = Color(0xFF0F0F11);
   static const Color dividerColor = Color(0xFF414141);
   static const Color textBorderColor = Color(0xFF777980);
+
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
+  static const Color grey = Color(0xFF777980);
+  static const Color lightGrey = Color(0xFFB0B3B8);
 }

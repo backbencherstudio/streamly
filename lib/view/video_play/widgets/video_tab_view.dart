@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/themes/color.dart';
+import '../../../themes/color.dart';
 
 class VideoTabView extends StatelessWidget {
   final List<String> tabs;
@@ -21,7 +21,7 @@ class VideoTabView extends StatelessWidget {
         children: [
           Container(
             height: 40.h,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(color: Colors.transparent),
               ),
@@ -30,12 +30,15 @@ class VideoTabView extends StatelessWidget {
               labelPadding: EdgeInsets.symmetric(horizontal: 16.w),
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: UnderlineTabIndicator(
-                borderSide: BorderSide(width: 2.h, color: Colors.purple),
+                borderSide: BorderSide(width: 2.h, color: AppColors.textPurple),
                 insets: EdgeInsets.symmetric(horizontal: 16.w),
               ),
-              labelColor: Colors.purple,
-              unselectedLabelColor: Colors.white,
-              labelStyle: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
+              labelColor: AppColors.textPurple,
+              unselectedLabelColor: AppColors.textPrimary,
+              labelStyle: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+              ),
               tabs: tabs.map((title) => Tab(text: title)).toList(),
             ),
           ),

@@ -33,10 +33,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           enableMute: true,
           enableFullscreen: true,
           enablePlaybackSpeed: true,
-
           showControls: true,
-
-
         ),
       ),
       betterPlayerDataSource: dataSource,

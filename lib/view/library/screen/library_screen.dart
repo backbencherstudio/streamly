@@ -86,7 +86,7 @@ class LibraryScreen extends StatelessWidget {
                             child: Text(
                               state.message,
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 14.sp),
+                                  color: AppColors.white, fontSize: 14.sp),
                             ),
                           );
                         }

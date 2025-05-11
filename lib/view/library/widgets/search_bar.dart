@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/routes/routes.dart';
 
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
+import '../../../themes/color.dart';
 import 'filter_modal_sheet.dart';
 
 class SearchBarLibrary extends StatefulWidget {
@@ -66,13 +68,13 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
               height: 48.h,
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: AppColors.containerBackground,
                 borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: Colors.white12, width: 1),
+                border: Border.all(color: AppColors.secondaryBorderColor, width: 1),
               ),
               child: Row(
                 children: [
-                  Icon(Icons.search, color: Colors.white60, size: 20.sp),
+                  Image.asset(AppIcons.search, color: AppColors.lightGrey, width: 20.w, height: 20.h),
                   SizedBox(width: 8.w),
                   Expanded(
                     child: TextField(
@@ -86,11 +88,11 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                         context.read<LibraryBloc>().add(SearchQueryChanged(text));
                         context.push(RoutesName.searchResult);
                       },
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp),
-                      cursorColor: Colors.white,
+                      style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
+                      cursorColor: AppColors.textPrimary,
                       decoration: InputDecoration(
                         hintText: 'Search..........',
-                        hintStyle: TextStyle(color: Colors.grey, fontSize: 14.sp),
+                        hintStyle: TextStyle(color: AppColors.grey, fontSize: 14.sp),
                         border: InputBorder.none,
                         isCollapsed: true,
                         contentPadding: EdgeInsets.zero,
@@ -101,7 +103,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                     onTap: _listen,
                     child: Icon(
                       _isListening ? Icons.mic_none : Icons.mic,
-                      color: Colors.white38,
+                      color: AppColors.icon,
                       size: 20.sp,
                     ),
                   ),
@@ -116,7 +118,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                 context: context,
                 barrierDismissible: true,
                 barrierLabel: "Filter",
-                barrierColor: Colors.black54,
+                barrierColor: AppColors.black.withOpacity(0.54),
                 transitionDuration: const Duration(milliseconds: 300),
                 pageBuilder: (_, __, ___) {
                   return Align(
@@ -136,20 +138,18 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
               ).then((_) {
                 context.push(RoutesName.filterResult);
               });
-
             },
             child: Container(
               width: 40.w,
               height: 40.w,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: AppColors.containerBackground,
                 shape: BoxShape.circle,
-                border: Border.all(color: Colors.white12, width: 1),
+                border: Border.all(color: AppColors.secondaryBorderColor, width: 1),
               ),
-              child: Icon(Icons.tune, color: Colors.white70, size: 20.sp),
+              child: Icon(Icons.tune, color: AppColors.lightGrey, size: 20.sp),
             ),
           ),
-
         ],
       ),
     );

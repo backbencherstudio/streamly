@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../themes/color.dart';
 
 class FloatingReaction extends StatefulWidget {
   const FloatingReaction({Key? key}) : super(key: key);
@@ -11,15 +13,16 @@ class FloatingReaction extends StatefulWidget {
 class _FloatingReactionState extends State<FloatingReaction> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _moveUp;
-  final double _left = 250 + Random().nextDouble() * 50;
-  final double _size = 18 + Random().nextDouble() * 10;
-  final double _start = 80;
+
+  final double _left = 250.w + Random().nextDouble() * 50.w;
+  final double _size = 18.sp + Random().nextDouble() * 10.sp;
+  final double _start = 80.h;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    _moveUp = Tween<double>(begin: 0, end: 150).animate(
+    _moveUp = Tween<double>(begin: 0, end: 150.h).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
     _controller.forward();
@@ -37,8 +40,8 @@ class _FloatingReactionState extends State<FloatingReaction> with SingleTickerPr
           bottom: _start + _moveUp.value,
           left: _left,
           child: Opacity(
-            opacity: 1.0 - (_moveUp.value / 150),
-            child: Icon(Icons.favorite, color: Colors.redAccent, size: _size),
+            opacity: 1.0 - (_moveUp.value / 150.h),
+            child: Icon(Icons.favorite, color: AppColors.textPurple, size: _size),
           ),
         );
       },

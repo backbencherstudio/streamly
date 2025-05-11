@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../model/movie/category_model.dart';
 import '../../../routes/routes.dart';
+import '../../../themes/color.dart';
 import 'movie_card.dart';
 
 class CategorySection extends StatelessWidget {
@@ -25,15 +26,18 @@ class CategorySection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: category.movies.map((movie) {
-                return GestureDetector(
-                  onTap: () => context.push(RoutesName.contentDetailScreen),
-                  child: MovieCard(
-                    movie: movie,
-                    isLarge: isComingSoon,
-                    isSquare: isPopularGenres,
-                    iconData: isPopularGenres ? _getGenreIcon(movie.title) : null,
-                    darkOverlay: isPopularGenres,
-                    key: ValueKey(movie.title),
+                return Padding(
+                  padding: EdgeInsets.only(left: 12.w),
+                  child: GestureDetector(
+                    onTap: () => context.push(RoutesName.contentDetailScreen),
+                    child: MovieCard(
+                      movie: movie,
+                      isLarge: isComingSoon,
+                      isSquare: isPopularGenres,
+                      iconData: isPopularGenres ? _getGenreIcon(movie.title) : null,
+                      darkOverlay: isPopularGenres,
+                      key: ValueKey(movie.title),
+                    ),
                   ),
                 );
               }).toList(),
@@ -46,29 +50,30 @@ class CategorySection extends StatelessWidget {
 
   Widget _buildHeader(BuildContext context, String title, bool hideViewAll) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 0.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.textPrimary,
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
           if (!hideViewAll)
             TextButton(
-              onPressed: () {
-                // Navigate to the full list of movies in this category
-                 context.push(RoutesName.filterResult);
-              },
+              onPressed: () => context.push(RoutesName.filterResult),
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              ),
               child: Text(
                 'View All',
                 style: TextStyle(
-                  color: Colors.purpleAccent,
+                  color: AppColors.textPurple,
                   fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

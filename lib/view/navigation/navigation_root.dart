@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/favorite/favorite_screen.dart';
 import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/live/screen/live_screen.dart';
@@ -25,7 +26,7 @@ class NavigationRoot extends StatelessWidget {
     return BlocBuilder<BottomNavCubit, int>(
       builder: (context, index) {
         return Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor: AppColors.background,
           body: SafeArea(child: _screens[index]),
           bottomNavigationBar: const CustomBottomNavBar(),
         );
