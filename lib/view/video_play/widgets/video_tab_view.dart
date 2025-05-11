@@ -20,26 +20,34 @@ class VideoTabView extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 40.h,
-            decoration: BoxDecoration(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            height: 40.h, // TabBar height
+            decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(color: Colors.transparent),
               ),
             ),
-            child: TabBar(
-              labelPadding: EdgeInsets.symmetric(horizontal: 16.w),
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicator: UnderlineTabIndicator(
-                borderSide: BorderSide(width: 2.h, color: AppColors.textPurple),
-                insets: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Material(
+              elevation: 0, // Removes the shadow/border
+              color: Colors.transparent, // Ensures no background color interference
+              child: TabBar(
+                dividerColor: AppColors.white.withAlpha(40), // Built-in divider
+                dividerHeight: 2.h, // Matches UnderlineTabIndicator thickness
+                labelPadding: EdgeInsets.symmetric(horizontal: 16.w),
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(width: 2.h, color: AppColors.textPurple),
+                  insets: EdgeInsets.symmetric(horizontal: 16.w),
+                ),
+                labelColor: AppColors.textPurple,
+                unselectedLabelColor: AppColors.textPrimary,
+                labelStyle: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                ),
+                padding: EdgeInsets.zero, // Ensure indicator aligns at bottom
+                tabs: tabs.map((title) => Tab(text: title)).toList(),
               ),
-              labelColor: AppColors.textPurple,
-              unselectedLabelColor: AppColors.textPrimary,
-              labelStyle: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-              ),
-              tabs: tabs.map((title) => Tab(text: title)).toList(),
             ),
           ),
           Expanded(
