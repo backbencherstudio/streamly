@@ -72,7 +72,7 @@ class DetailScreenBottomSection extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      context.go(RoutesName.videoPlayScreen);
+                      context.push(RoutesName.videoPlayScreen);
                     },
                     child: Row(
                       children: [
