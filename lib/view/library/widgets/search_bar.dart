@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/routes/routes.dart';
-
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
 import '../../../themes/color.dart';
@@ -47,7 +46,9 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
         setState(() => _isListening = true);
         _speech.listen(
           onResult: (val) {
-            context.read<LibraryBloc>().add(SearchQueryChanged(val.recognizedWords));
+            context
+                .read<LibraryBloc>()
+                .add(SearchQueryChanged(val.recognizedWords));
           },
         );
       }
@@ -64,50 +65,78 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              height: 40.h,
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
-              decoration: BoxDecoration(
-                color: AppColors.containerBackground,
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: AppColors.secondaryBorderColor, width: 1),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(AppIcons.search, color: AppColors.lightGrey, width: 20.w, height: 20.h),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: TextField(
-                      onTap: () {
-                        context.read<LibraryBloc>().add(FocusSearchField(true));
-                      },
-                      onChanged: (text) {
-                        context.read<LibraryBloc>().add(SearchQueryChanged(text));
-                      },
-                      onSubmitted: (text) {
-                        context.read<LibraryBloc>().add(SearchQueryChanged(text));
-                        context.push(RoutesName.searchResult);
-                      },
-                      style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
-                      cursorColor: AppColors.textPrimary,
-                      decoration: InputDecoration(
-                        hintText: 'Search..........',
-                        hintStyle: TextStyle(color: AppColors.grey, fontSize: 14.sp),
-                        border: InputBorder.none,
-                        isCollapsed: true,
-                        contentPadding: EdgeInsets.zero,
+            child: TextFormField(
+              onTap: () {
+                context.read<LibraryBloc>().add(FocusSearchField(true));
+              },
+              onChanged: (text) {
+                context.read<LibraryBloc>().add(SearchQueryChanged(text));
+              },
+              onFieldSubmitted: (value) {
+                if (value.trim().isNotEmpty) {
+                  context.read<LibraryBloc>().add(SearchQueryChanged(value));
+                  context.push(RoutesName.searchResult);
+                }
+              },
+              style: const TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                filled: true,
+                fillColor: const Color(0xff0E0A05),
+                hintText: "Search",
+                hintStyle: const TextStyle(color: Colors.grey),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(AppIcons.search, width: 20, height: 20),
+                ),
+                suffixIcon: SizedBox(
+                  width: 72,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: Container(
+                          height: 23,
+                          width: 2,
+                          color: const Color(0xff9F9D9B),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 8.w),
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: const BoxDecoration(
+                          color: Color(0xff554444),
+                          shape: BoxShape.circle,
+                        ),
+                        child: GestureDetector(
+                          onTap: _listen,
+                          child: Icon(
+                            _isListening ? Icons.mic_none : Icons.mic,
+                            color: AppColors.icon,
+                            size: 20.sp,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  GestureDetector(
-                    onTap: _listen,
-                    child: Icon(
-                      _isListening ? Icons.mic_none : Icons.mic,
-                      color: AppColors.icon,
-                      size: 20.sp,
-                    ),
-                  ),
-                ],
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.r),
+                  borderSide:
+                      const BorderSide(width: 2, color: Color(0xff221E19)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.r),
+                  borderSide:
+                      const BorderSide(width: 2, color: Color(0xff221E19)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.r),
+                  borderSide:
+                      const BorderSide(width: 2, color: Color(0xff221E19)),
+                ),
               ),
             ),
           ),
@@ -131,7 +160,8 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                 },
                 transitionBuilder: (_, anim, __, child) {
                   return SlideTransition(
-                    position: Tween(begin: Offset(0, -1), end: Offset(0, 0)).animate(anim),
+                    position: Tween(begin: Offset(0, -1), end: Offset(0, 0))
+                        .animate(anim),
                     child: child,
                   );
                 },
@@ -145,7 +175,8 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
               decoration: BoxDecoration(
                 color: AppColors.containerBackground,
                 shape: BoxShape.circle,
-                border: Border.all(color: AppColors.secondaryBorderColor, width: 1),
+                border:
+                    Border.all(color: AppColors.secondaryBorderColor, width: 1),
               ),
               child: Icon(Icons.tune, color: AppColors.lightGrey, size: 20.sp),
             ),

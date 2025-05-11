@@ -67,7 +67,10 @@ class DetailScreenBottomSection extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.push(RoutesName.videoPlayScreen);
+
+                },
                 child: Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 30.w, vertical: 11.h),
@@ -75,29 +78,24 @@ class DetailScreenBottomSection extends StatelessWidget {
                     color: Color(0xff7A25BC),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
-                  child: GestureDetector(
-                    onTap: () {
-                      context.push(RoutesName.videoPlayScreen);
-                    },
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          AppIcons.start,
-                          width: 20.w,
-                          height: 20.w,
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        AppIcons.start,
+                        width: 20.w,
+                        height: 20.w,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        "Play",
+                        style: TextStyle(
                           color: Colors.white,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
                         ),
-                        SizedBox(width: 8.w),
-                        Text(
-                          "Play",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
