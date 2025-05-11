@@ -26,7 +26,7 @@ class CategorySection extends StatelessWidget {
             child: Row(
               children: category.movies.map((movie) {
                 return GestureDetector(
-                  onTap: () => context.push(RoutesName.videoPlayScreen),
+                  onTap: () => context.push(RoutesName.contentDetailScreen),
                   child: MovieCard(
                     movie: movie,
                     isLarge: isComingSoon,

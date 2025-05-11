@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/routes/routes.dart';
+import 'package:streamly/themes/color.dart';
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
 import '../../../block/library_bloc/library_state.dart';
@@ -19,14 +20,9 @@ class LibraryScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => LibraryBloc()..add(LoadLibrary()),
       child: Scaffold(
+        backgroundColor: AppColors.background,
         body: Stack(
           children: [
-            Positioned.fill(
-              child: SvgPicture.asset(
-                'assets/images/background.svg',
-                fit: BoxFit.cover,
-              ),
-            ),
             SafeArea(
               child: Column(
                 children: [
