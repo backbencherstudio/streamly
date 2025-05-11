@@ -38,7 +38,7 @@ class LiveAppBar extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(4.w),
                   decoration: BoxDecoration(
-                    color: AppColors.primaryDark,
+                    color: AppColors.white.withAlpha(30),
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset(AppIcons.voice, width: 20.w, height: 20.h),

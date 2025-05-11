@@ -41,7 +41,7 @@ class _FloatingReactionState extends State<FloatingReaction> with SingleTickerPr
           left: _left,
           child: Opacity(
             opacity: 1.0 - (_moveUp.value / 150.h),
-            child: Icon(Icons.favorite, color: AppColors.textPurple, size: _size),
+            child: Icon(Icons.favorite, color: AppColors.red, size: _size),
           ),
         );
       },
