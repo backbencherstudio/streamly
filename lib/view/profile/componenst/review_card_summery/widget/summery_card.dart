@@ -43,7 +43,7 @@ class SummeryCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24.sp,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
                 TextSpan(
@@ -57,7 +57,7 @@ class SummeryCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16.h),
-          Divider(color: AppColors.textPurple),
+          Divider(color: Color(0xff1D082E)),
           SizedBox(height: 12.h),
           buildCheckItem("Ad-free listening without restrictions"),
           buildCheckItem("Unlimited shuffle play and downloads"),
