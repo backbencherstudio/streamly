@@ -23,4 +23,5 @@ class RoutesName {
   static const String filterResult = '/filterResult';
   static const String searchResult = '/searchResult';
   static const String editProfileScreen = '/editProfileScreen';
+  static const String profileManagementScreen = '/profileManagementScreen';
 }
