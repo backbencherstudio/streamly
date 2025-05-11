@@ -31,7 +31,7 @@ class _FilterDialogState extends State<FilterDialog> {
       child: SafeArea(
         bottom: false,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           child: BlocBuilder<LibraryBloc, LibraryState>(
             builder: (context, state) {
               return SingleChildScrollView(
