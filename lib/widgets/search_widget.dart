@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:streamly/config/icons/icons.dart';
+
+import '../routes/routes.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -8,9 +11,15 @@ class SearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: const TextStyle(color: Colors.white),
+      onFieldSubmitted: (value) {
+        if (value.trim().isNotEmpty) {
+          context.push(RoutesName.searchResult);
+        }
+      },
       decoration: InputDecoration(
         contentPadding:
-            const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         filled: true,
         fillColor: const Color(0xff0E0A05),
         hintText: "Search",
@@ -32,9 +41,7 @@ class SearchWidget extends StatelessWidget {
                   color: Color(0xff9F9D9B),
                 ),
               ),
-              SizedBox(
-                width: 8.w,
-              ),
+              SizedBox(width: 8.w),
               Container(
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
@@ -46,17 +53,18 @@ class SearchWidget extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
+          borderSide: BorderSide(width: 2, color: Color(0xff221E19)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
+          borderSide: BorderSide(width: 2, color: Color(0xff221E19)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(width: 2,color: Color(0xff221E19)),
+          borderSide: BorderSide(width: 2, color: Color(0xff221E19)),
         ),
       ),
     );
   }
 }
+
