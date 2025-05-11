@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../themes/color.dart';
 
 class SearchSuggestionWidget extends StatelessWidget {
   final List<String> suggestions;
@@ -22,13 +23,14 @@ class SearchSuggestionWidget extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.purpleAccent, width: 1.2),
+              border: Border.all(color: AppColors.textPurple, width: 1.2),
               borderRadius: BorderRadius.circular(8.r),
+              color: AppColors.containerBackground,
             ),
             child: Text(
               text,
               style: TextStyle(
-                color: Colors.purpleAccent,
+                color: AppColors.textPurple,
                 fontSize: 14.sp,
               ),
             ),

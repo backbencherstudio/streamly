@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../block/library_bloc/library_bloc.dart';
 import '../../../block/library_bloc/library_event.dart';
 import '../../../block/library_bloc/library_state.dart';
+import '../../../themes/color.dart';
 
 class FilterDialog extends StatefulWidget {
   const FilterDialog({super.key});
@@ -27,7 +27,7 @@ class _FilterDialogState extends State<FilterDialog> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black,
+      color: AppColors.background,
       child: SafeArea(
         bottom: false,
         child: Padding(
@@ -41,7 +41,7 @@ class _FilterDialogState extends State<FilterDialog> {
                     Text(
                       'Browse By Advanced\nSearch Filter',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.textPrimary,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
@@ -53,9 +53,7 @@ class _FilterDialogState extends State<FilterDialog> {
                       value: selectedCategory,
                       onChanged: (value) {
                         setState(() => selectedCategory = value);
-                        context
-                            .read<LibraryBloc>()
-                            .add(CategoryChanged(value!));
+                        context.read<LibraryBloc>().add(CategoryChanged(value!));
                       },
                     ),
                     SizedBox(height: 12.h),
@@ -72,15 +70,18 @@ class _FilterDialogState extends State<FilterDialog> {
                     _buildDatePicker(context),
                     SizedBox(height: 12.h),
                     _buildTextField(
-                        'Keywords', Icons.search, _keywordController, (value) {
-                      context.read<LibraryBloc>().add(KeywordChanged(value));
-                    }),
+                      'Keywords',
+                      Icons.search,
+                      _keywordController,
+                          (value) => context.read<LibraryBloc>().add(KeywordChanged(value)),
+                    ),
                     SizedBox(height: 12.h),
                     _buildTextField(
-                        'Top rated', Icons.search, _topRatedController,
-                        (value) {
-                      context.read<LibraryBloc>().add(TopRatedChanged(value));
-                    }),
+                      'Top rated',
+                      Icons.search,
+                      _topRatedController,
+                          (value) => context.read<LibraryBloc>().add(TopRatedChanged(value)),
+                    ),
                     SizedBox(height: 20.h),
                   ],
                 ),
@@ -101,29 +102,31 @@ class _FilterDialogState extends State<FilterDialog> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white12),
+        border: Border.all(color: AppColors.secondaryBorderColor),
         borderRadius: BorderRadius.circular(8.r),
+        color: AppColors.containerBackground,
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          hint: Text(label, style: TextStyle(color: Colors.white70)),
-          items: items
-              .map(
+          hint: Text(
+            label,
+            style: TextStyle(color: AppColors.lightGrey, fontSize: 14.sp),
+          ),
+          items: items.map(
                 (e) => DropdownMenuItem(
-                  value: e,
-                  child: Text(
-                    e,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              )
-              .toList(),
+              value: e,
+              child: Text(
+                e,
+                style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
+              ),
+            ),
+          ).toList(),
           value: value,
           onChanged: onChanged,
-          dropdownColor: Colors.black,
+          dropdownColor: AppColors.surface,
           isExpanded: true,
-          iconEnabledColor: Colors.white54,
-          style: TextStyle(color: Colors.white), // Selected text color
+          iconEnabledColor: AppColors.icon,
+          style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
         ),
       ),
     );
@@ -149,33 +152,39 @@ class _FilterDialogState extends State<FilterDialog> {
         height: 50.h,
         padding: EdgeInsets.symmetric(horizontal: 12.w),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.white12),
+          border: Border.all(color: AppColors.secondaryBorderColor),
           borderRadius: BorderRadius.circular(8.r),
+          color: AppColors.containerBackground,
         ),
         child: Row(
           children: [
             Expanded(
               child: Text(
                 selectedYear != null ? '${selectedYear!.year}' : 'Year',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: AppColors.lightGrey, fontSize: 14.sp),
               ),
             ),
             Icon(Icons.calendar_today_outlined,
-                color: Colors.white38, size: 18.sp),
+                color: AppColors.icon, size: 18.sp),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTextField(String hint, IconData icon,
-      TextEditingController controller, Function(String) onChanged) {
+  Widget _buildTextField(
+      String hint,
+      IconData icon,
+      TextEditingController controller,
+      Function(String) onChanged,
+      ) {
     return Container(
       height: 50.h,
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white12),
+        border: Border.all(color: AppColors.secondaryBorderColor),
         borderRadius: BorderRadius.circular(8.r),
+        color: AppColors.containerBackground,
       ),
       child: Row(
         children: [
@@ -183,15 +192,15 @@ class _FilterDialogState extends State<FilterDialog> {
             child: TextField(
               controller: controller,
               onChanged: onChanged,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
               decoration: InputDecoration(
                 hintText: hint,
-                hintStyle: TextStyle(color: Colors.white70),
+                hintStyle: TextStyle(color: AppColors.lightGrey, fontSize: 14.sp),
                 border: InputBorder.none,
               ),
             ),
           ),
-          Icon(icon, color: Colors.white38, size: 18.sp),
+          Icon(icon, color: AppColors.icon, size: 18.sp),
         ],
       ),
     );
