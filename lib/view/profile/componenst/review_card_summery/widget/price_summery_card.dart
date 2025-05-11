@@ -21,7 +21,7 @@ class PriceSummeryCard extends StatelessWidget {
           SizedBox(height: 8.h),
           priceRow("Tax", "\$5"),
           SizedBox(height: 8.h),
-          Divider(color: AppColors.textPurple),
+          Divider(color: Color(0xff7A25BC)),
           priceRow("Daily housekeeping", "\$26.64"),
         ],
       ),

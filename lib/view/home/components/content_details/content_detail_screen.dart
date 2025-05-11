@@ -23,7 +23,8 @@ class ContentDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ContentBloc(repository: ContentRepository())..add(LoadContentEvent(isEpisode: true)),
+      create: (_) => ContentBloc(repository: ContentRepository())
+        ..add(LoadContentEvent(isEpisode: true)),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.background,
@@ -48,6 +49,16 @@ class ContentDetailScreen extends StatelessWidget {
                             DetailScreenBottomSection(),
                             CastCrewList(people: dummyPeople),
                             SizedBox(height: 16.h),
+                            Text(
+                              "Episodes",
+                              style: TextStyle(
+                                  color: AppColors.textPrimary,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              height: 12.h,
+                            ),
                             EpisodesList(
                               episodes: dummyEpisodes,
                               onEpisodeTap: (index) {
@@ -63,8 +74,8 @@ class ContentDetailScreen extends StatelessWidget {
                               child: VideoTabView(
                                 tabs: const ['Episodes', 'Seasons', 'Comments'],
                                 tabViews: [
-                                  ContentTab(title: 'Episodes', state: state),
-                                  ContentTab(title: 'Season 1', state: state),
+                                  ContentTab(title: '', state: state),
+                                  ContentTab(title: ' ', state: state),
                                   const CommentTab(),
                                 ],
                               ),

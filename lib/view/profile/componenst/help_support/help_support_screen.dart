@@ -52,7 +52,7 @@ class HelpSupportScreen extends StatelessWidget {
                     SizedBox(height: 16.h),
                     Row(
                       children: [
-                        Expanded(child: const SearchWidget()),
+                        Expanded(child:  SearchWidget()),
                         SizedBox(width: 16.w),
                         Container(
                           padding: EdgeInsets.all(7.w),

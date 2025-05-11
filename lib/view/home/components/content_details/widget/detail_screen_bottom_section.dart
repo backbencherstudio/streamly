@@ -28,21 +28,26 @@ class DetailScreenBottomSection extends StatelessWidget {
           SizedBox(height: 12.h),
           Row(
             children: [
-              Icon(Icons.star, color: Colors.amber, size: 20.w),
-              SizedBox(width: 4.w),
-              Text(
-                "6.8",
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: AppColors.textPrimary,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              SizedBox(width: 8.w),
               GestureDetector(
                 onTap: () => showRattingBottomSheet(context),
-                child: Image.asset(AppIcons.rightArrow, width: 12.w),
+                child: Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.amber, size: 20.w),
+                    SizedBox(width: 4.w),
+                    Text(
+                      "6.8",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: AppColors.textPrimary,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    Image.asset(AppIcons.rightArrow, width: 12.w),
+                  ],
+                ),
               ),
+
               SizedBox(width: 8.w),
               Text(
                 "2025",

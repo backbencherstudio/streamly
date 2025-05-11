@@ -54,15 +54,15 @@ class DetailScreenHeader extends StatelessWidget {
                             width: 20.w, height: 20.w),
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(4.w),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff472C2A),
-                        shape: BoxShape.circle,
-                      ),
-                      child:
-                          Image.asset(AppIcons.cast, width: 35.w, height: 30.w),
-                    ),
+                    // Container(
+                    //   padding: EdgeInsets.all(4.w),
+                    //   decoration: BoxDecoration(
+                    //     color: const Color(0xff472C2A),
+                    //     shape: BoxShape.circle,
+                    //   ),
+                    //   child:
+                    //       Image.asset(AppIcons.cast, width: 35.w, height: 30.w),
+                    // ),
                   ],
                 ),
                 // You can continue adding title, rating, etc. here

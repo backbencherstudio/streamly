@@ -55,16 +55,18 @@ class CategoryChip extends StatelessWidget {
     required this.title,
     required this.isSelected,
   });
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      height: 40.h,
       decoration: BoxDecoration(
         color: isSelected ? const Color(0xFF7A25BC) : Colors.transparent,
         border: Border.all(color: const Color(0xFF7A24BC)),
         borderRadius: BorderRadius.circular(8.r),
       ),
+      alignment: Alignment.center,
       child: Text(
         title,
         style: TextStyle(

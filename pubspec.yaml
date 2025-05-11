@@ -49,6 +49,7 @@ dependencies:
   dio: ^5.8.0+1
   path_provider: ^2.1.5
   flutter_downloader: ^1.12.0
+  google_mlkit_text_recognition: ^0.15.0
 
 
 
@@ -56,9 +57,15 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+
+flutter_icons:
+      android: true
+      ios: true
+      image_path: "assets/launcher_icon/stremly.png"
 
 
-  flutter_lints: ^5.0.0
+flutter_lints: ^5.0.0
 
 flutter:
 
@@ -68,6 +75,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
+    - assets/launcher_icon/
     - assets/data/content.json
 
   #   - images/a_dot_ham.jpeg
