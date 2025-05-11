@@ -65,7 +65,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
         children: [
           Expanded(
             child: Container(
-              height: 48.h,
+              height: 40.h,
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               decoration: BoxDecoration(
                 color: AppColors.containerBackground,
@@ -118,13 +118,13 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
                 context: context,
                 barrierDismissible: true,
                 barrierLabel: "Filter",
-                barrierColor: AppColors.black.withOpacity(0.54),
+                barrierColor: AppColors.black.withAlpha(54),
                 transitionDuration: const Duration(milliseconds: 300),
                 pageBuilder: (_, __, ___) {
                   return Align(
                     alignment: Alignment.topCenter,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 110.h),
+                      padding: EdgeInsets.only(top: 100.h),
                       child: const FilterDialog(),
                     ),
                   );

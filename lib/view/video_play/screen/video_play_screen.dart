@@ -32,7 +32,7 @@ class VideoPlayScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                       height: 200.h,
-                      child: VideoPlayerWidget(videoUrl: state.selectedItem.videoUrl),
+                      child: VideoPlayerWidget(videoUrl: state.selectedItem.videoUrl, videoTitle: state.selectedItem.title,),
                     ),
                     SizedBox(height: 8.h),
                     Expanded(

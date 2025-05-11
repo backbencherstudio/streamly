@@ -43,7 +43,7 @@ class LiveViewInputBar extends StatelessWidget {
           SizedBox(width: 8.w),
           GestureDetector(
             onTap: onHeartTap,
-            child: Icon(Icons.favorite, color: AppColors.primary, size: 26.sp),
+            child: Icon(Icons.favorite, color: AppColors.red, size: 26.sp),
           ),
           SizedBox(width: 12.w),
           GestureDetector(
