@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/config/icons/icons.dart';
 
-
 import '../../../block/bottom_nav/bottom_nav_cubit.dart';
 import '../../../themes/color.dart';
 
@@ -29,26 +28,33 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
             ],
           ),
-          child: Material(
-            type: MaterialType.transparency,
-            child: BottomNavigationBar(
-              currentIndex: selectedIndex,
-              onTap: (index) => context.read<BottomNavCubit>().updateIndex(index),
-              type: BottomNavigationBarType.fixed,
-              showUnselectedLabels: true,
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              selectedItemColor: AppColors.textPurple,
-              unselectedItemColor: AppColors.textPrimary.withAlpha(135),
-              selectedFontSize: 11.sp,
-              unselectedFontSize: 11.sp,
-              items: [
-                _buildNavItem(AppIcons.home, 'Home', selectedIndex == 0),
-                _buildNavItem(AppIcons.live, 'Live', selectedIndex == 1),
-                _buildNavItem(AppIcons.library, 'Library', selectedIndex == 2),
-                _buildNavItem(AppIcons.favorite, 'Favorites', selectedIndex == 3),
-                _buildNavItem(AppIcons.profile, 'Profile', selectedIndex == 4),
-              ],
+          child: Theme(
+            data: Theme.of(context).copyWith(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+            ),
+            child: Material(
+              type: MaterialType.transparency,
+              child: BottomNavigationBar(
+                currentIndex: selectedIndex,
+                onTap: (index) => context.read<BottomNavCubit>().updateIndex(index),
+                type: BottomNavigationBarType.fixed,
+                showUnselectedLabels: true,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                selectedItemColor: AppColors.textPurple,
+                unselectedItemColor: AppColors.textPrimary.withAlpha(135),
+                selectedFontSize: 11.sp,
+                unselectedFontSize: 11.sp,
+                items: [
+                  _buildNavItem(AppIcons.home, 'Home', selectedIndex == 0),
+                  _buildNavItem(AppIcons.live, 'Live', selectedIndex == 1),
+                  _buildNavItem(AppIcons.library, 'Library', selectedIndex == 2),
+                  _buildNavItem(AppIcons.favorite, 'Favorites', selectedIndex == 3),
+                  _buildNavItem(AppIcons.profile, 'Profile', selectedIndex == 4),
+                ],
+              ),
             ),
           ),
         ),
@@ -60,17 +66,25 @@ class CustomBottomNavBar extends StatelessWidget {
     return BottomNavigationBarItem(
       icon: AnimatedContainer(
         duration: Duration(milliseconds: 200),
-        padding: EdgeInsets.only(top: isSelected ? 0 : 2.h),
-        child: Image.asset(
-          iconPath,
-          height: 24.h,
-          color: isSelected ? AppColors.textPurple : AppColors.textPrimary.withAlpha(135),
+        padding: EdgeInsets.only(top: isSelected ? 0 : 0.h),
+        child: Container(
+          decoration: isSelected
+              ? BoxDecoration(
+            color: AppColors.textPurple.withAlpha(50),
+            borderRadius: BorderRadius.circular(50.r),
+          )
+              : null,
+          padding: EdgeInsets.all(10.w),
+          child: Image.asset(
+            iconPath,
+            height: 24.h,
+            color: isSelected
+                ? AppColors.textPurple
+                : AppColors.textPrimary.withAlpha(135),
+          ),
         ),
       ),
       label: label,
     );
   }
 }
-
-
-
