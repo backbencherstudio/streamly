@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../block/comment/comment_bloc.dart';
 import '../../../model/comment/comment.dart';
+import '../../../themes/color.dart';
 
 class CommentTab extends StatefulWidget {
   const CommentTab({Key? key}) : super(key: key);
@@ -28,8 +30,8 @@ class _CommentTabState extends State<CommentTab> {
         children: [
           CircleAvatar(
             radius: 16.r,
-            backgroundColor: Colors.grey,
-            child: Icon(Icons.person, color: Colors.white, size: 18.sp),
+            backgroundColor: AppColors.grey,
+            child: Icon(Icons.person, color: AppColors.textPrimary, size: 18.sp),
           ),
           SizedBox(width: 12.w),
           Expanded(
@@ -38,13 +40,13 @@ class _CommentTabState extends State<CommentTab> {
               children: [
                 Row(
                   children: [
-                    Text(reply.user, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 13.sp)),
+                    Text(reply.user, style: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600, fontSize: 13.sp)),
                     SizedBox(width: 8.w),
-                    Text(reply.time, style: TextStyle(color: Colors.grey, fontSize: 11.sp)),
+                    Text(reply.time, style: TextStyle(color: AppColors.lightGrey, fontSize: 11.sp)),
                   ],
                 ),
                 SizedBox(height: 4.h),
-                Text(reply.text, style: TextStyle(color: Colors.white, fontSize: 13.sp)),
+                Text(reply.text, style: TextStyle(color: AppColors.textPrimary, fontSize: 13.sp)),
               ],
             ),
           ),
@@ -64,8 +66,8 @@ class _CommentTabState extends State<CommentTab> {
             children: [
               CircleAvatar(
                 radius: 18.r,
-                backgroundColor: Colors.grey,
-                child: Icon(Icons.person, color: Colors.white, size: 20.sp),
+                backgroundColor: AppColors.grey,
+                child: Icon(Icons.person, color: AppColors.textPrimary, size: 20.sp),
               ),
               SizedBox(width: 12.w),
               Expanded(
@@ -74,13 +76,13 @@ class _CommentTabState extends State<CommentTab> {
                   children: [
                     Row(
                       children: [
-                        Text(comment.user, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 13.sp)),
+                        Text(comment.user, style: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600, fontSize: 13.sp)),
                         SizedBox(width: 8.w),
-                        Text(comment.time, style: TextStyle(color: Colors.grey, fontSize: 11.sp)),
+                        Text(comment.time, style: TextStyle(color: AppColors.lightGrey, fontSize: 11.sp)),
                       ],
                     ),
                     SizedBox(height: 4.h),
-                    Text(comment.text, style: TextStyle(color: Colors.white, fontSize: 13.sp)),
+                    Text(comment.text, style: TextStyle(color: AppColors.textPrimary, fontSize: 13.sp)),
                     SizedBox(height: 8.h),
                     Row(
                       children: [
@@ -88,9 +90,9 @@ class _CommentTabState extends State<CommentTab> {
                           onTap: () => context.read<CommentBloc>().add(LikeComment(comment.id)),
                           child: Row(
                             children: [
-                              Icon(Icons.thumb_up_alt_outlined, color: Colors.grey, size: 16.sp),
+                              Icon(Icons.thumb_up_alt_outlined, color: AppColors.lightGrey, size: 16.sp),
                               SizedBox(width: 4.w),
-                              Text('${comment.likes}', style: TextStyle(color: Colors.grey, fontSize: 12.sp)),
+                              Text('${comment.likes}', style: TextStyle(color: AppColors.lightGrey, fontSize: 12.sp)),
                             ],
                           ),
                         ),
@@ -99,9 +101,9 @@ class _CommentTabState extends State<CommentTab> {
                           onTap: () => context.read<CommentBloc>().add(DislikeComment(comment.id)),
                           child: Row(
                             children: [
-                              Icon(Icons.thumb_down_alt_outlined, color: Colors.grey, size: 16.sp),
+                              Icon(Icons.thumb_down_alt_outlined, color: AppColors.lightGrey, size: 16.sp),
                               SizedBox(width: 4.w),
-                              Text('${comment.dislikes}', style: TextStyle(color: Colors.grey, fontSize: 12.sp)),
+                              Text('${comment.dislikes}', style: TextStyle(color: AppColors.lightGrey, fontSize: 12.sp)),
                             ],
                           ),
                         ),
@@ -111,7 +113,7 @@ class _CommentTabState extends State<CommentTab> {
                             final replyController = TextEditingController();
                             showModalBottomSheet(
                               context: context,
-                              backgroundColor: const Color(0xFF0B0617),
+                              backgroundColor: AppColors.surface,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(12.r))),
                               builder: (_) {
                                 return Padding(
@@ -121,17 +123,24 @@ class _CommentTabState extends State<CommentTab> {
                                     children: [
                                       TextField(
                                         controller: replyController,
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(color: AppColors.textPrimary),
                                         decoration: InputDecoration(
                                           hintText: 'Write a reply...',
-                                          hintStyle: TextStyle(color: Colors.grey),
+                                          hintStyle: TextStyle(color: AppColors.lightGrey),
                                           filled: true,
-                                          fillColor: const Color(0xFF1A1A2E),
-                                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: BorderSide.none),
+                                          fillColor: AppColors.containerBackground,
+                                          border: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(8.r),
+                                            borderSide: BorderSide.none,
+                                          ),
                                         ),
                                       ),
                                       SizedBox(height: 12.h),
                                       ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: AppColors.primary,
+                                          foregroundColor: AppColors.buttonText,
+                                        ),
                                         onPressed: () {
                                           final replyText = replyController.text.trim();
                                           if (replyText.isNotEmpty) {
@@ -147,7 +156,7 @@ class _CommentTabState extends State<CommentTab> {
                               },
                             );
                           },
-                          child: Text('Reply', style: TextStyle(color: Colors.grey, fontSize: 12.sp)),
+                          child: Text('Reply', style: TextStyle(color: AppColors.lightGrey, fontSize: 12.sp)),
                         ),
                       ],
                     ),
@@ -165,7 +174,7 @@ class _CommentTabState extends State<CommentTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0B0617),
+      backgroundColor: AppColors.surface,
       body: Column(
         children: [
           Expanded(
@@ -187,22 +196,22 @@ class _CommentTabState extends State<CommentTab> {
       bottomNavigationBar: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          color: const Color(0xFF1A1A2E),
+          color: AppColors.containerBackground,
           child: Row(
             children: [
               CircleAvatar(
                 radius: 16.r,
-                backgroundColor: Colors.grey,
-                child: Icon(Icons.person, color: Colors.white, size: 18.sp),
+                backgroundColor: AppColors.grey,
+                child: Icon(Icons.person, color: AppColors.textPrimary, size: 18.sp),
               ),
               SizedBox(width: 12.w),
               Expanded(
                 child: TextField(
                   controller: _controller,
-                  style: TextStyle(color: Colors.white, fontSize: 14.sp),
+                  style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
                   decoration: InputDecoration(
                     hintText: 'Add a public comment...',
-                    hintStyle: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                    hintStyle: TextStyle(color: AppColors.lightGrey, fontSize: 13.sp),
                     border: InputBorder.none,
                   ),
                 ),
@@ -215,7 +224,7 @@ class _CommentTabState extends State<CommentTab> {
                     _controller.clear();
                   }
                 },
-                child: Text('Comment', style: TextStyle(color: Colors.purple, fontSize: 14.sp)),
+                child: Text('Comment', style: TextStyle(color: AppColors.textPurple, fontSize: 14.sp)),
               ),
             ],
           ),

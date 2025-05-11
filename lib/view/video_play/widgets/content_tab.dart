@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:streamly/themes/color.dart';
 import '../../../block/content/content_state.dart';
 import 'content_list.dart';
 
@@ -8,10 +9,10 @@ class ContentTab extends StatelessWidget {
   final ContentLoaded state;
 
   const ContentTab({
-    Key? key,
+    super.key,
     required this.title,
     required this.state,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ContentTab extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.white,
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
             ),

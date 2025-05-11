@@ -14,7 +14,7 @@ import '../widgets/video_tab_view.dart';
 class VideoPlayScreen extends StatelessWidget {
   final bool isEpisode;
 
-  const VideoPlayScreen({Key? key, required this.isEpisode}) : super(key: key);
+  const VideoPlayScreen({super.key, required this.isEpisode});
 
   @override
   Widget build(BuildContext context) {

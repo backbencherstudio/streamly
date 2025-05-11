@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../block/content/content_bloc.dart';
 import '../../../block/content/content_event.dart';
 import '../../../model/content/content_model.dart';
+import '../../../themes/color.dart';
 
 class ContentList extends StatelessWidget {
   final List<ContentItem> items;
@@ -41,7 +43,7 @@ class ContentList extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Icon(Icons.play_circle_fill, size: 32.sp, color: Colors.white70),
+                  Icon(Icons.play_circle_fill, size: 32.sp, color: AppColors.lightGrey),
                 ],
               ),
               SizedBox(width: 12.w),
@@ -52,7 +54,7 @@ class ContentList extends StatelessWidget {
                     Text(
                       item.title,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.textPrimary,
                         fontWeight: FontWeight.bold,
                         fontSize: 14.sp,
                       ),
@@ -60,16 +62,16 @@ class ContentList extends StatelessWidget {
                     if (isPlaying)
                       Text(
                         "Playing",
-                        style: TextStyle(color: Colors.purpleAccent, fontSize: 12.sp),
+                        style: TextStyle(color: AppColors.textPurple, fontSize: 12.sp),
                       ),
                     Text(
                       "2h 32min",
-                      style: TextStyle(color: Colors.white54, fontSize: 12.sp),
+                      style: TextStyle(color: AppColors.lightGrey, fontSize: 12.sp),
                     ),
                   ],
                 ),
               ),
-              Icon(Icons.more_vert, color: Colors.white70, size: 20.sp),
+              Icon(Icons.more_vert, color: AppColors.lightGrey, size: 20.sp),
             ],
           ),
         );
