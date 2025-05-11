@@ -65,7 +65,7 @@ class _SearchBarLibraryState extends State<SearchBarLibrary> {
         children: [
           Expanded(
             child: Container(
-              height: 48.h,
+              height: 40.h,
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               decoration: BoxDecoration(
                 color: AppColors.containerBackground,
