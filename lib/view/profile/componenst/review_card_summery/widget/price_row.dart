@@ -12,7 +12,7 @@ Widget priceRow(String label, String value) {
       ),
       Text(
         value,
-        style: TextStyle(color: Colors.white, fontSize: 14.sp),
+        style: TextStyle(color: Colors.grey, fontSize: 14.sp),
       ),
     ],
   );

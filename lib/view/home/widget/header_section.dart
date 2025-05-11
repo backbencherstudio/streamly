@@ -29,17 +29,22 @@ class HeaderSection extends StatelessWidget {
             children: [
               Expanded(child: SearchWidget()),
               SizedBox(width: 12.w),
-              Container(
-                padding: EdgeInsets.all(8.w),
-                decoration: BoxDecoration(
-                    color: Color(0xff472C2A),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      width: 1,
-                      color: Color(0xff59544d),
-                    )),
-                child: Image.asset(AppIcons.notification,
-                    width: 20.w, height: 20.w),
+              GestureDetector(
+                onTap: (){
+                  context.push(RoutesName.notificationScreen);
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8.w),
+                  decoration: BoxDecoration(
+                      color: Color(0xff472C2A),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        width: 1,
+                        color: Color(0xff59544d),
+                      )),
+                  child: Image.asset(AppIcons.notification,
+                      width: 20.w, height: 20.w),
+                ),
               ),
             ],
           ),

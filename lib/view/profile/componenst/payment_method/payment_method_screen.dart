@@ -4,12 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/config/icons/icons.dart';
 import 'package:streamly/config/images/images.dart';
-import 'package:streamly/themes/color.dart';
+import 'package:streamly/view/profile/componenst/add_new_card/widget/camera_text.dart';
 import 'package:streamly/view/profile/componenst/payment_method/widget/payment_card_tile.dart';
-import 'package:streamly/view/profile/componenst/payment_method/widget/scanner_widget.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/outlined_primary_button.dart';
 import 'package:streamly/widgets/primary_button.dart';
+
 
 class PaymentMethodScreen extends StatefulWidget {
   const PaymentMethodScreen({super.key});
@@ -26,8 +26,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     final result = await Navigator.push<String>(
       context,
       MaterialPageRoute(
-        fullscreenDialog: true,
-        builder: (context) => const BarcodeScannerScreen(),
+        builder: (context) => const ScannerCameraScreen(),
       ),
     );
 
@@ -61,6 +60,22 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       },
                     ),
                     SizedBox(height: 24.h),
+
+                    TextField(
+                      controller: controller,
+                      style: const TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        hintText: 'Scanned text here...',
+                        hintStyle: const TextStyle(color: Colors.grey),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.1),
+                      ),
+                    ),
+
+                    SizedBox(height: 24.h),
                     PaymentTile(
                       title: "PayPal",
                       icon: AppIcons.paypal,
@@ -84,10 +99,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     SizedBox(height: 24.h),
                     OutlinedPrimaryButton(
-                        text: "Add New Card",
-                        onTap: () {
-                          context.push('/addNewCardScreen');
-                        }),
+                      text: "Add New Card",
+                      onTap: () {
+                        context.push('/addNewCardScreen');
+                      },
+                    ),
                     const Spacer(),
                     Row(
                       children: [
@@ -103,7 +119,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           child: PrimaryButton(
                             text: 'Submit',
                             onTap: () {
-                              // Handle submit with selectedMethod
                               context.push('/reviewCardSummeryScreen');
                             },
                             color: const Color(0xff7A25BC),

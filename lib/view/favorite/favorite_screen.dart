@@ -69,7 +69,10 @@ class FavoriteScreen extends StatelessWidget {
                 trailing: AppIcons.search,
               ),
             ),
+            SizedBox(height: 16.h),
             FavoriteHeaderSection(),
+            SizedBox(height: 16.h),
+
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
