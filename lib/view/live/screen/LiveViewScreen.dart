@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../block/live_view/live_view_bloc.dart';
 import '../../../block/live_view/live_view_event.dart';
 import '../../../block/live_view/live_view_state.dart';
+import '../../../themes/color.dart';
 import '../widgets/live_view_body.dart';
 
 class LiveViewScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _LiveViewScreenState extends State<LiveViewScreen> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.background,
         body: SizedBox.expand(
           child: BlocBuilder<LiveViewBloc, LiveViewState>(
             builder: (context, state) {

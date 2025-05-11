@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/config/icons/icons.dart';
+import '../../../themes/color.dart';
 
 class LiveAppBar extends StatelessWidget {
   const LiveAppBar({super.key});
@@ -8,53 +9,54 @@ class LiveAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.w),
       child: TextFormField(
         decoration: InputDecoration(
-          contentPadding:
-          const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
           filled: true,
-          fillColor: const Color(0xff0E0A05),
+          fillColor: AppColors.containerBackground,
           hintText: "Search",
-          hintStyle: const TextStyle(color: Colors.grey),
+          hintStyle: TextStyle(color: AppColors.grey, fontSize: 14.sp),
           prefixIcon: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Image.asset(AppIcons.search, width: 20, height: 20),
+            padding: EdgeInsets.all(12.w),
+            child: Image.asset(AppIcons.search, width: 20.w, height: 20.h),
           ),
           suffixIcon: SizedBox(
-            width: 72,
+            width: 72.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: 8.0),
+                  padding: EdgeInsets.only(right: 8.w),
                   child: Container(
-                    height: 23,
-                    width: 2,
-                    color: Color(0xff9F9D9B),
+                    height: 23.h,
+                    width: 2.w,
+                    color: AppColors.lightGrey,
                   ),
                 ),
-                SizedBox(
-                  width: 8.w,
-                ),
+                SizedBox(width: 8.w),
                 Container(
-                  padding: EdgeInsets.all(4),
+                  padding: EdgeInsets.all(4.w),
                   decoration: BoxDecoration(
-                      color: Color(0xff4B3736), shape: BoxShape.circle),
-                  child: Image.asset(AppIcons.voice, width: 20, height: 20),
+                    color: AppColors.primaryDark,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(AppIcons.voice, width: 20.w, height: 20.h),
                 ),
               ],
             ),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Color(0xff19161D)),
+            borderSide: BorderSide(color: AppColors.surface),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide.none,
           ),
         ),
+        style: TextStyle(color: AppColors.textPrimary, fontSize: 14.sp),
+        cursorColor: AppColors.textPrimary,
       ),
     );
   }
