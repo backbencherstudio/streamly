@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../block/music/music_bloc.dart';
-import '../../../block/music/music_state.dart';
+import '../../../block/view_all/view_all_bloc.dart';
+import '../../../block/view_all/view_all_state.dart';
 import '../../../model/music/music_model.dart';
 import '../../../themes/color.dart';
 import '../../library/widgets/search_bar.dart';
 
-class ViewAllMusic extends StatelessWidget {
-  const ViewAllMusic({super.key});
+class ViewAllScreen extends StatelessWidget {
+  const ViewAllScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MusicBloc(),
+      create: (context) => ViewAllBloc(),
       child: Scaffold(
         backgroundColor: AppColors.background,
         body: SafeArea(
@@ -22,14 +21,15 @@ class ViewAllMusic extends StatelessWidget {
             children: [
               const SearchBarLibrary(),
               Expanded(
-                child: BlocBuilder<MusicBloc, MusicState>(
+                child: BlocBuilder<ViewAllBloc, ViewAllState>(
                   builder: (context, state) {
-                    if (state is MusicLoading) {
+                    if (state is ViewAllLoading) {
                       return const Center(
-                        child:
-                        CircularProgressIndicator(color: AppColors.primary),
+                        child: CircularProgressIndicator(
+                          color: AppColors.primary,
+                        ),
                       );
-                    } else if (state is MusicLoaded) {
+                    } else if (state is ViewAllLoaded) {
                       return GridView.builder(
                         padding: EdgeInsets.all(12.w),
                         itemCount: state.musics.length,
@@ -44,21 +44,21 @@ class ViewAllMusic extends StatelessWidget {
                           return _MusicItem(
                             music: music,
                             onTap: () {
-                              // You can replace this with navigation or player logic
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text('Tapped: ${music.title}')),
-
                               );
                             },
                           );
                         },
                       );
-                    } else if (state is MusicError) {
+                    } else if (state is ViewAllError) {
                       return Center(
                         child: Text(
                           state.message,
-                          style:
-                          TextStyle(color: AppColors.red, fontSize: 14.sp),
+                          style: TextStyle(
+                            color: AppColors.red,
+                            fontSize: 14.sp,
+                          ),
                         ),
                       );
                     } else {
@@ -94,49 +94,36 @@ class _MusicItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12.r),
-                  child: Image.network(
-                    music.thumbnailUrl,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.network(
+                music.thumbnailUrl,
+                width: 172.w,
+                height: 120.h,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  width: 172.w,
+                  height: 120.h,
+                  color: AppColors.grey,
+                  child: const Icon(Icons.error, color: AppColors.red),
+                ),
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return SizedBox(
                     width: 172.w,
                     height: 120.h,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      width: 172.w,
-                      height: 120.h,
-                      color: AppColors.grey,
-                      child: Icon(Icons.error, color: AppColors.red),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primary,
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes!
+                            : null,
+                      ),
                     ),
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return SizedBox(
-                        width: 172.w,
-                        height: 120.h,
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            color: AppColors.primary,
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes!
-                                : null,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Positioned.fill(
-                  child: Center(
-                    child: Icon(
-                      Icons.play_circle_fill,
-                      size: 36.sp,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                ),
-              ],
+                  );
+                },
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(8.w),

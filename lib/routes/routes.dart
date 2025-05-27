@@ -25,4 +25,5 @@ class RoutesName {
   static const String editProfileScreen = '/editProfileScreen';
   static const String profileManagementScreen = '/profileManagementScreen';
   static const String viewAllMusic = '/viewAllMusic';
+  static const String viewAll = '/viewAll';
 }
