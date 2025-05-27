@@ -23,18 +23,18 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   final TextEditingController controller = TextEditingController();
 
   Future<void> _openFullScreenScanner(BuildContext context) async {
-    final result = await Navigator.push<String>(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const ScannerCameraScreen(),
-      ),
-    );
-
-    if (result != null && mounted) {
-      setState(() {
-        controller.text = result;
-      });
-    }
+    // final result = await Navigator.push<String>(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => const ScannerCameraScreen(),
+    //   ),
+    // );
+    //
+    // if (result != null && mounted) {
+    //   setState(() {
+    //     controller.text = result;
+    //   });
+    // }
   }
 
   @override

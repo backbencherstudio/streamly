@@ -119,16 +119,16 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
   final TextEditingController _cvvController = TextEditingController();
 
   Future<void> _openScanner() async {
-    final result = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const ScannerCameraScreen(),
-      ),
-    );
+    // final result = await Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => const ScannerCameraScreen(),
+    //   ),
+    // );
 
-    if (result != null && result is String) {
-      _extractCardData(result);
-    }
+    // if (result != null && result is String) {
+    //   _extractCardData(result);
+    // }
   }
 
   void _extractCardData(String scannedText) {
