@@ -1,4 +1,4 @@
-enum TabFilter { all, popular, following }
+enum TabFilter { all, LiveSports, popular }
 
 abstract class LiveEvent {}
 

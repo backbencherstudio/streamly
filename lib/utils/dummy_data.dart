@@ -204,7 +204,7 @@ const dummyLiveData = [
     "name": "Lorri Warf",
     "followers": "12k Followers",
     "views": "1M",
-    "image": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLCOpNz5mH1MpgYGnvZA8XwD1n1PJ-Zkd6eA&s"
   },
   {
     "id": 2,
@@ -225,14 +225,14 @@ const dummyLiveData = [
     "name": "Iva & Ryan",
     "followers": "10k Followers",
     "views": "2.8k",
-    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+    "image": "https://marketplace.canva.com/EAFIarSHhpo/2/0/800w/canva-red-%26-blue-yellow-minimalist-sport-breaking-news-live-youtube-thumbnail-Z95F7TYFX2E.jpg"
   },
   {
     "id": 1,
     "name": "Lorri Warf",
     "followers": "12k Followers",
     "views": "1M",
-    "image": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+    "image": "https://assets2.cbsnewsstatic.com/hub/i/r/2021/03/17/8943de62-3738-44bd-bac6-ba51d166b0c2/thumbnail/640x382/c692a4ad08ac58d766d8f07353bf059e/29-fave-tv-family-feud.jpg?v=48f078ae8a74a1412614b0db6f935e48"
   },
   {
     "id": 2,
@@ -253,7 +253,7 @@ const dummyLiveData = [
     "name": "Iva & Ryan",
     "followers": "10k Followers",
     "views": "2.8k",
-    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+    "image": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/262241418/original/94dca82578004690a903245c3629de2d671699a6/design-an-eye-catching-football-thumbnail-for-your-youtube-football-in-1-in-hour.jpg"
   }
 ];
 
