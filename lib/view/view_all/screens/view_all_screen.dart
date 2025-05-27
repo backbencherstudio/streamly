@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../block/view_all/view_all_bloc.dart';
 import '../../../block/view_all/view_all_state.dart';
 import '../../../model/music/music_model.dart';
+import '../../../routes/routes.dart';
 import '../../../themes/color.dart';
 import '../../library/widgets/search_bar.dart';
 
@@ -44,9 +46,7 @@ class ViewAllScreen extends StatelessWidget {
                           return _MusicItem(
                             music: music,
                             onTap: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Tapped: ${music.title}')),
-                              );
+                              context.push(RoutesName.contentDetailScreen);
                             },
                           );
                         },

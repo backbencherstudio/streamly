@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:streamly/routes/routes.dart';
 
 import '../../../block/music/music_bloc.dart';
 import '../../../block/music/music_state.dart';
@@ -44,11 +46,7 @@ class ViewAllMusic extends StatelessWidget {
                           return _MusicItem(
                             music: music,
                             onTap: () {
-                              // You can replace this with navigation or player logic
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Tapped: ${music.title}')),
-
-                              );
+                              context.push(RoutesName.contentDetailScreen);
                             },
                           );
                         },

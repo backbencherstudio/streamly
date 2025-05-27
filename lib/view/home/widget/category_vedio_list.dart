@@ -67,7 +67,7 @@ class CategorySectionForHome extends StatelessWidget {
           ),
           if (!hideViewAll)
             TextButton(
-              onPressed: () => context.push(RoutesName.filterResult),
+              onPressed: () => context.push(RoutesName.viewAll),
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
               ),
