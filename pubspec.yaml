@@ -49,7 +49,7 @@ dependencies:
   dio: ^5.8.0+1
   path_provider: ^2.1.5
   flutter_downloader: ^1.12.0
-  google_mlkit_text_recognition: ^0.15.0
+#  google_mlkit_text_recognition: ^0.15.0
 
 
 
