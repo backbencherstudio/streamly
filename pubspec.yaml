@@ -77,6 +77,7 @@ flutter:
     - assets/icons/
     - assets/launcher_icon/
     - assets/data/content.json
+    - assets/data/music.json
 
   #   - images/a_dot_ham.jpeg
 

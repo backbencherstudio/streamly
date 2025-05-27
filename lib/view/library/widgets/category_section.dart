@@ -29,7 +29,7 @@ class CategorySection extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(left: 12.w),
                   child: GestureDetector(
-                    onTap: () => context.push(RoutesName.contentDetailScreen),
+                    onTap: () => isPopularGenres? context.push(RoutesName.viewAllMusic) : context.push(RoutesName.contentDetailScreen),
                     child: MovieCard(
                       movie: movie,
                       isLarge: isComingSoon,
