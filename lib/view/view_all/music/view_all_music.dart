@@ -3,13 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/view/auth/forgot_password/set_new_password_screen.dart';
 
 import '../../../block/music/music_bloc.dart';
 import '../../../block/music/music_state.dart';
 import '../../../model/music/music_model.dart';
 import '../../../themes/color.dart';
-import '../../home/widget/header_section.dart';
 import '../../library/widgets/search_bar.dart';
 
 class ViewAllMusic extends StatelessWidget {
@@ -30,8 +28,7 @@ class ViewAllMusic extends StatelessWidget {
                   builder: (context, state) {
                     if (state is MusicLoading) {
                       return const Center(
-                        child:
-                            CircularProgressIndicator(color: AppColors.primary),
+                        child: CircularProgressIndicator(color: AppColors.primary),
                       );
                     } else if (state is MusicLoaded) {
                       return GridView.builder(
@@ -41,7 +38,7 @@ class ViewAllMusic extends StatelessWidget {
                           crossAxisCount: 2,
                           mainAxisSpacing: 12.h,
                           crossAxisSpacing: 12.w,
-                          childAspectRatio: 16 / 12,
+                          childAspectRatio: 172 / 168, // ← fixed to match true item height
                         ),
                         itemBuilder: (context, index) {
                           final music = state.musics[index];
@@ -52,8 +49,7 @@ class ViewAllMusic extends StatelessWidget {
                       return Center(
                         child: Text(
                           state.message,
-                          style:
-                              TextStyle(color: AppColors.red, fontSize: 14.sp),
+                          style: TextStyle(color: AppColors.red, fontSize: 14.sp),
                         ),
                       );
                     } else {
@@ -77,68 +73,71 @@ class _MusicItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: AppColors.surface,
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.r),
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(12.r),
       ),
-      child: Stack(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start, // Align text to start
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.r),
-            child: Image.network(
-              music.thumbnailUrl,
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: double.infinity,
-              errorBuilder: (context, error, stackTrace) => Container(
-                color: AppColors.grey,
-                child: Icon(Icons.error, color: AppColors.red),
-              ),
-              loadingBuilder: (context, child, loadingProgress) {
-                if (loadingProgress == null) return child;
-                return Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.primary,
-                    value: loadingProgress.expectedTotalBytes != null
-                        ? loadingProgress.cumulativeBytesLoaded /
-                            loadingProgress.expectedTotalBytes!
-                        : null,
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.r),
+                child: Image.network(
+                  music.thumbnailUrl,
+                  width: 172.w,
+                  height: 120.h,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    width: 172.w,
+                    height: 120.h,
+                    color: AppColors.grey,
+                    child: Icon(Icons.error, color: AppColors.red),
                   ),
-                );
-              },
-            ),
-          ),
-          const Positioned.fill(
-            child: Center(
-              child: Icon(
-                Icons.play_circle_fill,
-                size: 48,
-                color: AppColors.textPrimary,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return SizedBox(
+                      width: 172.w,
+                      height: 120.h,
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.primary,
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                              loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
-            ),
+              Positioned.fill(
+                child: Center(
+                  child: Icon(
+                    Icons.play_circle_fill,
+                    size: 36.sp,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+              ),
+            ],
           ),
-          Positioned(
-            left: 8.w,
-            bottom: 8.h,
-            right: 8.w,
+          Padding(
+            padding: EdgeInsets.all(8.w),
             child: Text(
               music.title,
               style: TextStyle(
-                fontWeight: FontWeight.bold,
                 fontSize: 14.sp,
-                color: AppColors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 6.r,
-                    color: AppColors.black,
-                    offset: Offset(0.w, 0.h),
-                  )
-                ],
+                fontWeight: FontWeight.w600,
+                color: AppColors.textPrimary,
               ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+              maxLines: 1, // ✅ Only one line
+              overflow: TextOverflow.ellipsis, // ✅ Show "..."
+              textAlign: TextAlign.start, // ✅ Align left
             ),
           ),
         ],
@@ -146,3 +145,4 @@ class _MusicItem extends StatelessWidget {
     );
   }
 }
+
