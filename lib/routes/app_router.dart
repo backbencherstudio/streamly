@@ -5,6 +5,8 @@ import 'package:streamly/view/library/screen/library_screen.dart';
 import 'package:streamly/view/live/screen/LiveViewScreen.dart';
 import 'package:streamly/view/search_result/screens/search_result.dart';
 import 'package:streamly/view/video_play/screen/video_play_screen.dart';
+import 'package:streamly/view/view_all/music/view_all_music.dart';
+import 'package:streamly/view/view_all/screens/view_all_screen.dart';
 import '../view/auth/forgot_password/forgot_password_screen.dart';
 import '../view/auth/forgot_password/reset_success_screen.dart';
 import '../view/auth/forgot_password/set_new_password_screen.dart';
@@ -129,6 +131,14 @@ class AppRouter {
       GoRoute(
         path: RoutesName.profileManagementScreen,
         builder: (context, state) => ProfileManagementScreen(),
+      ),
+      GoRoute(
+        path: RoutesName.viewAllMusic,
+        builder: (context, state) => ViewAllMusic(),
+      ),
+      GoRoute(
+        path: RoutesName.viewAll,
+        builder: (context, state) => ViewAllScreen(),
       ),
     ],
   );
