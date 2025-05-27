@@ -24,7 +24,7 @@ class LiveBloc extends Bloc<LiveEvent, LiveState> {
       case TabFilter.popular:
         filtered = _allUsers.where((u) => u.views.contains('M')).toList();
         break;
-      case TabFilter.following:
+      case TabFilter.LiveSports:
         filtered = _allUsers.where((u) => u.name.contains('Ryan')).toList();
         break;
       case TabFilter.all:
