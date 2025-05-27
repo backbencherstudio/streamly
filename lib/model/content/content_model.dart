@@ -3,12 +3,14 @@ class ContentItem {
   final String title;
   final String videoUrl;
   final String thumbnailUrl;
+  final String contentType;
 
   ContentItem({
     required this.id,
     required this.title,
     required this.videoUrl,
     required this.thumbnailUrl,
+    required this.contentType,
   });
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
@@ -17,6 +19,7 @@ class ContentItem {
       title: json['title'],
       videoUrl: json['videoUrl'],
       thumbnailUrl: json['thumbnailUrl'],
+      contentType : json['contentType'],
     );
   }
 }

@@ -3,11 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../model/movie/movie_model.dart';
 import '../../../themes/color.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../model/movie/movie_model.dart';
+import '../../../themes/color.dart';
+
 class MovieCard extends StatelessWidget {
   final Movie movie;
   final bool isLarge;
   final bool isSquare;
-  final IconData? iconData;
+  final String? iconAsset;
   final bool darkOverlay;
 
   const MovieCard({
@@ -15,7 +20,7 @@ class MovieCard extends StatelessWidget {
     required this.movie,
     this.isLarge = false,
     this.isSquare = false,
-    this.iconData,
+    this.iconAsset,
     this.darkOverlay = false,
   }) : super(key: key);
 
@@ -52,28 +57,47 @@ class MovieCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                 ),
-              if (isSquare && iconData != null)
-                Icon(
-                  iconData,
-                  color: AppColors.white,
-                  size: 32.sp,
+              if (isSquare && iconAsset != null)
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      iconAsset!,
+                      height: 32.sp,
+                      width: 32.sp,
+                      color: AppColors.white,
+                    ),
+                    Text(
+                      movie.title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: AppColors.textPrimary,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ),
             ],
           ),
-          SizedBox(height: 4.h),
-          Text(
-            movie.title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColors.textPrimary,
-              fontSize: isSquare ? 14.sp : 12.sp,
-              fontWeight: isSquare ? FontWeight.w500 : FontWeight.normal,
+          SizedBox(height: 8.h),
+          if (iconAsset == null)
+            Text(
+              movie.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AppColors.textPrimary,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
         ],
       ),
     );
   }
 }
+

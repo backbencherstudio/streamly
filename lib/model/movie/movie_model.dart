@@ -20,4 +20,20 @@ class Movie {
     rating: json['rating']?.toDouble(),
     releaseDate: json['releaseDate'],
   );
+
+  Movie copyWith({
+    int? id,
+    String? title,
+    String? posterUrl,
+    double? rating,
+    String? releaseDate,
+  }) {
+    return Movie(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      posterUrl: posterUrl ?? this.posterUrl,
+      rating: rating ?? this.rating,
+      releaseDate: releaseDate ?? this.releaseDate,
+    );
+  }
 }

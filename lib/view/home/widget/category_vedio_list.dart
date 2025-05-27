@@ -6,6 +6,7 @@ import '../../../routes/routes.dart';
 import '../../../themes/color.dart';
 import '../../library/widgets/movie_card.dart';
 
+
 class CategorySectionForHome extends StatelessWidget {
   final Category category;
 
@@ -14,7 +15,7 @@ class CategorySectionForHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isComingSoon = category.title.toLowerCase().contains("coming soon");
-    final bool isPopularGenres = category.title.toLowerCase() == "popular genres";
+    final bool isPopularGenres = category.title.toLowerCase() == "popular categories";
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,12 +30,14 @@ class CategorySectionForHome extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(left: 12.w),
                   child: GestureDetector(
-                    onTap: () => context.push(RoutesName.contentDetailScreen),
+                    onTap: () => isPopularGenres
+                        ? context.push(RoutesName.viewAllMusic)
+                        : context.push(RoutesName.contentDetailScreen),
                     child: MovieCard(
                       movie: movie,
                       isLarge: isComingSoon,
                       isSquare: isPopularGenres,
-                      iconData: isPopularGenres ? _getGenreIcon(movie.title) : null,
+                      iconAsset: isPopularGenres ? _getGenreAsset(movie.title) : null,
                       darkOverlay: isPopularGenres,
                       key: ValueKey(movie.title),
                     ),
@@ -82,16 +85,16 @@ class CategorySectionForHome extends StatelessWidget {
     );
   }
 
-  IconData _getGenreIcon(String title) {
+  String _getGenreAsset(String title) {
     switch (title.toLowerCase()) {
+      case "music videos":
+        return 'assets/icons/music_videos.png';
       case "tv shows":
-        return Icons.mic;
+        return 'assets/icons/tv_shows.png';
       case "movies":
-        return Icons.movie;
-      case "streamly original":
-        return Icons.play_circle_filled;
+        return 'assets/icons/movies.png';
       default:
-        return Icons.category;
+        return 'assets/icons/movies.png';
     }
   }
 }

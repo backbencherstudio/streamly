@@ -8,43 +8,29 @@ import '../model/search_result/media_item.dart';
 const dummyJson = {
   "categories": [
     {
-      "title": "Popular Genres",
+      "title": "Popular Categories",
       "movies": [
         {
           "id": 1,
-          "title": "The Last Frontier",
-          "posterUrl": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+          "title": "Music Videos",
+          "posterUrl": "https://img.freepik.com/premium-psd/neon-poster-template-electronic-music-with-female-dj_444361-510.jpg",
           "rating": 7.8,
           "releaseDate": "2025-04-20"
         },
         {
           "id": 2,
-          "title": "City of Shadows",
-          "posterUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+          "title": "TV Shows",
+          "posterUrl": "https://img.freepik.com/free-vector/hand-drawn-talk-show-background_23-2149981113.jpg?semt=ais_hybrid&w=740",
           "rating": 6.5,
           "releaseDate": "2025-03-11"
         },
         {
           "id": 7,
-          "title": "Echoes of Eternity",
-          "posterUrl": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+          "title": "Movies",
+          "posterUrl": "https://i0.wp.com/currentkick.com/wp-content/uploads/2022/03/windfall-review-netflix-thumbnail.jpg?fit=600%2C338&ssl=1",
           "rating": 8.1,
           "releaseDate": "2025-05-01"
         },
-        {
-          "id": 13,
-          "title": "Battlefield 2025",
-          "posterUrl": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg",
-          "rating": 6.9,
-          "releaseDate": "2025-04-10"
-        },
-        {
-          "id": 14,
-          "title": "Armageddon: Multiverse",
-          "posterUrl": "https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg",
-          "rating": 7.2,
-          "releaseDate": "2025-04-15"
-        }
       ]
     },
     {
@@ -206,7 +192,8 @@ const dummyJson = {
           "releaseDate": "2025-08-05"
         }
       ]
-    }
+    },
+
   ]
 };
 
