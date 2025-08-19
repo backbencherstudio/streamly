@@ -3,6 +3,8 @@ import 'package:streamly/data/bloc/auth/login/login_event.dart';
 import 'package:streamly/data/bloc/auth/login/login_state.dart';
 import 'package:streamly/data/repository/auth/login/login_repository.dart';
 
+import '../../../../core/services/token_storage.dart';
+
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final LoginRepository loginRepository;
 
@@ -14,12 +16,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(LoginLoading());
 
     try {
-      final isSuccess = await loginRepository.login(event.email, event.password);
+      final token = await loginRepository.login(event.email, event.password);
 
-      if (isSuccess) {
+      if (token != null) {
+        if (event.rememberMe) {
+          await loginRepository.tokenStorage.saveToken(token);
+        }
         emit(LoginSuccess());
       } else {
-        emit(LoginFailure(error: 'Failed to sign up'));
+        emit(LoginFailure(error: 'Failed to login'));
       }
     } catch (error) {
       emit(LoginFailure(error: error.toString()));

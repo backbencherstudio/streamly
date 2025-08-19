@@ -8,6 +8,7 @@ import 'package:streamly/widgets/primary_button.dart';
 
 import '../../core/constants/icons/icons.dart';
 import '../../core/routes/routes.dart';
+import '../../core/services/token_storage.dart';
 import '../../core/themes/color.dart';
 
 class ProfileManagementScreen extends StatefulWidget {
@@ -22,6 +23,32 @@ class _ProfileManagementScreenState extends State<ProfileManagementScreen> {
   bool isKidsMode = false;
   String selectedLanguage = 'English';
   String selectedPlan = 'Free';
+
+  void logout() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: AppColors.background,
+            title: const Text("Logout", style: TextStyle(color: Colors.white)),
+            content: const Text("Are you sure you want to logout?",
+                style: TextStyle(color: Colors.white)),
+            actions: [
+              OutlinedButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text("Cancel", style: TextStyle(color: Colors.white))),
+              OutlinedButton(
+                  onPressed: () async {
+                    final tokenStorage = TokenStorage();
+                    await tokenStorage.clearToken();
+                    context.push(RoutesName.loginScreen);
+                    Navigator.pop(context);
+                  },
+                  child: Text("Logout", style: TextStyle(color: Colors.white))),
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -168,10 +195,9 @@ class _ProfileManagementScreenState extends State<ProfileManagementScreen> {
               ),
 
               PrimaryButton(
-                  text: 'Log Out',
-                  onTap: () {
-                    context.push(RoutesName.loginScreen);
-                  })
+                text: 'Log Out',
+                onTap: logout,
+              ),
             ],
           ),
         ),

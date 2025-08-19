@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/images/images.dart';
 import '../../core/routes/routes.dart';
+import '../../core/services/token_storage.dart';
 import '../../core/themes/color.dart';
 import '../../widgets/outlined_primary_button.dart';
 import '../../widgets/primary_button.dart';
@@ -12,6 +13,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TokenStorage tokenStorage = TokenStorage();
     return Scaffold(
       body: SizedBox.expand(
         child: Stack(
@@ -47,8 +49,7 @@ class SplashScreen extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text:
-                                'and exclusives, tailored for every entertainment lover!',
+                            text: 'and exclusives, tailored for every entertainment lover!',
                             style: TextStyle(
                               color: AppColors.textPrimary,
                               fontWeight: FontWeight.w500,
@@ -64,13 +65,21 @@ class SplashScreen extends StatelessWidget {
                     /// Primary CTA Button
                     PrimaryButton(
                       text: 'Get Started',
-                      onTap: () {
-                        context.go('/navigationRoot');
+                      onTap: () async {
+                        final token = await tokenStorage.getToken();
+                        if (token != null) {
+                          context.go(RoutesName.navigationRoot);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Please login first!!!'),
+                            ),
+                          );
+                          context.go(RoutesName.loginScreen);
+                        }
                       },
                     ),
-
                     SizedBox(height: 16.h),
-
                     /// Secondary Button
                     OutlinedPrimaryButton(
                       text: 'Log in',
