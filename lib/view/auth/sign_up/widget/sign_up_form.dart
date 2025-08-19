@@ -41,7 +41,7 @@ class _SignUpFormState extends State<SignUpForm> {
               content: Text('Register Successfully'),
             ),
           );
-          context.go(RoutesName.navigationRoot);
+          context.go(RoutesName.loginScreen);
         } else if (state is SignUpFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
