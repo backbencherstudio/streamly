@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:streamly/data/bloc/auth/getMe/get_me_bloc.dart';
 import 'package:streamly/data/bloc/auth/login/login_bloc.dart';
 import 'package:streamly/data/bloc/auth/rememberMe/remember_me_cubit.dart';
 import 'package:streamly/data/bloc/auth/sign_up/sign_up_bloc.dart';
 import 'package:streamly/data/repository/auth/login/login_repository.dart';
 import 'package:streamly/data/repository/auth/sign_up/sign_up_repository.dart';
+import 'package:streamly/data/repository/auth/user/user_repository.dart';
 import 'core/routes/app_router.dart';
 import 'core/themes/themes.dart';
 import 'data/bloc/bottom_nav/bottom_nav_cubit.dart';
@@ -36,6 +38,7 @@ class AppWrapper extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => SignUpBloc(signUpRepository: SignUpRepository())),
         BlocProvider(create: (_) => LoginBloc(loginRepository: LoginRepository())),
+        BlocProvider(create: (_) => GetMeBloc(userRepository: UserRepository())),
         BlocProvider(create: (_) => RememberMeCubit()),
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),

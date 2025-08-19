@@ -86,7 +86,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
+            child: Image.asset(AppImages.background, fit: BoxFit.cover),
           ),
           Positioned.fill(
             child: Padding(

@@ -29,10 +29,7 @@ class _SettingScreenState extends State<SettingScreen> {
         children: [
           /// Background
           Positioned.fill(
-            child: SvgPicture.asset(
-              AppImages.background,
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset(AppImages.background, fit: BoxFit.cover),
           ),
           Positioned.fill(
             child: Padding(
