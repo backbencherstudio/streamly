@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/data/bloc/auth/login/login_bloc.dart';
 import 'package:streamly/data/bloc/auth/login/login_event.dart';
 import 'package:streamly/data/bloc/auth/login/login_state.dart';
+import 'package:streamly/data/bloc/auth/rememberMe/remember_me_cubit.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/themes/color.dart';
@@ -72,7 +73,16 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               offset: Offset(-8.w, 0),
               child: Row(
                 children: [
-                  Checkbox(value: true, onChanged: (value) {}),
+                  BlocBuilder<RememberMeCubit, bool>(
+                    builder: (context, rememberMe) {
+                      return Checkbox(
+                        value: rememberMe,
+                        onChanged: (value) {
+                          context.read<RememberMeCubit>().toggleCheckbox(value!);
+                        },
+                      );
+                    }
+                  ),
                   Transform.translate(
                     offset: Offset(-8.w, 0),
                     child: Text(
@@ -127,6 +137,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   context.read<LoginBloc>().add(LoginSubmitEvent(
                     email: email,
                     password: password,
+                    rememberMe: context.read<RememberMeCubit>().state,
                   ));
                 }
               },
