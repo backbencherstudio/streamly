@@ -36,7 +36,7 @@ class NavigationRoot extends StatelessWidget {
           context.go(RoutesName.loginScreen);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Something went wrong. Please login again'),
+              content: Text('Please login with remember me again'),
             ),
           );
         }

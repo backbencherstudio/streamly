@@ -19,6 +19,7 @@ class LoginRepository {
       if (response.statusCode == 200 || response.statusCode == 201) {
         final token = response.data['token'];
         if (token != null) {
+          await tokenStorage.saveToken(token);
           debugPrint('auth token: $token');
           return token;
         }

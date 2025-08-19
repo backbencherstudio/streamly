@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/view/auth/login/widget/login_form_widget.dart';
 import 'package:streamly/view/auth/login/widget/social_login_option.dart';
