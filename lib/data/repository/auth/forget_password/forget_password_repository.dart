@@ -1,34 +1,26 @@
-import 'package:flutter/material.dart';
-import 'package:streamly/core/utils/api_end_point.dart';
 import '../../../../core/services/api_services.dart';
 import '../../../../core/services/token_storage.dart';
+import '../../../../core/utils/api_end_point.dart';
 
-class LoginRepository {
+class ForgetPasswordRepository {
   final ApiService apiService = ApiService();
   final TokenStorage tokenStorage = TokenStorage();
 
-  Future<String?> login(String email, String password) async {
+  Future<bool> forgetPassword(String email) async {
     final data = {
       'email': email,
-      'password': password,
     };
 
     try {
-      final response = await apiService.post(ApiEndPoint.login, data: data);
+      final response = await apiService.post(ApiEndPoint.forget_password, data: data);
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        final token = response.data['token'];
-        if (token != null) {
-          await tokenStorage.saveToken(token);
-          debugPrint('auth token: $token');
-          return token;
-        }
+        return true;
       } else {
         throw Exception('Failed to login: ${response.statusCode}');
       }
     } catch (error) {
       throw Exception("Failed to login: $error");
     }
-    return null;
   }
 }

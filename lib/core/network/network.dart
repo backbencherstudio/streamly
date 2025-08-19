@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../services/reset_token_storage.dart';
 import '../services/token_storage.dart';
 import '../utils/api_end_point.dart';
 
@@ -25,8 +26,14 @@ class Network {
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         final token = await TokenStorage().getToken();
+        final refreshToken = await ResetTokenStorage().getToken();
         print('Injected Token: $token');
-        if (token != null) {
+        print('Injected Reset Token: $refreshToken');
+        if (token != null && refreshToken == null) {
+          options.headers['Authorization'] = 'Bearer $token';
+        } else if (refreshToken != null) {
+          options.headers['Authorization'] = 'Bearer $refreshToken';
+        } else {
           options.headers['Authorization'] = 'Bearer $token';
         }
         return handler.next(options);
