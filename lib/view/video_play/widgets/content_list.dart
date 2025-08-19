@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../block/content/content_bloc.dart';
-import '../../../block/content/content_event.dart';
-import '../../../model/content/content_model.dart';
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/content/content_bloc.dart';
+import '../../../data/bloc/content/content_event.dart';
+import '../../../data/model/content/content_model.dart';
+
 
 class ContentList extends StatelessWidget {
   final List<ContentItem> items;

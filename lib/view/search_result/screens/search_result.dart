@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:streamly/themes/color.dart';
-
-import '../../../block/library_bloc/library_bloc.dart';
-import '../../../block/library_bloc/library_event.dart';
-import '../../../block/library_bloc/library_state.dart';
-import '../../../routes/routes.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/library_bloc/library_bloc.dart';
+import '../../../data/bloc/library_bloc/library_event.dart';
+import '../../../data/bloc/library_bloc/library_state.dart';
 import '../../filter_result/widgets/movie_category_list.dart';
 import '../../library/widgets/search_bar.dart';
 import '../../library/widgets/search_suggestion_widget.dart';

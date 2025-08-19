@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../config/icons/icons.dart';
-import '../../../../../config/images/images.dart';
-import '../../../../../themes/color.dart';
+
+import '../../../../../core/constants/icons/icons.dart';
+import '../../../../../core/themes/color.dart';
 
 class StorageList extends StatefulWidget {
   const StorageList({super.key});

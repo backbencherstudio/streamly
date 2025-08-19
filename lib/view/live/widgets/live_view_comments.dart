@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../model/live_view/live_view_model.dart';
+
+import '../../../data/model/live_view/live_view_model.dart';
 
 class LiveViewComments extends StatelessWidget {
   final List<LiveComment> comments;

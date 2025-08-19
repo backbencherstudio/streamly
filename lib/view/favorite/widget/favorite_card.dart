@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:streamly/routes/routes.dart';
-import 'package:streamly/themes/color.dart';
+
+
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
 
 class FavoriteCard extends StatelessWidget {
   final Map<String, dynamic> data;

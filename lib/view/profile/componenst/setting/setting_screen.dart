@@ -6,8 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/view/profile/componenst/setting/widget/setting_title.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/primary_button.dart';
-import '../../../../config/images/images.dart';
-import '../../../../themes/color.dart';
+
+import '../../../../core/constants/images/images.dart';
+import '../../../../core/themes/color.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});

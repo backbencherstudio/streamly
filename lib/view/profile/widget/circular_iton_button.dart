@@ -1,9 +1,8 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
 
 Widget circularIconButton(String iconPath, {VoidCallback? onTap}) {
   return InkWell(

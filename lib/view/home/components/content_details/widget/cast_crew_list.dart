@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/view/home/components/content_details/widget/person_card.dart';
 
-import '../../../../../model/content_details/person.dart';
+import '../../../../../data/model/content_details/person.dart';
 
 class CastCrewList extends StatelessWidget {
   final List<Person> people;

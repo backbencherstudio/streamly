@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../themes/color.dart';
+
+import '../../../core/themes/color.dart';
 
 class LiveViewInputBar extends StatelessWidget {
   final TextEditingController commentController;

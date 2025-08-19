@@ -4,8 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/primary_button.dart';
-import '../../../config/images/images.dart';
-import '../../../themes/color.dart';
+
+import '../../../core/constants/images/images.dart';
+import '../../../core/themes/color.dart';
 import '../../../widgets/custom_text_field.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {

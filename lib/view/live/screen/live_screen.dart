@@ -3,12 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/view/live/widgets/live_card_grid.dart';
 import 'package:streamly/view/live/widgets/live_tab_bar.dart';
-
-import '../../../block/live/live_bloc.dart';
-import '../../../block/live/live_event.dart';
-import '../../../block/live/live_state.dart';
-import '../../../model/live/live_model.dart';
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/live/live_bloc.dart';
+import '../../../data/bloc/live/live_event.dart';
+import '../../../data/bloc/live/live_state.dart';
 import '../app_bar/live_app_bar.dart';
 
 

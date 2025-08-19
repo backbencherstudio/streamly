@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:streamly/config/icons/icons.dart';
-import 'package:streamly/routes/routes.dart';
-import 'package:streamly/themes/color.dart';
-import '../../../config/images/images.dart';
+import '../../../core/constants/icons/icons.dart';
+import '../../../core/constants/images/images.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
 import '../../../widgets/search_widget.dart';
 
 class HeaderSection extends StatelessWidget {

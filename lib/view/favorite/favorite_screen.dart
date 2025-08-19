@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/favorite/widget/favorite_card.dart';
 import 'package:streamly/view/favorite/widget/favorite_header_section.dart';
-import '../../config/icons/icons.dart';
-import '../../config/images/images.dart';
+
+import '../../core/constants/icons/icons.dart';
+import '../../core/constants/images/images.dart';
+import '../../core/themes/color.dart';
 import '../../widgets/custom_nab_ver.dart';
 
 class FavoriteScreen extends StatelessWidget {

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/widgets/outlined_primary_button.dart';
-import '../../../../../themes/color.dart';
+
+import '../../../../../core/themes/color.dart';
 
 class StorageBottomSection extends StatefulWidget {
   const StorageBottomSection({super.key});

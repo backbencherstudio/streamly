@@ -4,8 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:streamly/view/profile/componenst/notification/widget/notification_tile.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
-import '../../../../config/images/images.dart';
-import '../../../../themes/color.dart';
+
+import '../../../../core/constants/images/images.dart';
+import '../../../../core/themes/color.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});

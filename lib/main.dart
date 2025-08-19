@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:streamly/block/bottom_nav/bottom_nav_cubit.dart';
-import 'package:streamly/block/comment/comment_bloc.dart';
-import 'package:streamly/block/content/content_bloc.dart';
-import 'package:streamly/block/library_bloc/library_bloc.dart';
-import 'package:streamly/block/live/live_bloc.dart';
-import 'package:streamly/block/live_view/live_view_bloc.dart';
-import 'package:streamly/block/theme/theme_cubit.dart';
-import 'package:streamly/repository/content/content_repository.dart';
-import 'package:streamly/routes/app_router.dart';
-import 'package:streamly/themes/themes.dart';
-import 'package:streamly/block/search_result/search_result_bloc.dart';
-
-import 'block/music/music_bloc.dart';
+import 'core/routes/app_router.dart';
+import 'core/themes/themes.dart';
+import 'data/bloc/bottom_nav/bottom_nav_cubit.dart';
+import 'data/bloc/comment/comment_bloc.dart';
+import 'data/bloc/content/content_bloc.dart';
+import 'data/bloc/library_bloc/library_bloc.dart';
+import 'data/bloc/live/live_bloc.dart';
+import 'data/bloc/live_view/live_view_bloc.dart';
+import 'data/bloc/music/music_bloc.dart';
+import 'data/bloc/search_result/search_result_bloc.dart';
+import 'data/bloc/theme/theme_cubit.dart';
+import 'data/repository/content/content_repository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

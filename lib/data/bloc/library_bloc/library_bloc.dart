@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../core/utils/dummy_data.dart';
 import '../../model/movie/category_model.dart';
-import '../../utils/dummy_data.dart';
 import 'library_event.dart';
 import 'library_state.dart';
 

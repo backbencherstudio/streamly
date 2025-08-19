@@ -7,8 +7,8 @@ import 'package:streamly/view/auth/login/widget/login_header_section.dart';
 import 'package:streamly/view/auth/login/widget/social_login_option.dart';
 import 'package:streamly/widgets/primary_button.dart';
 
-import '../../../config/images/images.dart';
-import '../../../themes/color.dart';
+import '../../../core/constants/images/images.dart';
+import '../../../core/themes/color.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

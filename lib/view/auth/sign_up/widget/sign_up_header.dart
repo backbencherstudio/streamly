@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../themes/color.dart';
+import '../../../../core/themes/color.dart';
 import '../../../../widgets/custom_text_field.dart';
 
 class SignUpHeader extends StatelessWidget {

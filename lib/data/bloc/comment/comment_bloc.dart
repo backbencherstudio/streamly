@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../core/utils/dummy_data.dart';
 import '../../model/comment/comment.dart';
-import '../../utils/dummy_data.dart';
+
 part 'comment_event.dart';
 part 'comment_state.dart';
 

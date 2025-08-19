@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../block/live_view/live_view_bloc.dart';
-import '../../../block/live_view/live_view_event.dart';
-import '../../../block/live_view/live_view_state.dart';
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/live_view/live_view_bloc.dart';
+import '../../../data/bloc/live_view/live_view_event.dart';
+import '../../../data/bloc/live_view/live_view_state.dart';
 import '../widgets/live_view_body.dart';
 
 class LiveViewScreen extends StatefulWidget {

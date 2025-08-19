@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/themes/color.dart';
+
+import '../../../../../core/themes/color.dart';
 
 class PaymentTile extends StatelessWidget {
   final String title;

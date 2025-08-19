@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/config/icons/icons.dart';
 
-import '../../../block/bottom_nav/bottom_nav_cubit.dart';
-import '../../../themes/color.dart';
+import '../../../core/constants/icons/icons.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/bottom_nav/bottom_nav_cubit.dart';
+
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/themes/color.dart';
-import '../../../block/content/content_state.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/content/content_state.dart';
 import 'content_list.dart';
 
 class ContentTab extends StatelessWidget {
