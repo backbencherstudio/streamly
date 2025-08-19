@@ -6,11 +6,12 @@ import '../../../../core/themes/color.dart';
 
 
 class OtpVerificationWidget extends StatelessWidget {
-  const OtpVerificationWidget({super.key});
+  const OtpVerificationWidget({super.key, required this.otpController});
+
+  final TextEditingController otpController;
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController otpController = TextEditingController();
     return PinCodeTextField(
       length: 4,
       obscureText: false,

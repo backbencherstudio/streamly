@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/widgets/primary_button.dart';
 
 import '../../../core/constants/icons/icons.dart';
 import '../../../core/constants/images/images.dart';
+import '../../../core/routes/routes.dart';
 import '../../../core/themes/color.dart';
-
 
 class ResetSuccessScreen extends StatelessWidget {
   const ResetSuccessScreen({super.key});
@@ -28,7 +27,13 @@ class ResetSuccessScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 100.h),
-                  Image.asset(AppIcons.success),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(90.r),
+                    child: Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Image.asset(AppIcons.success, fit: BoxFit.fill),
+                    ),
+                  ),
                   SizedBox(
                     height: 16.h,
                   ),
@@ -53,7 +58,7 @@ class ResetSuccessScreen extends StatelessWidget {
                   PrimaryButton(
                     text: 'Continue',
                     onTap: () {
-                      context.go('/navigationRoot');
+                      context.go(RoutesName.loginScreen);
                       // Navigate or handle reset
                     },
                   ),

@@ -30,29 +30,27 @@ class NavigationRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => GetMeBloc(userRepository: UserRepository())..add(GetMeFetchEvent()),
-        child: BlocConsumer<GetMeBloc, GetMeState>(
-          listener: (context, state) {
-            if (state is GetMeFailure) {
-              context.go(RoutesName.loginScreen);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Something went wrong. Please login again'),
-                ),
-              );
-            }
-          },
-          builder: (context, state) {
-            return BlocBuilder<BottomNavCubit, int>(
-              builder: (context, index) {
-                return Scaffold(
-                  backgroundColor: AppColors.background,
-                  body: SafeArea(child: _screens[index]),
-                  bottomNavigationBar: const CustomBottomNavBar(),
-                );
-              },
+      create: (context) => GetMeBloc(userRepository: UserRepository())..add(GetMeFetchEvent()),
+      child: BlocConsumer<GetMeBloc, GetMeState>(listener: (context, state) {
+        if (state is GetMeFailure) {
+          context.go(RoutesName.loginScreen);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Something went wrong. Please login again'),
+            ),
+          );
+        }
+      }, builder: (context, state) {
+        return BlocBuilder<BottomNavCubit, int>(
+          builder: (context, index) {
+            return Scaffold(
+              backgroundColor: AppColors.background,
+              body: SafeArea(child: _screens[index]),
+              bottomNavigationBar: const CustomBottomNavBar(),
             );
-          }
-        ));
+          },
+        );
+      }),
+    );
   }
 }
