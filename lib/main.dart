@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:streamly/data/bloc/auth/sign_up/sign_up_bloc.dart';
+import 'package:streamly/data/repository/auth/sign_up/sign_up_repository.dart';
 import 'core/routes/app_router.dart';
 import 'core/themes/themes.dart';
 import 'data/bloc/bottom_nav/bottom_nav_cubit.dart';
@@ -29,6 +31,7 @@ class AppWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(create: (_) => SignUpBloc(signUpRepository: SignUpRepository())),
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),
         BlocProvider(create: (_) => LiveBloc()),

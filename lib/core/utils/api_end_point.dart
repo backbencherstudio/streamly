@@ -1,5 +1,9 @@
 class ApiEndPoint {
 
-  static const String baseUrl = 'https://zero-detected-ensure-top.trycloudflare.com';
+  static const String baseUrl = 'https://decisions-spanish-protecting-anime.trycloudflare.com';
+
+  /// auth
+  static const String login = '$baseUrl/api/login';
+  static const String register = '$baseUrl/api/users/registerUser';
 
 }
