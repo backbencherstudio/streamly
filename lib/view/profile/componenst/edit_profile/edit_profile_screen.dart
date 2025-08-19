@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:streamly/themes/color.dart';
 import 'package:streamly/widgets/primary_button.dart';
-import '../../../../config/icons/icons.dart';
-import '../../../../config/images/images.dart';
-import '../../../../routes/routes.dart';
+import '../../../../core/constants/icons/icons.dart';
+import '../../../../core/constants/images/images.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/themes/color.dart';
 import '../../../../widgets/custom_text_field.dart';
 import '../../../../widgets/custom_text_field_with_background.dart';
 

@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:streamly/config/icons/icons.dart';
-import 'package:streamly/routes/routes.dart';
-import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/profile/widget/profile_user_name_section.dart';
 import 'package:streamly/widgets/custom_text_field_with_background.dart';
 import 'package:streamly/widgets/primary_button.dart';
+
+import '../../core/constants/icons/icons.dart';
+import '../../core/routes/routes.dart';
+import '../../core/themes/color.dart';
 
 class ProfileManagementScreen extends StatefulWidget {
   const ProfileManagementScreen({super.key});

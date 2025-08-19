@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:streamly/routes/routes.dart';
 import 'package:streamly/view/video_play/screen/video_play_screen.dart';
 
-import '../../../block/search_result/search_result_bloc.dart';
-import '../../../block/search_result/search_result_state.dart';
+import '../../../core/routes/routes.dart';
+import '../../../data/bloc/search_result/search_result_bloc.dart';
+import '../../../data/bloc/search_result/search_result_state.dart';
 
 class SearchResultWidget extends StatelessWidget {
   const SearchResultWidget({super.key});

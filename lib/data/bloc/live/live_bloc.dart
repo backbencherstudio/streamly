@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../core/utils/dummy_data.dart';
 import '../../model/live/live_model.dart';
-import '../../utils/dummy_data.dart';
 import 'live_event.dart';
 import 'live_state.dart';
 

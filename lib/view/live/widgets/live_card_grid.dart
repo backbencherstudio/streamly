@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../block/live/live_bloc.dart';
-import '../../../block/live/live_state.dart';
+import '../../../data/bloc/live/live_bloc.dart';
+import '../../../data/bloc/live/live_state.dart';
 import 'live_card_item.dart';
 
 class LiveCardGrid extends StatelessWidget {

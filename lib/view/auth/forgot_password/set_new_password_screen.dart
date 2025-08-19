@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+
 
 class AppImages {
   static const String background = 'assets/images/background.svg';

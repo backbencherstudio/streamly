@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../block/view_all/view_all_bloc.dart';
-import '../../../block/view_all/view_all_state.dart';
-import '../../../model/music/music_model.dart';
-import '../../../routes/routes.dart';
-import '../../../themes/color.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/view_all/view_all_bloc.dart';
+import '../../../data/bloc/view_all/view_all_state.dart';
+import '../../../data/model/music/music_model.dart';
 import '../../library/widgets/search_bar.dart';
 
 class ViewAllScreen extends StatelessWidget {

@@ -4,10 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:streamly/view/home/widget/category_vedio_list.dart';
 import 'package:streamly/view/home/widget/header_section.dart';
 import 'package:streamly/view/home/widget/movie_carosal.dart';
-import '../../block/library_bloc/library_bloc.dart';
-import '../../block/library_bloc/library_event.dart';
-import '../../block/library_bloc/library_state.dart';
-import '../../themes/color.dart';
+
+import '../../core/themes/color.dart';
+import '../../data/bloc/library_bloc/library_bloc.dart';
+import '../../data/bloc/library_bloc/library_event.dart';
+import '../../data/bloc/library_bloc/library_state.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

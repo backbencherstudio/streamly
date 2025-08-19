@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../model/movie/category_model.dart';
-import '../../../routes/routes.dart';
-import '../../../themes/color.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/model/movie/category_model.dart';
 import '../../library/widgets/movie_card.dart';
 
 

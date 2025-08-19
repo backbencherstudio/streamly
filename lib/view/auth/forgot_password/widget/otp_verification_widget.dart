@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../../../themes/color.dart';
+import '../../../../core/themes/color.dart';
+
 
 class OtpVerificationWidget extends StatelessWidget {
   const OtpVerificationWidget({super.key});

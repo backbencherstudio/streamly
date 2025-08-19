@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:streamly/config/icons/icons.dart';
-import 'package:streamly/routes/routes.dart';
-import '../../../block/library_bloc/library_bloc.dart';
-import '../../../block/library_bloc/library_event.dart';
-import '../../../themes/color.dart';
+import '../../../core/constants/icons/icons.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/library_bloc/library_bloc.dart';
+import '../../../data/bloc/library_bloc/library_event.dart';
 import 'filter_modal_sheet.dart';
 
 class SearchBarLibrary extends StatefulWidget {

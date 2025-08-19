@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:streamly/config/images/images.dart';
-import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/profile/componenst/help_support/widget/faq.dart';
 import 'package:streamly/view/profile/componenst/help_support/widget/help_bottom_section.dart';
 import 'package:streamly/view/profile/componenst/notification/widget/notification_tile.dart';
 import 'package:streamly/widgets/primary_button.dart';
 import 'package:streamly/widgets/search_widget.dart';
-import '../../../../config/icons/icons.dart';
+import '../../../../core/constants/icons/icons.dart';
+import '../../../../core/constants/images/images.dart';
+import '../../../../core/themes/color.dart';
 import '../../../../widgets/custom_nab_ver.dart';
 import '../../../../widgets/custom_text_field_with_background.dart';
 import '../../../../widgets/description_field.dart';

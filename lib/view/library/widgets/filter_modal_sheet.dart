@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../block/library_bloc/library_bloc.dart';
-import '../../../block/library_bloc/library_event.dart';
-import '../../../block/library_bloc/library_state.dart';
-import '../../../themes/color.dart';
+
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/library_bloc/library_bloc.dart';
+import '../../../data/bloc/library_bloc/library_event.dart';
+import '../../../data/bloc/library_bloc/library_state.dart';
 
 class FilterDialog extends StatefulWidget {
   const FilterDialog({super.key});

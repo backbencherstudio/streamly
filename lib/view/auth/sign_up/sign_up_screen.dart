@@ -6,9 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/view/auth/sign_up/widget/sign_up_header.dart';
 import 'package:streamly/view/auth/sign_up/widget/social_signUp_option.dart';
 import 'package:streamly/widgets/primary_button.dart';
-import '../../../config/images/images.dart';
-import '../../../routes/routes.dart';
-import '../../../themes/color.dart';
+import '../../../core/constants/images/images.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

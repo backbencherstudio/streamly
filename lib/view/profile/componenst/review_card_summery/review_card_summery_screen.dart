@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:streamly/view/profile/componenst/review_card_summery/widget/card_info.dart';
 import 'package:streamly/view/profile/componenst/review_card_summery/widget/price_summery_card.dart';
 import 'package:streamly/view/profile/componenst/review_card_summery/widget/summery_card.dart';
-import '../../../../config/icons/icons.dart';
-import '../../../../config/images/images.dart';
+import '../../../../core/constants/icons/icons.dart';
+import '../../../../core/constants/images/images.dart';
 import '../../../../widgets/custom_nab_ver.dart';
 import '../../../../widgets/primary_button.dart';
 

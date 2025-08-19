@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:streamly/themes/color.dart';
 import 'package:streamly/view/profile/componenst/review_card_summery/widget/price_row.dart';
 
 class PriceSummeryCard extends StatelessWidget {

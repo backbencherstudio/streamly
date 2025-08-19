@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../block/live/live_bloc.dart';
-import '../../../block/live/live_event.dart';
-import '../../../block/live/live_state.dart';
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/live/live_bloc.dart';
+import '../../../data/bloc/live/live_event.dart';
+
 
 class LiveTabBar extends StatelessWidget {
   final TabFilter currentTab;

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:streamly/config/icons/icons.dart';
-import 'package:streamly/config/images/images.dart';
 import 'package:streamly/view/profile/componenst/add_new_card/widget/camera_text.dart';
 import 'package:streamly/view/profile/componenst/payment_method/widget/payment_card_tile.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/outlined_primary_button.dart';
 import 'package:streamly/widgets/primary_button.dart';
+
+import '../../../../core/constants/icons/icons.dart';
+import '../../../../core/constants/images/images.dart';
 
 
 class PaymentMethodScreen extends StatefulWidget {

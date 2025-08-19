@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:streamly/themes/color.dart';
-
+import '../../../core/themes/color.dart';
 import '../../library/widgets/search_bar.dart';
 import '../widgets/category_banner.dart';
 import '../widgets/movie_category_list.dart';

@@ -1,9 +1,10 @@
-import '../model/comment/comment.dart';
-import '../model/content_details/episode.dart';
-import '../model/content_details/person.dart';
-import '../model/content_details/trailer.dart';
-import '../model/live_view/live_view_model.dart';
-import '../model/search_result/media_item.dart';
+
+import '../../data/model/comment/comment.dart';
+import '../../data/model/content_details/episode.dart';
+import '../../data/model/content_details/person.dart';
+import '../../data/model/content_details/trailer.dart';
+import '../../data/model/live_view/live_view_model.dart';
+import '../../data/model/search_result/media_item.dart';
 
 const dummyJson = {
   "categories": [

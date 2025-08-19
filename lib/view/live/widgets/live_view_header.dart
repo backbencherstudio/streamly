@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../model/live_view/live_view_model.dart';
-import '../../../themes/color.dart';
+
+import '../../../core/themes/color.dart';
+import '../../../data/model/live_view/live_view_model.dart';
 
 class LiveViewHeader extends StatelessWidget {
   final LiveViewModel model;

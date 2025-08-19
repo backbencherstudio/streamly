@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../block/comment/comment_bloc.dart';
-import '../../../model/comment/comment.dart';
-import '../../../themes/color.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/bloc/comment/comment_bloc.dart';
+import '../../../data/model/comment/comment.dart';
+
 
 class CommentTab extends StatefulWidget {
   const CommentTab({Key? key}) : super(key: key);

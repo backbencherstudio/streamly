@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:better_player_plus/better_player_plus.dart';
 
-import '../../../model/live_view/live_view_model.dart';
+import '../../../data/model/live_view/live_view_model.dart';
 import 'floating_reaction.dart';
 import 'live_view_comments.dart';
 import 'live_view_header.dart';

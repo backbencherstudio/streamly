@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../model/content_details/episode.dart';
+import '../../../../../data/model/content_details/episode.dart';
 import 'episode_card.dart';
 
 class EpisodesList extends StatelessWidget {

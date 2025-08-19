@@ -5,9 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/view/auth/forgot_password/widget/otp_verification_widget.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/primary_button.dart';
-import '../../../config/images/images.dart';
-import '../../../themes/color.dart';
-import '../../../widgets/custom_text_field.dart';
+import '../../../core/constants/images/images.dart';
+import '../../../core/themes/color.dart';
+
 
 class VerifyCodeScreen extends StatelessWidget {
   const VerifyCodeScreen({super.key});

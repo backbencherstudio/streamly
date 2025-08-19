@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../model/live/live_model.dart';
-import '../../../routes/routes.dart';
-import '../../../themes/color.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/themes/color.dart';
+import '../../../data/model/live/live_model.dart';
 
 class LiveCardItem extends StatelessWidget {
   final LiveUser user;

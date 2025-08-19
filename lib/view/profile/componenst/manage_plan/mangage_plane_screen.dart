@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:streamly/view/profile/componenst/manage_plan/widget/most_popular_plan.dart';
 import 'package:streamly/widgets/primary_button.dart';
 
-import '../../../../config/images/images.dart';
+import '../../../../core/constants/images/images.dart';
 import '../../../../widgets/custom_nab_ver.dart';
 
 class ManagePlaneScreen extends StatelessWidget {
