@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/primary_button.dart';
@@ -19,7 +18,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(AppImages.background, fit: BoxFit.cover),
+            child: Image.asset(AppImages.background, fit: BoxFit.cover),
           ),
           Positioned.fill(
             child: Padding(

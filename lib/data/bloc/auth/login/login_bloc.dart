@@ -3,8 +3,6 @@ import 'package:streamly/data/bloc/auth/login/login_event.dart';
 import 'package:streamly/data/bloc/auth/login/login_state.dart';
 import 'package:streamly/data/repository/auth/login/login_repository.dart';
 
-import '../../../../core/services/token_storage.dart';
-
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final LoginRepository loginRepository;
 
