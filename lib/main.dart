@@ -24,12 +24,14 @@ import 'data/bloc/library_bloc/library_bloc.dart';
 import 'data/bloc/live/live_bloc.dart';
 import 'data/bloc/live_view/live_view_bloc.dart';
 import 'data/bloc/music/music_bloc.dart';
+import 'data/bloc/profile/edit_password/edit_password_bloc.dart';
 import 'data/bloc/profile/edit_profile/edit_profile_bloc.dart';
 import 'data/bloc/search_result/search_result_bloc.dart';
 import 'data/bloc/theme/theme_cubit.dart';
 import 'data/repository/auth/reset_password/reset_password_repository.dart';
 import 'data/repository/auth/verify_otp/verify_otp_repository.dart';
 import 'data/repository/content/content_repository.dart';
+import 'data/repository/profile/edit_profile/edit_password_repository.dart';
 import 'data/repository/profile/edit_profile/edit_profile_repository.dart';
 
 void main() async {
@@ -54,6 +56,7 @@ class AppWrapper extends StatelessWidget {
         BlocProvider(create: (_) => ResetPasswordBloc(repository: ResetPasswordRepository())),
         BlocProvider(create: (_) => EditProfileBloc(repository: EditProfileRepository())),
         BlocProvider(create: (_) => EditProfileImageBloc(imageRepository: EditProfileImageRepository())),
+        BlocProvider(create: (_) => EditPasswordBloc(repository: EditPasswordRepository())),
         BlocProvider(create: (_) => RememberMeCubit()),
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),

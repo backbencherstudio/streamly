@@ -15,5 +15,6 @@ class ApiEndPoint {
   /// profile
   static const String updateUserProfileData = '$baseUrl/api/users/update-user-details';
   static const String updateUserProfileImage = '$baseUrl/api/users/update-image';
+  static const String updateUserPassword = '$baseUrl/api/users/updatePass';
 
 }
