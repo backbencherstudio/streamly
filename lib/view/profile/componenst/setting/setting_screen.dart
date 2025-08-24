@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:streamly/view/profile/componenst/setting/widget/setting_title.dart';
 import 'package:streamly/widgets/custom_nab_ver.dart';
 import 'package:streamly/widgets/primary_button.dart';
 
 import '../../../../core/constants/images/images.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/services/token_storage.dart';
 import '../../../../core/themes/color.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -21,6 +22,32 @@ class _SettingScreenState extends State<SettingScreen> {
   bool isDataSaver = false;
   bool isAutoplay = true;
   bool isAutostart = true;
+
+  void logout() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: AppColors.background,
+            title: const Text("Logout", style: TextStyle(color: Colors.white)),
+            content: const Text("Are you sure you want to logout?",
+                style: TextStyle(color: Colors.white)),
+            actions: [
+              OutlinedButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text("Cancel", style: TextStyle(color: Colors.white))),
+              OutlinedButton(
+                  onPressed: () async {
+                    final tokenStorage = TokenStorage();
+                    await tokenStorage.clearToken();
+                    context.push(RoutesName.loginScreen);
+                    Navigator.pop(context);
+                  },
+                  child: Text("Logout", style: TextStyle(color: Colors.white))),
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,10 +112,10 @@ class _SettingScreenState extends State<SettingScreen> {
                             context.push('/helpSupportScreen');
                           }),
                       SettingTile(title: 'Delete Account', onTap: () {}),
-                      SizedBox(height: 40.h),
+                      SizedBox(height: 20.h),
                       PrimaryButton(
                         text: 'Log Out',
-                        onTap: () {},
+                        onTap: logout,
                       ),
                     ],
                   ),

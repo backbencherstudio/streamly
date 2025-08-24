@@ -6,10 +6,12 @@ import 'package:streamly/data/bloc/auth/getMe/get_me_bloc.dart';
 import 'package:streamly/data/bloc/auth/login/login_bloc.dart';
 import 'package:streamly/data/bloc/auth/rememberMe/remember_me_cubit.dart';
 import 'package:streamly/data/bloc/auth/sign_up/sign_up_bloc.dart';
+import 'package:streamly/data/bloc/profile/edit_profile_image/edit_profile_image_bloc.dart';
 import 'package:streamly/data/repository/auth/forget_password/forget_password_repository.dart';
 import 'package:streamly/data/repository/auth/login/login_repository.dart';
 import 'package:streamly/data/repository/auth/sign_up/sign_up_repository.dart';
 import 'package:streamly/data/repository/auth/user/user_repository.dart';
+import 'package:streamly/data/repository/profile/edit_profile/edit_profile_image_repository.dart';
 import 'core/routes/app_router.dart';
 import 'core/themes/themes.dart';
 import 'data/bloc/auth/forget_password/forget_password_bloc.dart';
@@ -22,11 +24,13 @@ import 'data/bloc/library_bloc/library_bloc.dart';
 import 'data/bloc/live/live_bloc.dart';
 import 'data/bloc/live_view/live_view_bloc.dart';
 import 'data/bloc/music/music_bloc.dart';
+import 'data/bloc/profile/edit_profile/edit_profile_bloc.dart';
 import 'data/bloc/search_result/search_result_bloc.dart';
 import 'data/bloc/theme/theme_cubit.dart';
 import 'data/repository/auth/reset_password/reset_password_repository.dart';
 import 'data/repository/auth/verify_otp/verify_otp_repository.dart';
 import 'data/repository/content/content_repository.dart';
+import 'data/repository/profile/edit_profile/edit_profile_repository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +52,8 @@ class AppWrapper extends StatelessWidget {
         BlocProvider(create: (_) => ForgetPasswordBloc(repository: ForgetPasswordRepository())),
         BlocProvider(create: (_) => VerifyOtpBloc(repository: VerifyOtpRepository())),
         BlocProvider(create: (_) => ResetPasswordBloc(repository: ResetPasswordRepository())),
+        BlocProvider(create: (_) => EditProfileBloc(repository: EditProfileRepository())),
+        BlocProvider(create: (_) => EditProfileImageBloc(imageRepository: EditProfileImageRepository())),
         BlocProvider(create: (_) => RememberMeCubit()),
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),
