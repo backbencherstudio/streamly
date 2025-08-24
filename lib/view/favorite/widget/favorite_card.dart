@@ -1,50 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-
-
-import '../../../core/routes/routes.dart';
-import '../../../core/themes/color.dart';
 
 class FavoriteCard extends StatelessWidget {
-  final Map<String, dynamic> data;
-  const FavoriteCard({super.key, required this.data});
+  final String title;
+  final String imageUrl;
+  final double? rating;
+  final String? badge;
+  final VoidCallback? onTap;
+
+  const FavoriteCard({
+    super.key,
+    required this.title,
+    required this.imageUrl,
+    this.rating,
+    this.badge,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.push(RoutesName.contentDetailScreen);
-      },
-      child: Container(
-        height: 240,
-        width: 170,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          image: DecorationImage(
-            image: AssetImage(data["imageUrl"]),
-            fit: BoxFit.cover,
+    return InkWell(
+      onTap: onTap,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.network(imageUrl, fit: BoxFit.cover),
+            ),
           ),
-        ),
-        child: Stack(
-          children: [
+          if (badge != null)
             Positioned(
-              top: 12,
-              left: 12,
+              top: 8,
+              left: 8,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.r),
-                  color: Color(0xff7A25BC),
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(
-                  data["rating"].toString(),
-                  style: TextStyle(color: AppColors.textPrimary),
-                ),
+                child: Text(badge!, style: const TextStyle(color: Colors.white, fontSize: 12)),
               ),
-            )
-          ],
-        ),
+            ),
+          Positioned(
+            left: 8,
+            right: 8,
+            bottom: 8,
+            child: Text(
+              title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
       ),
     );
   }
