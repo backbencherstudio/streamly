@@ -23,6 +23,7 @@ class RoutesName {
   static const String filterResult = '/filterResult';
   static const String searchResult = '/searchResult';
   static const String editProfileScreen = '/editProfileScreen';
+  static const String editPasswordScreen = '/editPasswordScreen';
   static const String profileManagementScreen = '/profileManagementScreen';
   static const String viewAllMusic = '/viewAllMusic';
   static const String viewAll = '/viewAll';

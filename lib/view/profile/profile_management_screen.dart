@@ -148,7 +148,7 @@ class _ProfileManagementScreenState extends State<ProfileManagementScreen> {
                 hintText: "Change Password",
                 iconPath: AppIcons.lock,
                 onTap: () {
-                  context.push(RoutesName.forgotPasswordScreen);
+                  context.push(RoutesName.editPasswordScreen);
                 },
               ),
               customContainerWithBackground(

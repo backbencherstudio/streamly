@@ -10,10 +10,10 @@ class EditProfileImageBloc extends Bloc<EditProfileImageEvent, EditProfileImageS
   EditProfileImageBloc({
     required this.imageRepository,
   }) : super(EditProfileImageInitial()) {
-    on<EditProfileImageSubmitEvent>(_onEditProfileSubmit);
+    on<EditProfileImageSubmitEvent>(_onEditProfileImageSubmit);
   }
 
-  void _onEditProfileSubmit(EditProfileImageSubmitEvent event, Emitter<EditProfileImageState> emit) async {
+  void _onEditProfileImageSubmit(EditProfileImageSubmitEvent event, Emitter<EditProfileImageState> emit) async {
     emit(EditProfileImageLoading());
 
     try {
