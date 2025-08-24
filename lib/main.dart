@@ -20,6 +20,8 @@ import 'data/bloc/auth/verify_otp/verify_otp_bloc.dart';
 import 'data/bloc/bottom_nav/bottom_nav_cubit.dart';
 import 'data/bloc/comment/comment_bloc.dart';
 import 'data/bloc/content/content_bloc.dart';
+import 'data/bloc/content/favorite/favorite_content_bloc.dart';
+import 'data/bloc/content/favorite/favorite_content_event.dart';
 import 'data/bloc/library_bloc/library_bloc.dart';
 import 'data/bloc/live/live_bloc.dart';
 import 'data/bloc/live_view/live_view_bloc.dart';
@@ -31,6 +33,7 @@ import 'data/bloc/theme/theme_cubit.dart';
 import 'data/repository/auth/reset_password/reset_password_repository.dart';
 import 'data/repository/auth/verify_otp/verify_otp_repository.dart';
 import 'data/repository/content/content_repository.dart';
+import 'data/repository/content/favorite/favorite_content_repository.dart';
 import 'data/repository/profile/edit_profile/edit_password_repository.dart';
 import 'data/repository/profile/edit_profile/edit_profile_repository.dart';
 
@@ -57,6 +60,7 @@ class AppWrapper extends StatelessWidget {
         BlocProvider(create: (_) => EditProfileBloc(repository: EditProfileRepository())),
         BlocProvider(create: (_) => EditProfileImageBloc(imageRepository: EditProfileImageRepository())),
         BlocProvider(create: (_) => EditPasswordBloc(repository: EditPasswordRepository())),
+        BlocProvider(create: (_) => FavoriteContentBloc(repository: FavoriteContentRepository(),)..add(FetchFavContentEvent()),),
         BlocProvider(create: (_) => RememberMeCubit()),
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),

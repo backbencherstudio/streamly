@@ -9,6 +9,9 @@ import 'package:streamly/data/bloc/auth/rememberMe/remember_me_cubit.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/themes/color.dart';
+import '../../../../data/bloc/auth/getMe/get_me_bloc.dart';
+import '../../../../data/bloc/auth/getMe/get_me_event.dart';
+import '../../../../data/bloc/bottom_nav/bottom_nav_cubit.dart';
 import '../../../../widgets/custom_text_field.dart';
 import '../../../../widgets/primary_button.dart';
 
@@ -129,7 +132,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 ? Center(child: CircularProgressIndicator())
                 : PrimaryButton(
               text: 'Login',
-              onTap: () {
+              onTap: () async {
                 final email = _emailController.text.trim();
                 final password = _passwordController.text.trim();
 
@@ -139,6 +142,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     password: password,
                     rememberMe: context.read<RememberMeCubit>().state,
                   ));
+                  context.read<BottomNavCubit>().updateIndex(0);
                 }
               },
             ),

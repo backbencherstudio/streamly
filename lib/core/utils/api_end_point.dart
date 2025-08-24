@@ -17,4 +17,7 @@ class ApiEndPoint {
   static const String updateUserProfileImage = '$baseUrl/api/users/update-image';
   static const String updateUserPassword = '$baseUrl/api/users/updatePass';
 
+  /// favorite
+  static const String getFavoriteContent = '$baseUrl/api/favourites/all-favourites';
+
 }
